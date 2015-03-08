@@ -1,0 +1,37 @@
+body {
+    background: silver;
+
+
+}
+
+#header {
+    padding: 20px;
+    background:#00438a;
+    color: white;
+}
+
+#content
+{
+    background: #fff;   
+    padding: 20px;
+}
+
+#footer {
+    background: #00438a ;
+    padding: 20px;
+    color:white;
+}
+
+a {
+    color: wite;
+    text-decoration: none;
+}
+
+#header>a:visited { color: silver;
+}
+
+//werkt niet code hieronder
+#mm1>a:visited { color: silver;
+
+}
+

@@ -1,0 +1,46 @@
+2015-03-05 15:01:50 - DEBUG --> Program start 
+2015-03-05 15:11:41 - DEBUG --> Program start 
+2015-03-05 15:12:27 - DEBUG --> Get_afwezigheidstoezicht 
+2015-03-05 15:12:27 - DEBUG --> Program start 
+2015-03-05 15:12:31 - DEBUG --> Program start 
+2015-03-05 15:12:33 - DEBUG --> Get_afwezigheidstoezicht 
+2015-03-05 15:12:33 - DEBUG --> Program start 
+2015-03-05 15:13:07 - DEBUG --> Program start 
+2015-03-05 15:13:09 - DEBUG --> Get_afwezigheidstoezicht 
+2015-03-05 15:13:09 - DEBUG --> Program start 
+2015-03-05 15:15:28 - DEBUG --> Program start 
+2015-03-05 15:16:02 - DEBUG --> Program start 
+2015-03-05 15:16:04 - DEBUG --> Get_afwezigheidstoezicht 
+2015-03-05 15:16:04 - DEBUG --> Program start 
+2015-03-05 15:17:15 - DEBUG --> Program start 
+2015-03-05 15:17:57 - DEBUG --> Program start 
+2015-03-05 15:19:32 - DEBUG --> Program start 
+2015-03-05 15:23:34 - DEBUG --> Program start 
+2015-03-05 15:23:36 - DEBUG --> Get_afwezigheidstoezicht 
+2015-03-05 15:23:36 - DEBUG --> Program start 
+2015-03-05 15:26:52 - DEBUG --> Program start 
+2015-03-05 15:26:54 - DEBUG --> Get_afwezigheidstoezicht 
+2015-03-05 15:26:54 - DEBUG --> Program start 
+2015-03-05 15:31:18 - DEBUG --> Program start 
+2015-03-05 15:31:21 - DEBUG --> Program start 
+2015-03-05 15:31:45 - DEBUG --> Program start 
+2015-03-05 15:31:51 - DEBUG --> Program start 
+2015-03-05 15:32:00 - DEBUG --> Program start 
+2015-03-05 15:32:04 - DEBUG --> Program start 
+2015-03-05 15:44:14 - DEBUG --> Program start 
+2015-03-05 15:44:17 - DEBUG --> Program start 
+2015-03-05 15:44:25 - DEBUG --> Program start 
+2015-03-05 15:44:28 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-03-05 15:44:28 - DEBUG --> Program start 
+2015-03-05 15:44:51 - DEBUG --> Program start 
+2015-03-05 15:44:55 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-05 15:47:50 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-05 15:47:57 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-03-05 16:00:45 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-05 16:03:20 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-05 16:03:42 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-05 16:04:37 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-05 16:04:39 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-05 16:05:02 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-05 16:05:28 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-05 16:06:11 - ERROR --> pagina bestaat niet: /index.php 
