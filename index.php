@@ -11,6 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        //test
         //maak gebruik van een autoloader!! -> vb. SPl autoloader
         require 'libs/Bootstrap.php';
         require 'libs/Controller.php';
