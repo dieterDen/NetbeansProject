@@ -16,8 +16,10 @@ class AlgemeenInfo extends Controller {
         echo 'hier moet tabel komen<br />';
         $this->view->afwezigheidslijst = $this->model->get_afwezigheidstoezicht();
         $this->view->render('algemeenInfo/get_afwezigheidstoezicht',true);
-      
+        
     }
+    
+    
 
     //method daderGerichteAanpak
 }

@@ -44,3 +44,8 @@
 2015-03-05 16:05:02 - ERROR --> pagina bestaat niet: /index.php 
 2015-03-05 16:05:28 - ERROR --> pagina bestaat niet: /index.php 
 2015-03-05 16:06:11 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-09 9:04:17 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-09 10:30:32 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-09 14:01:40 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-09 16:09:27 - ERROR --> pagina bestaat niet: /?XDEBUG_SESSION_START=netbeans-xdebug 
+2015-03-09 16:10:12 - ERROR --> pagina bestaat niet: /?XDEBUG_SESSION_START=netbeans-xdebug 

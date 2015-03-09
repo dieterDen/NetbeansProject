@@ -9,9 +9,11 @@ class login_model extends Model {
 
     public function run()
     {
-        $result=  $this->db->query("SELECT * FROM shop.sales");
+        $result=  $this->db->query("SELECT afwezigheidstoezicht_elementnummer as 'elementnummer', afwezigheidstoezichttekst_tekst as 'afwezigheids inlichtingen' FROM islp.view_afwezigheidstoezichtTekst");
         while($row =$result->fetch_assoc()) {
-            printf("%s %s %s %s %s \n",$row["id"],$row["ondate"],$row["buyer"],$row["product"],$row["anmount"]);
+            //echo $row["elementnummer"].'<br />';
+            //echo $row["afwezigheids inlichtingen"]."<br />";
+           // printf("%s %s %s %s %s <br>", $row["elementnummer"],$row["afwezigheids inlichtingen"],$row["bewoner naam"],$row["bewoner voornaam"],$row["begindatum"]);
         }
         
         
