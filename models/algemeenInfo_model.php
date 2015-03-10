@@ -14,7 +14,11 @@ class algemeenInfo_model extends Model {
         //return $result->fetch_assoc();
 
         $result = $this->db->query("SELECT afwezigheidstoezicht_elementnummer as 'elementnummer', afwezigheidstoezichttekst_tekst as 'afwezigheids inlichtingen',afwezigheidstoezicht_naam as 'bewoner naam',afwezigheidstoezicht_voornaam as 'bewoner voornaam', afwezigheidstoezicht_elementbegindatum as 'begindatum' FROM islp.view_afwezigheidstoezichtTekst");
-        return $result->fetch_assoc();
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        //print_r($rows);
+        return $rows;
     }
 
 }

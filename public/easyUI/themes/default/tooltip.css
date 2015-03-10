@@ -1,7 +1,7 @@
 .tooltip {
   position: absolute;
   display: none;
-  z-index: 9900000;
+  z-index: 99000000;
   outline: none;
   opacity: 1;
   filter: alpha(opacity=100);
