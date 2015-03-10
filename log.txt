@@ -71,3 +71,9 @@
 2015-03-10 10:35:42 - ERROR --> pagina bestaat niet: /index.php 
 2015-03-10 10:36:45 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
 2015-03-10 14:03:00 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-10 14:23:07 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-10 14:23:08 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-10 14:23:10 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-10 15:15:45 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-10 15:30:55 - ERROR --> pagina bestaat niet: /algemeenInfo/%3Ch1%3Etest%3C/h1%3E 
+2015-03-10 15:49:45 - ERROR --> pagina bestaat niet: /algemeenInfo/URlalgemeenInfo/get_inlichtingen/param 

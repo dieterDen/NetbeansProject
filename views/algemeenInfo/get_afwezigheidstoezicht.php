@@ -11,6 +11,15 @@
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
         <script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>
+
+        <script type="text/javascript">
+
+            function popup(param) {
+                
+                cuteLittleWindow = window.open("<?php echo URl; ?>algemeenInfo/get_inlichtingen/param", "inlichtingen", "location=no,menubar=no,status=no,resizable=yes,width=550,height=200,top=250, left=500");
+            }
+
+        </script>
     </head>
     <body>
         <div id="header">
@@ -34,10 +43,10 @@
                     </tr>
                 </thead>
                 <tbody> 
-                    <?php  
+                    <?php
                     foreach ($this->afwezigheidslijst as $row) {
                         echo '<tr><td>' . $row['elementnummer'] . '</td>'
-                        . '<td><a href="javascript:void(0)" class="easyui-linkbutton" onclick="$("#w").window("open")">'. substr($row['afwezigheids inlichtingen'], 0, 100) . '...</a></td>'
+                        . '<td><a href="javascript:popup()">' . substr($row['afwezigheids inlichtingen'], 0, 100) . '...</a></td>'
                         . '<td>' . $row['bewoner naam'] . '</td>'
                         . '<td>' . $row['bewoner voornaam'] . '</td>'
                         . '<td>' . $row['begindatum'] . '</td>'
