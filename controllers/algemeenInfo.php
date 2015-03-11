@@ -20,6 +20,13 @@ class AlgemeenInfo extends Controller {
     }
     
     
-
+    function get_afwezigheidInlichtingen($elementnummer) {
+        echo 'we zijn in method get_afwezigheidInlichtingen in controller <br />';
+        $this->view->afwezigheidInlichtingen = $this->model->get_afwezigheidInlichtingen();
+        $this->view->afwezigheid_elementnummer= $elementnummer;
+        $this->view->render('algemeenInfo/get_afwezigheidInlichtingen',true);
+       
+    }
+    
     //method daderGerichteAanpak
 }

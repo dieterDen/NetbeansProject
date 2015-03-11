@@ -21,4 +21,19 @@ class algemeenInfo_model extends Model {
         return $rows;
     }
 
+    function get_afwezigheidInlichtingen($elementnummer) {
+        echo 'inside function get_afwezigheidInlichtingen in model';
+        $result = $this->db->query('SELECT afwezigheidstoezichttekst_tekst FROM islp.view_afwezigheidstoezichtTekst where lower(afwezigheidstoezichttekst_aardtekst) = "inlichtingen" and afwezigheidstoezichttekst_elementnummer like 113 ');
+       
+        while($row =$result->fetch_assoc()) {
+            $rows[]=$row;
+        }
+         //print_r($rows); ->ok
+        return $rows;
+        
+    }
+    
+    //function get_afwezigheidCommentaren($elementnummer) {
+    
+    
 }

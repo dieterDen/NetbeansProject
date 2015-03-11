@@ -11,17 +11,34 @@
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
         <script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>
-
         <script type="text/javascript">
+        $(document).ready(function()
+        //werkt niet
+{ var text=doculent.getElementById('test').value();
+    alert(text);
+});
 
-            function popup(param) {
-                
-                cuteLittleWindow = window.open("<?php echo URl; ?>algemeenInfo/get_inlichtingen/param", "inlichtingen", "location=no,menubar=no,status=no,resizable=yes,width=550,height=200,top=250, left=500");
+        </script>
+        <script type="text/javascript">
+            function createPopup(param) {
+                var elementnummer=param.parent().parent().children();
+                var popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/elementnummer", "Popup", "top=500,width=1000,height=300");
             }
 
         </script>
+        
+        <!-- 
+      script --javascript
+      klik op inlichtingen ->onclick() -> popup methode{
+      $this->model->afwezigheidInlichtingen by elementnummer
+      -> dit doorgeven via url: echo URL/algemeenInfo/get_afwezigheidInlichtingen/elementnummer
+      }
+    
+        -->
+
     </head>
     <body>
+        <p id='test'>test</p>
         <div id="header">
             <a href="<?php echo URL; ?>index">Index</a>
             <a href="<?php echo URL; ?>help">Help</a>
@@ -46,13 +63,26 @@
                     <?php
                     foreach ($this->afwezigheidslijst as $row) {
                         echo '<tr><td>' . $row['elementnummer'] . '</td>'
-                        . '<td><a href="javascript:popup()">' . substr($row['afwezigheids inlichtingen'], 0, 100) . '...</a></td>'
+                        . '<td><a href="#" id="divPopup" onclick="createPopup(this);">' . substr($row['afwezigheids inlichtingen'], 0, 100) . '...</a></td>'
                         . '<td>' . $row['bewoner naam'] . '</td>'
                         . '<td>' . $row['bewoner voornaam'] . '</td>'
                         . '<td>' . $row['begindatum'] . '</td>'
                         . '</tr>';
                     }
                     ?>
+
+
+                    <!-- 
+                    probleem om parameter door te geven in createPopup method
+                    script --javascript
+                    klik op inlichtingen ->onclick() -> popup methode{
+                    $this->model->afwezigheidInlichtingen by elementnummer
+                    -> dit doorgeven via url: echo URL/algemeenInfo/get_afwezigheidInlichtingen/elementnummer
+                    }
+                  
+                    method oproepen via url die de data inlichtingen ophaalt van geselecteerde elementnummer
+                    -> deze data inserten in html pag -> get_afwezigheidsinlichtingen
+                    -->
                 </tbody>
             </table>
         </div> 

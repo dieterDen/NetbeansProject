@@ -77,3 +77,13 @@
 2015-03-10 15:15:45 - ERROR --> pagina bestaat niet: /index.php 
 2015-03-10 15:30:55 - ERROR --> pagina bestaat niet: /algemeenInfo/%3Ch1%3Etest%3C/h1%3E 
 2015-03-10 15:49:45 - ERROR --> pagina bestaat niet: /algemeenInfo/URlalgemeenInfo/get_inlichtingen/param 
+2015-03-11 9:58:57 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-11 10:43:16 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidInlichtingen/undefined 
+2015-03-11 10:43:50 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidInlichtingen/undefined 
+2015-03-11 10:45:00 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidInlichtingen/undefined 
+2015-03-11 10:46:32 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidInlichtingen/undefined 
+2015-03-11 10:52:09 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidInlichtingen/undefined 
+2015-03-11 10:56:58 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidInlichtingen/ 
+2015-03-11 14:12:02 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-11 14:12:32 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-11 14:12:33 - ERROR --> pagina bestaat niet: /index.php 
