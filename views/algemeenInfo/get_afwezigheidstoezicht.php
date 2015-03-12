@@ -14,7 +14,7 @@
         <script type="text/javascript">
             function createPopup(param) {
                 var elementnummer = $(param).parents("tr").find(">:first-child").text();
-                var popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/"+elementnummer, "Popup", "top=500,width=1000,height=300");
+                var popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/" + elementnummer, "Popup", "top=500,width=1000,height=300");
             }
 
         </script>
@@ -30,8 +30,6 @@
 
     </head>
     <body>
-        <h1 id="h01"></h1>
-        <p id='test'>test p element</p>
         <div id="header">
             <a href="<?php echo URL; ?>index">Index</a>
             <a href="<?php echo URL; ?>help">Help</a>
