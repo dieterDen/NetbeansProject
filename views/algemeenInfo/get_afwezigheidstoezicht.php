@@ -11,22 +11,24 @@
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
         <script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>
-        <script type="text/javascript">
-        $(document).ready(function()
-        //werkt niet
-{ var text=doculent.getElementById('test').value();
-    alert(text);
-});
+        <!--<script>
+            function myFunction() {
+               alert( $("#divPopup").html());
+               
+            }
+            $(document).ready(myFunction);
+        </script>-->
 
-        </script>
         <script type="text/javascript">
             function createPopup(param) {
-                var elementnummer=param.parent().parent().children();
+                alert($(param).parent().parent().parent().find(">:first-child").text());
+               // alert($(param).parents().find(">:first-child").text());
+                var elementnummer = param.parent().parent().children();
                 var popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/elementnummer", "Popup", "top=500,width=1000,height=300");
             }
 
         </script>
-        
+
         <!-- 
       script --javascript
       klik op inlichtingen ->onclick() -> popup methode{
@@ -38,7 +40,8 @@
 
     </head>
     <body>
-        <p id='test'>test</p>
+        <h1 id="h01"></h1>
+        <p id='test'>test p element</p>
         <div id="header">
             <a href="<?php echo URL; ?>index">Index</a>
             <a href="<?php echo URL; ?>help">Help</a>
@@ -62,7 +65,7 @@
                 <tbody> 
                     <?php
                     foreach ($this->afwezigheidslijst as $row) {
-                        echo '<tr><td>' . $row['elementnummer'] . '</td>'
+                        echo '<tr><td class="elementnr">' . $row['elementnummer'] . '</td>'
                         . '<td><a href="#" id="divPopup" onclick="createPopup(this);">' . substr($row['afwezigheids inlichtingen'], 0, 100) . '...</a></td>'
                         . '<td>' . $row['bewoner naam'] . '</td>'
                         . '<td>' . $row['bewoner voornaam'] . '</td>'
