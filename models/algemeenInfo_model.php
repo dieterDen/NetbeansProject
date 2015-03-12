@@ -3,7 +3,7 @@
 class algemeenInfo_model extends Model {
 
     function __construct() {
-        echo 'we are in algemeenInfo_model';
+        //echo 'we are in algemeenInfo_model';
         parent::__construct();
     }
 
@@ -22,13 +22,14 @@ class algemeenInfo_model extends Model {
     }
 
     function get_afwezigheidInlichtingen($elementnummer) {
-        echo 'inside function get_afwezigheidInlichtingen in model';
-        $result = $this->db->query('SELECT afwezigheidstoezichttekst_tekst FROM islp.view_afwezigheidstoezichtTekst where lower(afwezigheidstoezichttekst_aardtekst) = "inlichtingen" and afwezigheidstoezichttekst_elementnummer like 113 ');
+       // echo 'inside function get_afwezigheidInlichtingen in model'.$elementnummer;
+        $result = $this->db->query('SELECT afwezigheidstoezichttekst_tekst FROM islp.view_afwezigheidstoezichtTekst where lower(afwezigheidstoezichttekst_aardtekst) = "inlichtingen" and afwezigheidstoezichttekst_elementnummer like '. $elementnummer);
        
         while($row =$result->fetch_assoc()) {
             $rows[]=$row;
         }
-         //print_r($rows); ->ok
+         //print_r($rows); 
+        
         return $rows;
         
     }

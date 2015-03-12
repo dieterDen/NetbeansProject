@@ -88,3 +88,4 @@
 2015-03-11 14:12:32 - ERROR --> pagina bestaat niet: /index.php 
 2015-03-11 14:12:33 - ERROR --> pagina bestaat niet: /index.php 
 2015-03-12 8:50:34 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-12 10:26:41 - ERROR --> pagina bestaat niet: /index.php 

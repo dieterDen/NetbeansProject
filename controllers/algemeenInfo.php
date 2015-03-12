@@ -5,7 +5,7 @@ class AlgemeenInfo extends Controller {
     function __construct() {
         parent::__construct();
 
-        echo 'we are in algemeen info controller<br />';
+        //echo 'we are in algemeen info controller<br />';
     }
 
     //method afwezigheidstoezicht
@@ -21,8 +21,8 @@ class AlgemeenInfo extends Controller {
     
     
     function get_afwezigheidInlichtingen($elementnummer) {
-        echo 'we zijn in method get_afwezigheidInlichtingen in controller <br />';
-        $this->view->afwezigheidInlichtingen = $this->model->get_afwezigheidInlichtingen();
+        //echo 'we zijn in method get_afwezigheidInlichtingen in controller <br />'.$elementnummer;
+        $this->view->afwezigheidInlichtingen = $this->model->get_afwezigheidInlichtingen($elementnummer);
         $this->view->afwezigheid_elementnummer= $elementnummer;
         $this->view->render('algemeenInfo/get_afwezigheidInlichtingen',true);
        

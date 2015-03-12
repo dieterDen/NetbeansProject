@@ -1,4 +1,4 @@
-<?php echo 'inside view get_afwezigheidInlichtingen'; ?>
+<?php //echo 'inside view get_afwezigheidInlichtingen'; ?>
 
 
 

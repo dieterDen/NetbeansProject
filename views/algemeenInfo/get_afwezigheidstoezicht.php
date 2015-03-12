@@ -11,20 +11,10 @@
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
         <script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>
-        <!--<script>
-            function myFunction() {
-               alert( $("#divPopup").html());
-               
-            }
-            $(document).ready(myFunction);
-        </script>-->
-
         <script type="text/javascript">
             function createPopup(param) {
-                alert($(param).parent().parent().parent().find(">:first-child").text());
-               // alert($(param).parents().find(">:first-child").text());
-                var elementnummer = param.parent().parent().children();
-                var popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/elementnummer", "Popup", "top=500,width=1000,height=300");
+                var elementnummer = $(param).parents("tr").find(">:first-child").text();
+                var popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/"+elementnummer, "Popup", "top=500,width=1000,height=300");
             }
 
         </script>
