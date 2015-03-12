@@ -13,7 +13,7 @@ class algemeenInfo_model extends Model {
         //$result=$this->db->query("select * from islp.view_afwezigheid");
         //return $result->fetch_assoc();
 
-        $result = $this->db->query("SELECT afwezigheidstoezicht_elementnummer as 'elementnummer', afwezigheidstoezichttekst_tekst as 'afwezigheids inlichtingen',afwezigheidstoezicht_naam as 'bewoner naam',afwezigheidstoezicht_voornaam as 'bewoner voornaam', afwezigheidstoezicht_elementbegindatum as 'begindatum' FROM islp.view_afwezigheidstoezichtTekst");
+        $result = $this->db->query("SELECT afwezigheidstoezicht_elementnummer as 'elementnummer', afwezigheidstoezicht_naam as 'bewoner naam',afwezigheidstoezicht_voornaam as 'bewoner voornaam', afwezigheidstoezicht_elementbegindatum as 'begindatum' FROM islp.view_afwezigheidstoezicht");
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }

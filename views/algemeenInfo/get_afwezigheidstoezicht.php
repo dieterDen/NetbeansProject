@@ -42,10 +42,10 @@
                    data-options="singleSelect:true,collapsible:true">
                 <thead>
                     <tr>
-                        <th data-options="field:'itemid',width:120"><?php echo $lang['elementnummer']; ?></th>
-                        <th data-options="field:'productid',width:750"><?php echo $lang['afwezigheids inlichtingen']; ?></th>
-                        <th data-options="field:'listprice',width:200"><?php echo $lang['bewoner naam']; ?></th>
-                        <th data-options="field:'unitcost',width:200"><?php echo $lang['bewoner voornaam']; ?></th>
+                        <th data-options="field:'itemid',width:100"><?php echo $lang['elementnummer']; ?></th>
+                        <!--<th data-options="field:'productid',width:750"><?php echo $lang['afwezigheids inlichtingen']; ?></th>-->
+                        <th data-options="field:'listprice',width:100"><?php echo $lang['bewoner naam']; ?></th>
+                        <th data-options="field:'unitcost',width:120"><?php echo $lang['bewoner voornaam']; ?></th>
                         <th data-options="field:'attr1',width:100"><?php echo $lang['begindatum']; ?></th>
                        <!-- <th data-options="field:'status',width:140"><?php echo $lang['bezocht']; ?></th>-->
                     </tr>
@@ -54,12 +54,12 @@
                     <?php
                     foreach ($this->afwezigheidslijst as $row) {
                         echo '<tr><td class="elementnr">' . $row['elementnummer'] . '</td>'
-                        . '<td><a href="#" id="divPopup" onclick="createPopup(this);">' . substr($row['afwezigheids inlichtingen'], 0, 100) . '...</a></td>'
                         . '<td>' . $row['bewoner naam'] . '</td>'
                         . '<td>' . $row['bewoner voornaam'] . '</td>'
                         . '<td>' . $row['begindatum'] . '</td>'
                         . '</tr>';
                     }
+                    // . '<td><a href="#" id="divPopup" onclick="createPopup(this);">' . substr($row['afwezigheids inlichtingen'], 0, 100) . '...</a></td>'
                     ?>
 
 

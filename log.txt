@@ -90,3 +90,9 @@
 2015-03-12 8:50:34 - ERROR --> pagina bestaat niet: /index.php 
 2015-03-12 10:26:41 - ERROR --> pagina bestaat niet: /index.php 
 2015-03-12 10:50:53 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-12 13:14:40 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-12 13:14:42 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-12 13:14:43 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-12 13:14:45 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-12 13:18:47 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-03-12 13:18:51 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
