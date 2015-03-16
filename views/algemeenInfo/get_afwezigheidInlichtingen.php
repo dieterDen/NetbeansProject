@@ -1,7 +1,4 @@
-<?php //echo 'inside view get_afwezigheidInlichtingen'; ?>
-
-
-
+<?php //echo 'inside view get_afwezigheidInlichtingen';      ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,16 +11,24 @@
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min.js"></script>
     </head>
     <body>
+        <div class="easyui-tabs" style="width:980px;height:280px">
+            <div title="Details" style="padding:10px">
+                <p style="font-size:12px">Afwezigheid inlichtingen: <?php echo $this->afwezigheid_elementnummer; ?></p>
+                <div >
+                    <?php
+                    foreach ($this->afwezigheidInlichtingen as $row) {
+                        echo $row[afwezigheidstoezichttekst_tekst] . "<br /><br />";
+                    }
+                    ?>
 
-        <div id="dd" class="easyui-draggable easyui-resizable" data-options="handle:'#mytitle'" style="width:980px;height:250px;border:1px solid #ccc">
-            <div id="mytitle" style="background:#ddd;padding:5px;font-family: verdana, helvetica,arial, sans-serif; font-size: 16px;">Afwezigheid inlichtingen: <?php echo $this->afwezigheid_elementnummer; ?></div>
-            <div style="padding:20px;font-family: verdana, helvetica,arial, sans-serif; font-size: 14px; ">
+                </div>
+            </div>
+            <div title="Commentaren(<?php echo count($this->afwezigheidCommentaren); ?>)" style="padding:10px">
                 <?php
-                foreach ($this->afwezigheidInlichtingen as $row) {
-                    echo $row[afwezigheidstoezichttekst_tekst]."<br /><br />";
+                foreach ($this->afwezigheidCommentaren as $row) {
+                    echo $row[afwezigheidstoezichttekst_tekst] . "<br /><br />";
                 }
                 ?>
-
             </div>
         </div>
     </body>

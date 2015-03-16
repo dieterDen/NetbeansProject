@@ -12,21 +12,19 @@
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
         <script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>
         <script type="text/javascript">
-            function createPopup(param) {
+            var popup = null;
+            var createPopup = function (param) {
                 var elementnummer = $(param).parents("tr").find(">:first-child").text();
-                var popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/" + elementnummer, "Popup", "top=500,width=1000,height=300");
-            }
+                if (popup && !popup.closed) {
+                    popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/" + elementnummer, "Popup", "top=500,width=1000,height=300");
+                    popup.focus();
+                } else {
+                    popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/" + elementnummer, "Popup", "top=500,width=1000,height=300");
+
+                }
+            };
 
         </script>
-
-        <!-- 
-      script --javascript
-      klik op inlichtingen ->onclick() -> popup methode{
-      $this->model->afwezigheidInlichtingen by elementnummer
-      -> dit doorgeven via url: echo URL/algemeenInfo/get_afwezigheidInlichtingen/elementnummer
-      }
-    
-        -->
 
     </head>
     <body>
@@ -38,25 +36,31 @@
 
         <div id="content">
             <div style="margin:20px 0;"></div>
-            <table class="easyui-datagrid" title="Basic DataGrid" style="width:1500px;height:800px"
+            <table class="easyui-datagrid" title="Afwezigheidstoezicht" style="width:1700px;height:800px"
                    data-options="singleSelect:true,collapsible:true">
                 <thead>
                     <tr>
-                        <th data-options="field:'itemid',width:100"><?php echo $lang['elementnummer']; ?></th>
-                        <!--<th data-options="field:'productid',width:750"><?php echo $lang['afwezigheids inlichtingen']; ?></th>-->
-                        <th data-options="field:'listprice',width:100"><?php echo $lang['bewoner naam']; ?></th>
-                        <th data-options="field:'unitcost',width:120"><?php echo $lang['bewoner voornaam']; ?></th>
-                        <th data-options="field:'attr1',width:100"><?php echo $lang['begindatum']; ?></th>
-                       <!-- <th data-options="field:'status',width:140"><?php echo $lang['bezocht']; ?></th>-->
+                        <th data-options="field:'elementnummer',width:100"><?php echo $lang['elementnummer']; ?></th>
+                        <th data-options="field:'bewNaam',width:100"><?php echo $lang['bewoner naam']; ?></th>
+                        <th data-options="field:'bewVoornaam',width:120"><?php echo $lang['bewoner voornaam']; ?></th>
+                        <th data-options="field:'adres',width:500"><?php echo $lang['adres']; ?></th>
+                        <th data-options="field:'inlichtingen',width:550"><?php echo $lang['afwezigheids inlichtingen']; ?></th>
+                        <th data-options="field:'begDatum',width:100"><?php echo $lang['begindatum']; ?></th>
+                        <th data-options="field:'bezocht',width:70, align:'center'"><?php echo $lang['bezocht']; ?></th>
+                        <th data-options="field:'dagGeleden',width:95, align:'center'"><?php echo $lang['dagen geleden']; ?></th>
                     </tr>
                 </thead>
                 <tbody> 
                     <?php
                     foreach ($this->afwezigheidslijst as $row) {
-                        echo '<tr><td class="elementnr">' . $row['elementnummer'] . '</td>'
+                        echo '<tr><td>' . $row['elementnummer'] . '</td>'
                         . '<td>' . $row['bewoner naam'] . '</td>'
                         . '<td>' . $row['bewoner voornaam'] . '</td>'
+                        . '<td>' . $row['adres'] . '</td>'
+                        . '<td><a href="#" id="divPopup" onclick="createPopup(this);">' . substr($row['details en commentaar'], 0, 60) . '...</a></td>'
                         . '<td>' . $row['begindatum'] . '</td>'
+                        . '<td>' . $row['bezocht'] . '</td>'
+                        . '<td>' . $row['dagen geleden'] . '</td>'
                         . '</tr>';
                     }
                     // . '<td><a href="#" id="divPopup" onclick="createPopup(this);">' . substr($row['afwezigheids inlichtingen'], 0, 100) . '...</a></td>'
@@ -76,6 +80,7 @@
                     -->
                 </tbody>
             </table>
+            
         </div> 
         <?php
         require 'views/footer.php';

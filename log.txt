@@ -96,3 +96,16 @@
 2015-03-12 13:14:45 - ERROR --> pagina bestaat niet: /index.php 
 2015-03-12 13:18:47 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
 2015-03-12 13:18:51 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-03-16 9:36:24 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 9:36:26 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 9:36:45 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 10:21:33 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 11:39:42 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 11:39:42 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 11:39:42 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 11:39:49 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 11:57:34 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 13:03:28 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 13:05:01 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 13:20:33 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-16 15:58:09 - ERROR --> pagina bestaat niet: /index.php 
