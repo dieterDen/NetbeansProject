@@ -23,9 +23,7 @@
 
                 }
             };
-
         </script>
-
     </head>
     <body>
         <div id="header">
@@ -36,7 +34,7 @@
 
         <div id="content">
             <div style="margin:20px 0;"></div>
-            <table class="easyui-datagrid" title="Afwezigheidstoezicht" style="width:1700px;height:800px"
+            <table class="easyui-datagrid" title="Afwezigheidstoezicht" width="98%" style="width:98%"
                    data-options="singleSelect:true,collapsible:true">
                 <thead>
                     <tr>
@@ -63,24 +61,10 @@
                         . '<td>' . $row['dagen geleden'] . '</td>'
                         . '</tr>';
                     }
-                    // . '<td><a href="#" id="divPopup" onclick="createPopup(this);">' . substr($row['afwezigheids inlichtingen'], 0, 100) . '...</a></td>'
                     ?>
-
-
-                    <!-- 
-                    probleem om parameter door te geven in createPopup method
-                    script --javascript
-                    klik op inlichtingen ->onclick() -> popup methode{
-                    $this->model->afwezigheidInlichtingen by elementnummer
-                    -> dit doorgeven via url: echo URL/algemeenInfo/get_afwezigheidInlichtingen/elementnummer
-                    }
-                  
-                    method oproepen via url die de data inlichtingen ophaalt van geselecteerde elementnummer
-                    -> deze data inserten in html pag -> get_afwezigheidsinlichtingen
-                    -->
                 </tbody>
             </table>
-            
+
         </div> 
         <?php
         require 'views/footer.php';

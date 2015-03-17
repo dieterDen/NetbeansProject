@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/easyUI/demo.css">
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min.js"></script>
-    </head>
+        </head>
     <body>
         <div class="easyui-tabs" style="width:980px;height:280px">
             <div title="Details" style="padding:10px">
@@ -17,7 +17,7 @@
                 <div >
                     <?php
                     foreach ($this->afwezigheidInlichtingen as $row) {
-                        echo $row[afwezigheidstoezichttekst_tekst] . "<br /><br />";
+                        echo $row['afwezigheidstoezichttekst_tekst'] . "<br /><br />";
                     }
                     ?>
 
@@ -26,7 +26,7 @@
             <div title="Commentaren(<?php echo count($this->afwezigheidCommentaren); ?>)" style="padding:10px">
                 <?php
                 foreach ($this->afwezigheidCommentaren as $row) {
-                    echo $row[afwezigheidstoezichttekst_tekst] . "<br /><br />";
+                    echo $row['afwezigheidstoezichttekst_tekst'] . "<br /><br />";
                 }
                 ?>
             </div>

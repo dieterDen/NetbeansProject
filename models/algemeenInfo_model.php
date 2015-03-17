@@ -8,13 +8,7 @@ class algemeenInfo_model extends Model {
     }
 
     function get_afwezigheidstoezicht() {
-        echo 'inside function get_afwezigheidsToezicht in model';
-        //query uitvoeren op view
-        //$result=$this->db->query("select * from islp.view_afwezigheid");
-        //return $result->fetch_assoc();
-
         $result = $this->db->query("SELECT afwezigheidstoezicht_elementnummer as 'elementnummer', afwezigheidstoezicht_naam as 'bewoner naam', afwezigheidstoezicht_voornaam as 'bewoner voornaam', afwezigheidstoezicht_adres as 'adres', afwezigheidstoezichttekst_tekst as 'details en commentaar', afwezigheidstoezicht_elementbegindatum as 'begindatum', bezocht as 'bezocht', `dagen geleden` FROM islp.view_afwezigheidstoezicht");
-        //SELECT afwezigheidstoezicht_elementnummer as 'elementnummer', afwezigheidstoezicht_naam as 'bewoner naam', afwezigheidstoezicht_voornaam as 'bewoner voornaam', afwezigheidstoezicht_adres as 'adres', afwezigheidstoezichttekst_tekst as 'details en commentaar', afwezigheidstoezicht_elementbegindatum as 'begindatum', bezocht as 'bezocht', `dagen geleden` FROM islp.view_afwezigheidstoezicht
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }

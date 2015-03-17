@@ -12,6 +12,7 @@ This is the main page welcome!
     <div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/test"><?php echo $lang['DaderGerichteAanpak']; ?></a></div>
     <div class="menu-sep"></div>
     <div><a href="<?php echo URL; ?>algemeenInfo/test"><?php echo $lang['innameOpenbareweg']; ?></a></div>
+    <div><a href="<?php echo URL; ?>algemeenInfo/get_briefing"><?php echo $lang['briefing']; ?></a></div>
 </div>
 <div id="mm2" style="width:200px;">
     <div><?php echo $lang['OpenstaandeDossiers']; ?></div>

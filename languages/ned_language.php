@@ -8,6 +8,7 @@ $lang['FunctioneelBeheer'] = 'Functioneel beheer';
 $lang['OpenstaandeDossiers'] = 'Openstaande dossiers';
 $lang['Afwerkingstermijnen'] = 'Afwerkingstermijnen';
 $lang['BriefingsTermijn'] = 'Briefingstermijn';
+$lang['briefing'] = '5min briefing';
 
 
 ?>

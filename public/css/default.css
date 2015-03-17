@@ -1,6 +1,6 @@
 body {
     background: silver;
-
+    
 
 }
 
@@ -8,22 +8,25 @@ body {
     padding: 20px;
     background:#00438a;
     color: white;
+    width: 98%;
 }
 
 #content
 {
     background: #fff;   
     padding: 20px;
+    width: 98%;
 }
 
 #footer {
     background: #00438a ;
     padding: 20px;
     color:white;
+    width: 98%;
 }
 
 a {
-    color: wite;
+    color: #00458a;
     text-decoration: none;
 }
 

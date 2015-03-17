@@ -4,16 +4,11 @@ class AlgemeenInfo extends Controller {
 
     function __construct() {
         parent::__construct();
-
-        //echo 'we are in algemeen info controller<br />';
     }
 
     //method afwezigheidstoezicht
     function get_afwezigheidstoezicht() {
-        //ToDo: datagrid met tooltip die tekst inlichtingen en commentaar bevat
         //ToDo:  extra: print functie die pdf toont of nog liever odf file
-
-        echo 'hier moet tabel komen<br />';
         $this->view->afwezigheidslijst = $this->model->get_afwezigheidstoezicht();
         $this->view->render('algemeenInfo/get_afwezigheidstoezicht', true);
     }
@@ -21,7 +16,6 @@ class AlgemeenInfo extends Controller {
     function get_afwezigheidCommentaren($elementnummer) {
         //echo 'we zijn in method get_afwezigheidCommentaren';
         $this->view->afwezigheidCommentaren = $this->model->get_afwezigheidCommentaren($elementnummer);
-        // $this->view->render('algemeenInfo/get_afwezigheidInlichtingen',true);
     }
 
     function get_afwezigheidInlichtingen($elementnummer) {
@@ -32,5 +26,16 @@ class AlgemeenInfo extends Controller {
         $this->view->render('algemeenInfo/get_afwezigheidInlichtingen', true);
     }
 
+    function get_briefing() {
+    echo 'we are in briefing';   
+    $this->view->render('algemeenInfo/get_briefing');
+    }
+    
+    function get_briefingPDF() {
+        $this->view->render('algemeenInfo/get_briefingPDF');
+        //in view get_briefing require 'get_briefing';
+    }
+    
     //method daderGerichteAanpak
 }
+
