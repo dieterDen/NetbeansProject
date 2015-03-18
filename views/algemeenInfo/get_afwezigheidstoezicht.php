@@ -32,7 +32,7 @@
             <a href="<?php echo URL; ?>login">Login</a>
         </div>
 
-        <div id="content">
+        <div id="content"> 
             <div style="margin:20px 0;"></div>
             <table class="easyui-datagrid" title="Afwezigheidstoezicht" width="98%" style="width:98%"
                    data-options="singleSelect:true,collapsible:true">
@@ -49,7 +49,7 @@
                     </tr>
                 </thead>
                 <tbody> 
-                    <?php
+                    <?php 
                     foreach ($this->afwezigheidslijst as $row) {
                         echo '<tr><td>' . $row['elementnummer'] . '</td>'
                         . '<td>' . $row['bewoner naam'] . '</td>'
