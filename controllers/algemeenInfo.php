@@ -27,7 +27,6 @@ class AlgemeenInfo extends Controller {
     }
 
     function get_briefing() {
-    echo 'we are in briefing';   
     $this->view->render('algemeenInfo/get_briefing');
     }
     

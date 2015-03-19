@@ -9,13 +9,15 @@ This is the main page welcome!
 </div>
 <div id="mm1"style="width:200px;">
     <div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/get_afwezigheidstoezicht"><?php echo $lang['Afwezigheidstoezicht']; ?></a></div>
+    <div><a href="<?php echo URL; ?>algemeenInfo/get_briefing"><?php echo $lang['briefing']; ?></a></div>
     <div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/test"><?php echo $lang['DaderGerichteAanpak']; ?></a></div>
     <div class="menu-sep"></div>
     <div><a href="<?php echo URL; ?>algemeenInfo/test"><?php echo $lang['innameOpenbareweg']; ?></a></div>
-    <div><a href="<?php echo URL; ?>algemeenInfo/get_briefing"><?php echo $lang['briefing']; ?></a></div>
+    
 </div>
 <div id="mm2" style="width:200px;">
     <div><?php echo $lang['OpenstaandeDossiers']; ?></div>
+    <div><a href="<?php echo URL; ?>functioneelBeheer/get_imeiNummers"><?php echo $lang['IMEI']; ?></div>
 </div>
 <div id="mm3" style="width: 200px;">
     <div><?php echo $lang['innameOpenbareweg']; ?></div>
@@ -23,9 +25,6 @@ This is the main page welcome!
 
 
 <hr>
-<?php
-//$this -> verwijst naar de View() class
-//echo $this->msg; 
-?>
+
 
 

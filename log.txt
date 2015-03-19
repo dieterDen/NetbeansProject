@@ -215,3 +215,72 @@
 2015-03-18 15:53:59 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
 2015-03-18 15:54:12 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
 2015-03-18 15:54:25 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 8:55:55 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-19 11:13:14 - ERROR --> pagina bestaat niet: /index/inde 
+2015-03-19 11:13:33 - ERROR --> pagina bestaat niet: /index/inde 
+2015-03-19 11:15:02 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:15:17 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:17:25 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:17:25 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:18:14 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:18:14 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:19:50 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:19:50 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:21:38 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:21:38 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:22:52 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:22:52 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:22:59 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:22:59 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:25:32 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:25:32 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:27:11 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:27:11 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:29:11 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:29:11 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:35:43 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:36:23 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:40:06 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:40:07 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:40:08 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:40:08 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:40:11 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:40:22 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:40:26 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:40:37 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:46:09 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:47:06 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:47:49 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 11:50:13 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 13:14:41 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-03-19 13:33:51 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-03-19 14:58:19 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:05:23 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:06:12 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:10:44 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:14:33 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 15:18:02 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 15:18:06 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 15:19:02 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 15:19:11 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 15:19:11 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 15:19:12 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 15:20:06 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 15:22:09 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 15:38:52 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:38:58 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:41:55 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:42:01 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:42:06 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:52:17 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:53:26 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:54:11 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:57:54 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:58:12 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 15:58:36 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 16:09:06 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 16:09:53 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 16:11:03 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 16:11:06 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-19 16:14:39 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
+2015-03-19 16:16:25 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
