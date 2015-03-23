@@ -284,3 +284,5 @@
 2015-03-19 16:11:06 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
 2015-03-19 16:14:39 - ERROR --> pagina bestaat niet: /algmeenInfo/get_briefingPDF 
 2015-03-19 16:16:25 - ERROR --> Uploaden van 5min briefing gefaald-> enkel pdf formaat toegestaan 
+2015-03-23 9:01:21 - ERROR --> pagina bestaat niet: /index.php 
+2015-03-23 9:01:41 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
