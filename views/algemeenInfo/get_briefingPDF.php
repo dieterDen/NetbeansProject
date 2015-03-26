@@ -1,14 +1,13 @@
 <?php
 
 $log = KLogger::getInstance();
-//require 'views/algemeenInfo/get_briefing.php';
 
 if ($_POST ['submit']) {
     $name = $_FILES['upload']['name'];
     $temp = $_FILES['upload']['tmp_name'];
     $type = $_FILES['upload']['type'];
     $size = $_FILES['upload']['size'];
-
+    echo $name;
     if ($type == 'application/pdf') {
 
         if ($size <= 20000000) {
@@ -27,13 +26,6 @@ if ($_POST ['submit']) {
     }
 } else {
     header("location: ../index/index.php");
-}
-
-if ($_POST['Delete']) {
-
-    $nameFile = $_FILES['Delete']['name'];
-    unlink($filename);
-    header("location: ./get_briefing");
 }
 ?>
 

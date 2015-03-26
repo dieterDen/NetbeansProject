@@ -3,7 +3,7 @@
 class login_model extends Model {
     
     public function __construct() {
-        echo '111<br/> data van uit db<br />';
+        //echo '111<br/> data van uit db<br />';
         parent::__construct();
     }
 

@@ -3,7 +3,7 @@
 class Help_Model extends Model {
 
     function __construct() {
-        echo 'help model';
+       // echo 'help model';
     }
 
     function blah()

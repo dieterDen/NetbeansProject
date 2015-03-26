@@ -10,7 +10,7 @@
         <script type="text/javascript" src="<?php echo URL; ?>public/js/jQuery.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
-        <script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>
+        <!--<script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>-->
         <script type="text/javascript">
             var popup = null;
             var createPopup = function (param) {

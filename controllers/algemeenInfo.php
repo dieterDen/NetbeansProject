@@ -27,14 +27,17 @@ class AlgemeenInfo extends Controller {
     }
 
     function get_briefing() {
-    $this->view->render('algemeenInfo/get_briefing');
+        $this->view->render('algemeenInfo/get_briefing');
     }
-    
+
     function get_briefingPDF() {
         $this->view->render('algemeenInfo/get_briefingPDF');
-        //in view get_briefing require 'get_briefing';
     }
-    
+
+    function delete_briefing($filename) {
+        $this->view->filename = $filename;
+        $this->view->render('algemeenInfo/delete_briefing');
+    }
+
     //method daderGerichteAanpak
 }
-
