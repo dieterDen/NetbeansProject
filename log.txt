@@ -31,3 +31,4 @@
 2015-03-30 9:02:53 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
 2015-03-31 13:45:54 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
 2015-03-31 13:45:57 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-04-01 10:36:33 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
