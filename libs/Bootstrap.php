@@ -1,9 +1,35 @@
 <?php
-
 use KLogger;
+
+/**
+ * Deze klasse gaat URL ontvangen en plaatst deze in array
+ * , onderzoekt of dat het eerste element een geldige controller is
+ * , onderzoekt of dat het tweede element een geldige controller actie is
+ * , onderzoekt of dat het derde element een geldige parameter is voor de actie method
+ * 
+ * @package libs
+ * @example ../index.php 
+ * @version 0.0
+ * @since 2015-03-24
+ * 
+ */
 
 class Bootstrap {
 
+/**
+ * Constructor roep een child-instantie van de klasse Controller op. 
+ * Het juiste type van Controller klasse wordt bepaald adh van URL die doorgegeven wordt.
+ * Ten eerste worden de slashes verwijderd uit de URl.
+ * Als tweede worden de URl string omgezet in array via explode.
+ * Als derde: controller wordt bepaald, als controller niet bestaat wordt default index controleller opgeroepen
+ * Als vierde: als controller bestaat wordt model eraan gekoppeld via parent functie loadModel()
+ * Als vijfde: de controller actie method en param wordt bepaald
+ * Tot slot: als er geen juiste controller, actie method of param gevonden kan worden, wordt de functie error() opgeroepen
+ *
+ * @return void
+ * @TODO implementeren van autoloader
+ * @since 2015-03-24
+ */
     function __construct() {
         $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : null;
         $log = KLogger::getInstance();
@@ -55,7 +81,12 @@ class Bootstrap {
             }
         }
     }
-
+/**
+ * Deze functie gaat foutboodschap tonen 'page doesn't exists' aan gebruiker indien pagina niet geladen kan worden
+ * 
+ * @return void
+ * @since 2015-03-24
+ */
     function error() {
         require 'controllers/error.php';
         $controller = new Error();

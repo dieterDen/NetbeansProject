@@ -1,5 +1,10 @@
 <?php
-//logging toevoegen
+/**
+ * De  klasse staat in voor verwijderen van een 5min briefing pdf file
+ * @package views
+ * @subpackage algemeenInfo
+ * @version 0.0
+ */
 $log = KLogger::getInstance();
 
 $name_file = $this->filename;

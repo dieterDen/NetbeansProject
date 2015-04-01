@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Dit is een testklasse
+ * @package models
+ * @version 0.0
+ */
 class login_model extends Model {
     
     public function __construct() {

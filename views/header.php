@@ -1,4 +1,10 @@
-<?php include_once ("languages/ned_language.php"); ?>
+<?php
+/**
+ * Klasse toont de header van de hoofdpagina
+ * @package views
+ * @version 0.0
+ */
+include_once ("languages/ned_language.php"); ?>
 <!doctype html>
 <html>
     <head>

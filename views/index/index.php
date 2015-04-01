@@ -1,4 +1,12 @@
-<?php// include_once ("languages/ned_language.php"); ?>
+<?php
+/**
+ * de klasse toont de view met de main body voor de hoofdpagina.
+ * Er wordt een lijst getoond met alle modules en items in een navigation bar
+ * @package views
+ * @subpackage index
+ * @version 0.0
+ */
+// include_once ("languages/ned_language.php"); ?>
 This is the main page welcome!
 
 

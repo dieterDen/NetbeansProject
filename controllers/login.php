@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Dit is een test klasse en mag verwijderd worden
+ * @package controllers
+ */
 class Login extends Controller {
 
     function __construct() {

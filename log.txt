@@ -28,3 +28,6 @@
 
 2015-03-26 10:41:29 - INFO  --> verwijderen van 5minbriefing_testpdf succesvol. 
 2015-03-26 12:28:47 - INFO  --> verwijderen van 5minbriefing_testpdf succesvol. 
+2015-03-30 9:02:53 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-03-31 13:45:54 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-03-31 13:45:57 - ERROR --> pagina bestaat niet: /algemeenInfo/test 

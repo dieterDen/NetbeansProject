@@ -1,4 +1,12 @@
-<?php include_once ("languages/ned_get_imeiNummers.php"); ?>
+<?php
+/**
+ * De klasse toont view voor IMEI-nummers
+ * De gegevens van IMEI-nummers worden getoond in een easyUI datagrid
+ * @package views
+ * @subpackage functioneelBeheer
+ * @version 0.0
+ */
+include_once ("languages/ned_get_imeiNummers.php"); ?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,8 +27,10 @@
                     <th field="itemid" width="80" align="center"><?php echo $lang['dossiernummer']; ?></th>
                     <th field="productid" width="120" align="center"><?php echo $lang['element']; ?></th>
                     <th field="listprice" width="80" align="center"><?php echo $lang['elementnummer']; ?></th>
-                    <th field="unitcost" width="80" align="center"><?php echo $lang['imeiNummer']; ?></th>
+                    <th field="imeinummer" width="80" align="center"><?php echo $lang['imeiNummer']; ?></th>
+                    <th field="opmerkingimei" width="80" align="center"><?php echo $lang['opmerkingImei']; ?></th>
                     <th field="attr1" width="150" align="center"><?php echo $lang['merk']; ?></th>
+                    <th field="opmerkingMerk" width="150" align="center"><?php echo $lang['OpmerkingMerk']; ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +40,9 @@
                     . '<td>' . $row['Element'] . '</td>'
                     . '<td>' . $row['Elementnummer'] . '</td>'
                     . '<td>' . $row['IMEI-nummer'] . '</td>'
+                    . '<td>' . $row['opmerking'] . '</td>'
                     . '<td>' . $row['Merk'] . '</td>'
+                    . '<td>' . $row['opmerkingMerk'] . '</td>'
                     . '</tr>';
                 }
                 ?> 

@@ -1,4 +1,8 @@
 <?php
+/**
+ * dit is een test klasse en mag verwijderd worden
+ * @package controllers
+ */
 
 class Help  extends Controller {
 

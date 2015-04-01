@@ -1,4 +1,12 @@
 <?php
+/**
+ * De klasse toont een overzicht van de 5min briefingen.
+ * 5min briefingen die ouder zijn dan een week worden verwijderd
+ * @package views
+ * @subpackage algemeenInfo
+ * @version 0.0
+ * @todo sort functie maken om birefingen te tonen op datum. Eerst iterator in array zetten en deze filteren 
+ */
 $log = KLogger::getInstance();
 ?>
 <form action='<?php echo URL; ?>algemeenInfo/get_briefingPDF' method="POST" enctype="multipart/form-data">

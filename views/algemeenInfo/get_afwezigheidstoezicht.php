@@ -1,4 +1,13 @@
-<?php include_once ("languages/ned_get_afwezigheidstoezicht.php"); ?>
+<?php
+/**
+ * De klasse is de view voor alle info te tonen van afwezigheidstoezicht. 
+ * De data wordt getoond in een modified easyUI datagrid
+ * @package views
+ * @subpackage algemeenInfo
+ * @version 0.0
+ */
+include_once ("languages/ned_get_afwezigheidstoezicht.php");
+?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,7 +29,7 @@
                     popup.focus();
                 } else {
                     popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/" + elementnummer, "Popup", "top=500,width=1000,height=300");
-
+                    
                 }
             };
         </script>
@@ -49,7 +58,7 @@
                     </tr>
                 </thead>
                 <tbody> 
-                    <?php 
+                    <?php
                     foreach ($this->afwezigheidslijst as $row) {
                         echo '<tr><td>' . $row['elementnummer'] . '</td>'
                         . '<td>' . $row['bewoner naam'] . '</td>'

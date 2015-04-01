@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * De klasse bevat alle Nederlandse termen van de hoofdpagina
+ * @package languages
+ * @version 0.0
+ */
 $lang['algemeneInfo'] = 'Algemene info';
 $lang['Afwezigheidstoezicht'] = 'Afwezigheidstoezicht';
 $lang['DaderGerichteAanpak'] = 'Dader gerichte aanpak';

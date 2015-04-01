@@ -1,4 +1,12 @@
-<?php //echo 'inside view get_afwezigheidInlichtingen';      ?>
+<?php 
+/**
+ * View die de popup met panels toont met inlichtingen en commentaren van afwezigheidstoezicht  
+ *  
+ * @package views
+ * @subpackage algemeenInfo
+ * @version 0.0
+ */
+//echo 'inside view get_afwezigheidInlichtingen';    ?>
 <!DOCTYPE html>
 <html>
     <head>
