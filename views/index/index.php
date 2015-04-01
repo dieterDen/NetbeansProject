@@ -24,8 +24,8 @@ This is the main page welcome!
     
 </div>
 <div id="mm2" style="width:200px;">
-    <div><?php echo $lang['OpenstaandeDossiers']; ?></div>
-    <div><a href="<?php echo URL; ?>functioneelBeheer/get_imeiNummers"><?php echo $lang['IMEI']; ?></div>
+    <div><a href="<?php echo URL; ?>functioneelBeheer/get_openstaandeDossiers"><?php echo $lang['OpenstaandeDossiers']; ?></a></div>
+    <div><a href="<?php echo URL; ?>functioneelBeheer/get_imeiNummers"><?php echo $lang['IMEI']; ?></a></div>
 </div>
 <div id="mm3" style="width: 200px;">
     <div><?php echo $lang['innameOpenbareweg']; ?></div>

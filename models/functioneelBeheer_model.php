@@ -49,9 +49,27 @@ class functioneelBeheer_model extends Model {
                     break;
                 case preg_match('/^[\d]*$/', $row['Merk']):$row['opmerkingMerk'] = "Geen geldige merknaam";
                     break;
+                default : $row['opmerkingMerk'] = "OK";
             }
 
             $rows[] = $row;
+        }
+        //print_r($rows);
+        return $rows;
+    }
+
+    /**
+     * De functie 
+     *
+     * 
+     * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
+     */
+    function get_openstaandeDossiers() {
+        echo 'inside model openstaandeDossiers';
+        //view_openstaande_dossiers_hitparade
+        $result = $this->db->query("SELECT * from islp.view_openstaande_dossiers_hitparade");
+        while ($row = $result->fetch_assoc()) {
+        $rows[]=$row;    
         }
         //print_r($rows);
         return $rows;

@@ -24,7 +24,7 @@ include_once ("languages/ned_get_imeiNummers.php"); ?>
                title="IMEI-nummer" data-options="singleSelect:true,collapsible:true">
             <thead>
                 <tr>
-                    <th field="itemid" width="80" align="center"><?php echo $lang['dossiernummer']; ?></th>
+                    <th field="itemid" width="250" align="center"><?php echo $lang['dossiernummer']; ?></th>
                     <th field="productid" width="350" align="center"><?php echo $lang['element']; ?></th>
                     <th field="listprice" width="140" align="center"><?php echo $lang['elementnummer']; ?></th>
                     <th field="imeinummer" width="120" align="center"><?php echo $lang['imeiNummer']; ?></th>
