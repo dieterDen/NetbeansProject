@@ -16,7 +16,7 @@ if (unlink($path_file)) {
     header("location: ../get_briefing");
     $log->LogInfo("verwijderen van ".$name_file." succesvol.");
 } else {
-    $log->LogError("Kan pdf niet verwijderen, chech of dat path van pdf file overeenkomt");
+    $log->LogError("Kan pdf niet verwijderen, check of dat path van pdf file overeenkomt");
     header("location: ../get_briefing");
 }
 ?>

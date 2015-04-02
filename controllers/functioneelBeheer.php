@@ -30,10 +30,21 @@ class FunctioneelBeheer extends Controller {
      * Bijhorende view wordt gerenderd
      * @return void 
      */
-    function get_openstaandeDossiers() {
-        echo 'controller func beheer';
-        $this->view->namen_openstaandeDossiers = $this->model->get_openstaandeDossiers();
+    function get_openstaandeDossiers_namen() {
+        //echo 'controller func beheer';
+        $this->view->namen_openstaandeDossiers = $this->model->get_openstaandeDossiers_namen();
         $this->view->render('functioneelBeheer/get_openstaandeDossiers');
+    }
+
+    /**
+     * 
+     * Bijhorende view wordt gerenderd
+     * @return void 
+     */
+    function get_openstaandeDossiers($naam) {
+        $this->view->info_openstaandeDossiers = $this->model->get_openstaandeDossiers($naam);
+        $this->view->statistiekPerWeek=$this->model->get_statistiekPerWeek($naam);
+        $this->get_openstaandeDossiers_namen();
     }
 
 }

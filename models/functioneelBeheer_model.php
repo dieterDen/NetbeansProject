@@ -64,15 +64,34 @@ class functioneelBeheer_model extends Model {
      * 
      * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
      */
-    function get_openstaandeDossiers() {
-        echo 'inside model openstaandeDossiers';
+    function get_openstaandeDossiers_namen() {
+        //echo 'inside model openstaandeDossiers';
         //view_openstaande_dossiers_hitparade
         $result = $this->db->query("SELECT * from islp.view_openstaande_dossiers_hitparade");
         while ($row = $result->fetch_assoc()) {
-        $rows[]=$row;    
+            $rows[] = $row;
         }
         //print_r($rows);
         return $rows;
+    }
+
+    /**
+     * De functie 
+     *
+     * @param string naam opsteller openstaand dossier
+     * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
+     */
+    function get_openstaandeDossiers($naam) {
+        $naam = urldecode($naam);
+        $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiers WHERE lower(opsteller) = \"" . strtolower($naam) . "\" ORDER BY openstaande_dossiers_datum");
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
+    
+    function get_statistiekPerWeek($naam) {
+        //$naam=urldecode
     }
 
 }
