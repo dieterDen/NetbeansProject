@@ -89,9 +89,20 @@ class functioneelBeheer_model extends Model {
         }
         return $rows;
     }
-    
+
+    /**
+     * De functie 
+     *
+     * @param string naam opsteller openstaand dossier
+     * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
+     */
     function get_statistiekPerWeek($naam) {
-        //$naam=urldecode
+        $naam = urldecode($naam);
+        $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiersPerWeek WHERE lower(opsteller) = \"" . strtolower($naam) . "\"");
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        return $rows;
     }
 
 }
