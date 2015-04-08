@@ -35,3 +35,10 @@
 2015-04-01 15:21:28 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers 
 2015-04-01 15:22:01 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers 
 2015-04-02 11:49:19 - DEBUG --> Connectie met de database faalt 
+2015-04-08 9:42:51 - INFO  --> verwijderen van 5minBriefing_0803pdf succesvol. 
+2015-04-08 9:48:53 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-04-08 9:48:57 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-04-08 10:52:54 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-04-08 11:00:48 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-04-08 11:01:24 - ERROR --> pagina bestaat niet: /algemeenInfo/test 
+2015-04-08 11:01:27 - ERROR --> pagina bestaat niet: /algemeenInfo/test 

@@ -19,7 +19,6 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
         <script type="text/javascript" src="<?php echo URL; ?>public/js/jQuery.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
-        <!--<script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>-->
         <script type="text/javascript">
             var popup = null;
             var createPopup = function (param) {
@@ -29,7 +28,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                     popup.focus();
                 } else {
                     popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/" + elementnummer, "Popup", "top=500,width=1000,height=300");
-                    
+
                 }
             };
         </script>

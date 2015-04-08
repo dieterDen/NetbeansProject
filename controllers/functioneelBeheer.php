@@ -27,23 +27,25 @@ class FunctioneelBeheer extends Controller {
     }
 
     /**
+     * Alle namen van personen met openstaande dossiers worden opgehaald uit model en doorgegeven aan view
      * Bijhorende view wordt gerenderd
      * @return void 
      */
     function get_openstaandeDossiers_namen() {
-        //echo 'controller func beheer';
         $this->view->namen_openstaandeDossiers = $this->model->get_openstaandeDossiers_namen();
         $this->view->render('functioneelBeheer/get_openstaandeDossiers');
     }
 
     /**
-     * 
+     * Alle dossiers van een geselecteerde persoon worden opgehaald en aan view doorgegeven
      * Bijhorende view wordt gerenderd
+     * 
+     * @param string naam opsteller openstaand dossier
      * @return void 
      */
     function get_openstaandeDossiers($naam) {
         $this->view->info_openstaandeDossiers = $this->model->get_openstaandeDossiers($naam);
-        $this->view->statistiekPerWeek=$this->model->get_statistiekPerWeek($naam);
+        $this->view->statistiekPerWeek = $this->model->get_statistiekPerWeek($naam);
         $this->get_openstaandeDossiers_namen();
     }
 

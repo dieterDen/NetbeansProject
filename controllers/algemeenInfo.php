@@ -78,4 +78,16 @@ class AlgemeenInfo extends Controller {
     }
 
     //method daderGerichteAanpak
+    function get_daderGerichteAanpak() {
+        echo 'inside controller algemeenInfo dadergerichteAanpak';
+        $this->view->render('algemeenInfo/get_daderGerichteAanpak');
+    }
+
+    function get_daderGerichteAanpakNaam($naam) {
+        echo'inside controller algemeenInfo dadergerichteAanpak';
+        //$this->view->render('algemeenInfo/get_daderGerichteAanpak');
+        $this->get_daderGerichteAanpak();
+        
+    }
+
 }

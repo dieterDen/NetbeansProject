@@ -40,9 +40,9 @@ include_once ("languages/ned_get_imeiNummers.php"); ?>
                     . '<td>' . $row['Element'] . '</td>'
                     . '<td>' . $row['Elementnummer'] . '</td>'
                     . '<td>' . $row['IMEI-nummer'] . '</td>'
-                    . '<td>' . $row['opmerking'] . '</td>'
+                    . '<td color="red"><font color="red">' . $row['opmerking'] . '</font></td>'
                     . '<td>' . $row['Merk'] . '</td>'
-                    . '<td>' . $row['opmerkingMerk'] . '</td>'
+                    . '<td><font color="red">' . $row['opmerkingMerk'] . '</font></td>'
                     . '</tr>';
                 }
                 ?> 

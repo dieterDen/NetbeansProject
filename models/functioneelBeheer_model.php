@@ -54,29 +54,26 @@ class functioneelBeheer_model extends Model {
 
             $rows[] = $row;
         }
-        //print_r($rows);
         return $rows;
     }
 
     /**
-     * De functie 
-     *
+     * De functie haalt alle namen op van personen die openstaande dossiers hebben.
+     * De gegevens worden opgehaald van de view openstaande_dossiers_hitparade.
      * 
      * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
      */
     function get_openstaandeDossiers_namen() {
-        //echo 'inside model openstaandeDossiers';
-        //view_openstaande_dossiers_hitparade
         $result = $this->db->query("SELECT * from islp.view_openstaande_dossiers_hitparade");
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }
-        //print_r($rows);
         return $rows;
     }
 
     /**
-     * De functie 
+     * De functie haalt alle dossiers van een persoon op adhv naam.
+     * Om problemen met speciale karakters  in namen te vermijden ->  urldecode
      *
      * @param string naam opsteller openstaand dossier
      * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
@@ -91,7 +88,7 @@ class functioneelBeheer_model extends Model {
     }
 
     /**
-     * De functie 
+     * De functie haalt uit de view_openstaande_dossiersPerWeek de opsteller en aantal weken vertraging per type dossier
      *
      * @param string naam opsteller openstaand dossier
      * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
