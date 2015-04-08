@@ -28,8 +28,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                     popup.focus();
                 } else {
                     popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/" + elementnummer, "Popup", "top=500,width=1000,height=300");
-
-                }
+s                }
             };
         </script>
     </head>

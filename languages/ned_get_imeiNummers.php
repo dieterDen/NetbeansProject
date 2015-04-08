@@ -9,7 +9,7 @@ $lang['element'] = 'Element';
 $lang['elementnummer'] = 'Elementnummer';
 $lang['imeiNummer'] = 'IMEI-nummer';
 $lang['merk'] = 'Merk';
-$lang['opmerkingImei'] = 'Opmerking IMEI-nummer';
+$lang['opmerkingImei'] = 'Opmerking IMEI-nummer - merknaam';
 $lang['OpmerkingMerk'] = 'Opmerking Merk';
 
 ?>

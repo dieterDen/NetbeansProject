@@ -49,7 +49,7 @@ class functioneelBeheer_model extends Model {
                     break;
                 case preg_match('/^[\d]*$/', $row['Merk']):$row['opmerkingMerk'] = "Geen geldige merknaam";
                     break;
-                default : $row['opmerkingMerk'] = "OK";
+                default : $row['opmerkingMerk'] = "Merknaam OK ";
             }
 
             $rows[] = $row;

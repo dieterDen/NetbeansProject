@@ -1,4 +1,5 @@
 <?php
+
 use KLogger;
 
 /**
@@ -13,31 +14,30 @@ use KLogger;
  * @since 2015-03-24
  * 
  */
-
 class Bootstrap {
 
-/**
- * Constructor roep een child-instantie van de klasse Controller op. 
- * Het juiste type van Controller klasse wordt bepaald adh van URL die doorgegeven wordt.
- * Ten eerste worden de slashes verwijderd uit de URl.
- * Als tweede worden de URl string omgezet in array via explode.
- * Als derde: controller wordt bepaald, als controller niet bestaat wordt default index controleller opgeroepen
- * Als vierde: als controller bestaat wordt model eraan gekoppeld via parent functie loadModel()
- * Als vijfde: de controller actie method en param wordt bepaald
- * Tot slot: als er geen juiste controller, actie method of param gevonden kan worden, wordt de functie error() opgeroepen
- *
- * @return void
- * @TODO implementeren van autoloader
- * @since 2015-03-24
- */
+    /**
+     * Constructor roep een child-instantie van de klasse Controller op. 
+     * Het juiste type van Controller klasse wordt bepaald adh van URL die doorgegeven wordt.
+     * Ten eerste worden de slashes verwijderd uit de URl.
+     * Als tweede worden de URl string omgezet in array via explode.
+     * Als derde: controller wordt bepaald, als controller niet bestaat wordt default index controleller opgeroepen
+     * Als vierde: als controller bestaat wordt model eraan gekoppeld via parent functie loadModel()
+     * Als vijfde: de controller actie method en param wordt bepaald
+     * Tot slot: als er geen juiste controller, actie method of param gevonden kan worden, wordt de functie error() opgeroepen
+     *
+     * @return void
+     * @TODO implementeren van autoloader
+     * @since 2015-03-24
+     */
     function __construct() {
         $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : null;
         $log = KLogger::getInstance();
-       
+
         if (!$_SERVER['REQUEST_URI']) {
             $log->LogError('Bootstrap: $server[REQUEST_URI]' . $_SERVER['REQUEST_URI']);
         }
-        
+
         $url = ltrim($url, '/');
         $url = rtrim($url, '/');
         $url = explode('/', $url);
@@ -81,12 +81,13 @@ class Bootstrap {
             }
         }
     }
-/**
- * Deze functie gaat foutboodschap tonen 'page doesn't exists' aan gebruiker indien pagina niet geladen kan worden
- * 
- * @return void
- * @since 2015-03-24
- */
+
+    /**
+     * Deze functie gaat foutboodschap tonen 'page doesn't exists' aan gebruiker indien pagina niet geladen kan worden
+     * 
+     * @return void
+     * @since 2015-03-24
+     */
     function error() {
         require 'controllers/error.php';
         $controller = new Error();

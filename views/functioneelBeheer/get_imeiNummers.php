@@ -6,7 +6,8 @@
  * @subpackage functioneelBeheer
  * @version 0.0
  */
-include_once ("languages/ned_get_imeiNummers.php"); ?>
+include_once ("languages/ned_get_imeiNummers.php");
+?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,7 +21,7 @@ include_once ("languages/ned_get_imeiNummers.php"); ?>
     <body>
         <div style="margin-bottom:20px">
         </div>
-        <table id="tt" class="easyui-datagrid" style="width:98%" width="98%"
+        <table id="tt" class="easyui-datagrid" style="width:99%" width="98%"
                title="IMEI-nummer" data-options="singleSelect:true,collapsible:true">
             <thead>
                 <tr>
@@ -28,9 +29,10 @@ include_once ("languages/ned_get_imeiNummers.php"); ?>
                     <th field="productid" width="350" align="center"><?php echo $lang['element']; ?></th>
                     <th field="listprice" width="140" align="center"><?php echo $lang['elementnummer']; ?></th>
                     <th field="imeinummer" width="120" align="center"><?php echo $lang['imeiNummer']; ?></th>
-                    <th field="opmerkingimei" width="400" align="center"><?php echo $lang['opmerkingImei']; ?></th>
                     <th field="attr1" width="150" align="center"><?php echo $lang['merk']; ?></th>
-                    <th field="opmerkingMerk" width="400" align="center"><?php echo $lang['OpmerkingMerk']; ?></th>
+                    <th field="opmerkingimei" width="745" align="center"><?php echo $lang['opmerkingImei']; ?></th>
+
+
                 </tr>
             </thead>
             <tbody>
@@ -40,9 +42,8 @@ include_once ("languages/ned_get_imeiNummers.php"); ?>
                     . '<td>' . $row['Element'] . '</td>'
                     . '<td>' . $row['Elementnummer'] . '</td>'
                     . '<td>' . $row['IMEI-nummer'] . '</td>'
-                    . '<td color="red"><font color="red">' . $row['opmerking'] . '</font></td>'
                     . '<td>' . $row['Merk'] . '</td>'
-                    . '<td><font color="red">' . $row['opmerkingMerk'] . '</font></td>'
+                    . '<td><font color="red">' . $row['opmerking'].'. ' . $row['opmerkingMerk'] . '</font></td>'
                     . '</tr>';
                 }
                 ?> 
