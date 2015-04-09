@@ -29,7 +29,7 @@ class Bootstrap {
      * @return void
      * @TODO implementeren van autoloader
      * @since 2015-03-24
-     */
+     */ 
     function __construct() {
         $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : null;
         $log = KLogger::getInstance();

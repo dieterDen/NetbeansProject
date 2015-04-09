@@ -27,7 +27,7 @@ class FunctioneelBeheer extends Controller {
     }
 
     /**
-     * Alle namen van personen met openstaande dossiers worden opgehaald uit model en doorgegeven aan view
+     * Alle namen van personen met openstaande dossiers worden opgehaald uit model en doorgegeven aan view.
      * Bijhorende view wordt gerenderd
      * @return void 
      */
@@ -36,9 +36,9 @@ class FunctioneelBeheer extends Controller {
         $this->view->render('functioneelBeheer/get_openstaandeDossiers');
     }
 
-    /**
-     * Alle dossiers van een geselecteerde persoon worden opgehaald en aan view doorgegeven
-     * Bijhorende view wordt gerenderd
+    /** 
+     * Alle dossiers van een geselecteerde persoon worden opgehaald en aan view doorgegeven.
+     * Alle statistieken worden opgehaald van een gebruiker en aan view doorgegeven.
      * 
      * @param string naam opsteller openstaand dossier
      * @return void 
