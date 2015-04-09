@@ -62,5 +62,13 @@ class algemeenInfo_model extends Model {
     function get_daderGerichteAanpak() {
         echo 'inside daderGerichteAanpak model algemeenInfo_model';
     }
-
+        
+      /**
+     * 
+     * 
+     * @return void
+     */
+      function get_gerechtelijkeFeiten() {
+          echo 'inside model get_gerechtelijkeFeiten';
+      }
 }

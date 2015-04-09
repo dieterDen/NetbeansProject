@@ -9,18 +9,10 @@
  */
 $log = KLogger::getInstance();
 ?>
-<form action='<?php echo URL; ?>algemeenInfo/get_briefingPDF' method="POST" enctype="multipart/form-data">
-    <div style="margin-bottom:20px">
-        <input id="fb" class="easyui-filebox" name="upload" style="width:25%" data-options="prompt:'Choose a file...'"></div>
-    <div>
-        <input class="easyui-linkbutton" style="width: 25%; padding:5px" name="submit" type="submit" value="Upload">
-    </div>
-</form>
-<br />
 
 
 <div class="easyui-accordion" style="width:98%;height:98%;">
-    <!--ToDO -> sort functie maken om te tonen op datum van-->
+    <!--ToDO -> sort functie maken om te tonen op datum van (gebruik van scandir)-->
     <?php
     $path_dir = 'external_files/';
     $fi = new FilesystemIterator('external_files', FilesystemIterator::CURRENT_AS_PATHNAME);
@@ -42,7 +34,17 @@ $log = KLogger::getInstance();
         . '</div>';
     }
     ?>
-</div>
+</div><br><br>
+
+<form action='<?php echo URL; ?>algemeenInfo/get_briefingPDF' method="POST" enctype="multipart/form-data">
+    <div style="margin-bottom:20px">
+        <input id="fb" class="easyui-filebox" name="upload" style="width:25%" data-options="prompt:'Choose a file...'"></div>
+    <div>
+        <input class="easyui-linkbutton" style="width: 25%; padding:5px" name="submit" type="submit" value="Upload">
+    </div>
+</form>
+<br />
+
 
 
 

@@ -10,7 +10,6 @@
 ?>
 This is the main page welcome!
 
-
 <div style="background:#fafafa;padding:5px;width:100%;border:1px solid #ccc;">
     <a href="#" class="easyui-menubutton" menu="#mm1" iconCls="icon-info"><?php echo $lang['algemeneInfo']; ?></a>
     <a href="#" class="easyui-menubutton" menu="#mm2" iconCls="icon-beheer"><?php echo $lang['FunctioneelBeheer']; ?></a>
@@ -21,15 +20,19 @@ This is the main page welcome!
     <div><a href="<?php echo URL; ?>algemeenInfo/get_briefing"><?php echo $lang['briefing']; ?></a></div>
     <div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/get_daderGerichteAanpak"><?php echo $lang['DaderGerichteAanpak']; ?></a></div>
     <div class="menu-sep"></div>
-    <div><a href="<?php echo URL; ?>algemeenInfo/test"><?php echo $lang['innameOpenbareweg']; ?></a></div>
+    <div><a href="<?php echo URL; ?>algemeenInfo/get_daderGerichteAanpak"><?php echo $lang['innameOpenbareweg']; ?></a></div>
+    <div><a href="<?php echo URL; ?>algemeenInfo/get_gerechtelijkeFeiten"><?php echo $lang['Gerechtelijk_feit']; ?></a></div>
 
 </div>
 <div id="mm2" style="width:200px;">
     <div><a href="<?php echo URL; ?>functioneelBeheer/get_openstaandeDossiers_namen"><?php echo $lang['OpenstaandeDossiers']; ?></a></div>
     <div><a href="<?php echo URL; ?>functioneelBeheer/get_imeiNummers"><?php echo $lang['IMEI']; ?></a></div>
 </div>
-<div id="mm3" style="width: 200px;">
-    <div><?php echo $lang['innameOpenbareweg']; ?></div>
+<div id="mm3" style="width: 250px;">
+    <div><?php echo $lang['GF_VO']; ?></div>
+    <div><?php echo $lang['kantschriften']; ?></div>
+    <div><?php echo $lang['woonstveranderingen']; ?></div>
+    <div><?php echo $lang['hercosi']; ?></div>
 </div>
 
 <hr>

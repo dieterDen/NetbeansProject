@@ -77,17 +77,37 @@ class AlgemeenInfo extends Controller {
         $this->view->render('algemeenInfo/delete_briefing');
     }
 
-    //method daderGerichteAanpak
+    /**
+     * Functie roept model op om alle items van dader gerichte aanpak op te halen.
+     * 
+     * 
+     * @return void
+     */
     function get_daderGerichteAanpak() {
         echo 'inside controller algemeenInfo dadergerichteAanpak';
         $this->view->render('algemeenInfo/get_daderGerichteAanpak');
     }
 
+    /**
+     * dader gerichte aanpak 1 item
+     * 
+     * @return void
+     */
     function get_daderGerichteAanpakNaam($naam) {
         echo'inside controller algemeenInfo dadergerichteAanpak';
         //$this->view->render('algemeenInfo/get_daderGerichteAanpak');
         $this->get_daderGerichteAanpak();
-        
+    }
+
+    /**
+     * controller actie voor GF gisteren en vandaag.
+     * 
+     * 
+     * @return void
+     */
+    function get_gerechtelijkeFeiten() {
+        echo 'inside controller functie get_gerechtelijkeFeiten';
+        $this->view->render('algemeenInfo/get_gerechtelijkeFeiten');
     }
 
 }

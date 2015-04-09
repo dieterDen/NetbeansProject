@@ -19,6 +19,8 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
         <script type="text/javascript" src="<?php echo URL; ?>public/js/jQuery.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
+        <script src="<?php echo URL; ?>public/js/highcharts.js"></script>
+        <script src="jquery.highchartTable.js" type="text/javascript"></script>        
         <script type="text/javascript">
             var popup = null;
             var createPopup = function (param) {
@@ -28,18 +30,76 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                     popup.focus();
                 } else {
                     popup = open("<?php echo URL; ?>algemeenInfo/get_afwezigheidInlichtingen/" + elementnummer, "Popup", "top=500,width=1000,height=300");
-s                }
+
+                }
             };
         </script>
+
     </head>
     <body>
         <div id="header">
+            <img src="/pictures/pol_logo.png" style="width: 20%;padding-left: 10px;">
+            <br>
+
+            <br />
             <a href="<?php echo URL; ?>index">Index</a>
             <a href="<?php echo URL; ?>help">Help</a>
             <a href="<?php echo URL; ?>login">Login</a>
         </div>
-
         <div id="content"> 
+            <a href="">Toon statistieken >></a>
+            <div id="container" style="width: 100%; height: 400px;"></div>
+            <script>
+                $(function () {
+                    $('#container').highcharts({
+                        chart: {
+                            type: 'bar'
+                        },
+                        title: {
+                            text: 'Fruit Consumption'
+                        },
+                        xAxis: {
+                            categories: ['Apples', 'Bananas', 'Oranges']
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Fruit eaten'
+                            }
+                        },
+                        series: [{
+                                name: 'Jane',
+                                data: [1, 0, 4]
+                            }, {
+                                name: 'John',
+                                data: [5, 7, 3]
+                            }]
+                    });
+                });
+                
+                //series -> using JSON mogelijk?
+            </script>
+            <table class="highchart" data-graph-container-before="1" data-graph-type="column">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Sales</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>8000</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>12000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <script type="text/javascript">$(document).ready(function () {
+                    $('table.highchart').highchartTable();
+                });
+            </script>
             <div style="margin:20px 0;"></div>
             <table class="easyui-datagrid" title="Afwezigheidstoezicht" width="98%" style="width:98%"
                    data-options="singleSelect:true,collapsible:true">

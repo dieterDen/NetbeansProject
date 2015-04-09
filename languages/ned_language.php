@@ -14,6 +14,11 @@ $lang['Afwerkingstermijnen'] = 'Afwerkingstermijnen';
 $lang['BriefingsTermijn'] = 'Briefingstermijn';
 $lang['briefing'] = '5min briefing';
 $lang['IMEI'] = 'IMEI-nummers';
+$lang['Gerechtelijk_feit'] = 'GF gisteren & vandaag';
+$lang['kantschriften'] = 'Kantschriften > 30 dagen';
+$lang['woonstveranderingen'] = 'Woonstveranderingen > 14 dagen';
+$lang['GF_VO'] = 'GF niet-verkeer & VO > 14 dagen IN';
+$lang['hercosi'] = 'Hercosi > 5 dagen';
 
 
 ?>

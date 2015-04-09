@@ -1,6 +1,6 @@
 <?php
 /**
- * De klasse bevat alle Nederlandse termen van de view: functioneelBeheer/get_imeiNummers
+ * De klasse bevat alle Nederlandse termen van de view: functioneelBeheer/get_openstaandeDossiers
  * @package languages
  * @version 0.0
  */

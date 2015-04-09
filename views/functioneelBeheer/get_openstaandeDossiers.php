@@ -1,3 +1,6 @@
+<?php
+include_once 'languages/ned_get_openstaandeDossiers.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +19,7 @@
                        data-options="singleSelect:true,collapsible:false,">
                     <thead>
                         <tr>
-                            <th data-options="field:'itemid',width:210,align:'center'">Naam</th>
+                            <th data-options="field:'itemid',width:210,align:'center'"><?php echo $lang['naam']; ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,10 +46,10 @@
                 ?>
                 <thead>
                     <tr>
-                        <th style="width: 100px;" data-options="field:'dossierNummer',align:'center'">Dossier Nummer</th>
-                        <th style="width: 90px;" data-options="field:'type',align:'center'">Dossier type</th>
-                        <th style="width: 100px;" data-options="field:'datum',align:'center'">Datum</th>
-                        <th style="width: 1150px;" data-options="field:'tekst',align:'left'">Tekst</th>
+                        <th style="width: 100px;" data-options="field:'dossierNummer',align:'center'"><?php echo $lang['dossiernummer']; ?></th>
+                        <th style="width: 90px;" data-options="field:'type',align:'center'"><?php echo $lang['dossiertype']; ?></th>
+                        <th style="width: 100px;" data-options="field:'datum',align:'center'"><?php echo $lang['datum']; ?></th>
+                        <th style="width: 1150px;" data-options="field:'tekst',align:'left'"><?php echo $lang['tekst']; ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,11 +73,11 @@
             <thead>
                 <tr>
                     <th style="width: 120px;" data-options="field:'empty',align:'center'"></th>
-                    <th style="width: 120px;" data-options="field:'tweeWeken',align:'center'">2w</th>
-                    <th style="width: 120px;" data-options="field:'drieWeken',align:'center'">3w</th>
-                    <th style="width: 120px;" data-options="field:'vierWeken',align:'center'">4w</th>
-                    <th style="width: 120px;" data-options="field:'vierWeken',align:'center'">5w</th>
-                    <th style="width: 120px;" data-options="field:'meerWeken',align:'center'">+6w</th>
+                    <th style="width: 120px;" data-options="field:'tweeWeken',align:'center'"><?php echo $lang['2w']; ?></th>
+                    <th style="width: 120px;" data-options="field:'drieWeken',align:'center'"><?php echo $lang['3w']; ?></th>
+                    <th style="width: 120px;" data-options="field:'vierWeken',align:'center'"><?php echo $lang['4w']; ?></th>
+                    <th style="width: 120px;" data-options="field:'vierWeken',align:'center'"><?php echo $lang['5w']; ?></th>
+                    <th style="width: 120px;" data-options="field:'meerWeken',align:'center'"><?php echo $lang['6w']; ?></th>
                 </tr>
             </thead>
             <tbody>
