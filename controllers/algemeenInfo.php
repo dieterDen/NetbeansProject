@@ -22,7 +22,12 @@ class AlgemeenInfo extends Controller {
      */
     function get_afwezigheidstoezicht() {
         $this->view->afwezigheidslijst = $this->model->get_afwezigheidstoezicht();
+        $this->view->statistiek_afwezigheid = $this->model->get_afwezigheidstoezichtStatistiek();
         $this->view->render('algemeenInfo/get_afwezigheidstoezicht', true);
+    }
+
+    function get_statistiekAfwezigheidstoezicht() {
+        //  $this->view->statistiek_afwezigheid = $this->model->get_statistiekAfwezigheidstoezicht();
     }
 
     /**

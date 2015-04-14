@@ -34,7 +34,11 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                 }
             };
         </script>
-
+        <?php
+        for ($i = 1; $i <= 12; $i++) {
+            echo $this->statistiek_afwezigheid[2014][$i];
+        }
+        ?>
     </head>
     <body>
         <div id="header">
@@ -46,60 +50,90 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
             <a href="<?php echo URL; ?>help">Help</a>
             <a href="<?php echo URL; ?>login">Login</a>
         </div>
-        <div id="content"> 
-            <a href="">Toon statistieken >></a>
-            <div id="container" style="width: 100%; height: 400px;"></div>
+        <div id="content">  
+            <div id="container" style="width: 100%;"></div>
             <script>
-                $(function () {
-                    $('#container').highcharts({
-                        chart: {
-                            type: 'bar'
-                        },
-                        title: {
-                            text: 'Fruit Consumption'
-                        },
-                        xAxis: {
-                            categories: ['Apples', 'Bananas', 'Oranges']
-                        },
-                        yAxis: {
+                $(document).ready(function () {
+                    $(".btn1").hide();
+                    $(".btn1").click(function () {
+                        $(".btn2").show();
+                        $("#container").hide(1000);
+                        $(".btn1").hide();
+                    });
+                    $(".btn2").click(function () {
+                        $('#container').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
                             title: {
-                                text: 'Fruit eaten'
-                            }
-                        },
-                        series: [{
-                                name: 'Jane',
-                                data: [1, 0, 4]
-                            }, {
-                                name: 'John',
-                                data: [5, 7, 3]
-                            }]
+                                text: 'Statistieken afwezigheidstoezicht'
+                            },
+                            xAxis: {
+                                categories: ['Jan',
+                                    'Feb',
+                                    'Mar',
+                                    'Apr',
+                                    'Mei',
+                                    'Jun',
+                                    'Jul',
+                                    'Aug',
+                                    'Sep',
+                                    'Okt',
+                                    'Nov',
+                                    'Dec'],
+                                crosshair: true
+                            },
+                            yAxis: {
+                                min: 0,
+                                title: {
+                                    text: 'aantal toezichten/maand'
+                                }
+                            },
+                            plotOptions: {
+                                column: {
+                                    pointPadding: 0.2,
+                                    borderwidth: 0
+
+                                }
+                            },
+                            series: [{
+                                    name: <?php $huidig_jaar=$this->statistiek_afwezigheid[0];
+                                    echo $huidig_jaar; ?>,
+                                    data: [<?php
+                                    
+        for ($i = 1; $i <= 12; $i++) {
+            echo $this->statistiek_afwezigheid[3][$huidig_jaar][$i] . ",";
+        }
+        ?>]
+                                }, {
+                                    name: <?php $vorig_jaar=$this->statistiek_afwezigheid[1];
+                                    echo $vorig_jaar;?>,
+                                    data: [<?php
+        for ($i = 1; $i <= 12; $i++) {
+            echo $this->statistiek_afwezigheid[3][$vorig_jaar][$i] . ",";
+        }
+        ?>]
+
+                                },
+                                {
+                                    name: <?php $twee_jaar=$this->statistiek_afwezigheid[2];
+                                    echo $twee_jaar;?>,
+                                    data: [<?php
+        for ($i = 1; $i <= 12; $i++) {
+            echo $this->statistiek_afwezigheid[3][$twee_jaar][$i] . ",";
+        }
+        ?>]
+                                }]
+                        });
+                        $("#container").show();
+                        $(".btn1").show();
+                        $(".btn2").hide();
                     });
                 });
-                
-                //series -> using JSON mogelijk?
             </script>
-            <table class="highchart" data-graph-container-before="1" data-graph-type="column">
-                <thead>
-                    <tr>
-                        <th>Month</th>
-                        <th>Sales</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>January</td>
-                        <td>8000</td>
-                    </tr>
-                    <tr>
-                        <td>February</td>
-                        <td>12000</td>
-                    </tr>
-                </tbody>
-            </table>
-            <script type="text/javascript">$(document).ready(function () {
-                    $('table.highchart').highchartTable();
-                });
-            </script>
+            <a class="btn1" href="#">Verberg statistieken ></a>
+            <a class="btn2" href="#">Toon statistieken ></a>
+
             <div style="margin:20px 0;"></div>
             <table class="easyui-datagrid" title="Afwezigheidstoezicht" width="98%" style="width:98%"
                    data-options="singleSelect:true,collapsible:true">
@@ -136,4 +170,4 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
         <?php
         require 'views/footer.php';
         ?>
-
+        

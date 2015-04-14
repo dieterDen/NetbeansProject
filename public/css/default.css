@@ -26,16 +26,18 @@ body {
     width: 98%;
 }
 
+#divPopup {
+    color: #0081C2;
+}
 a {
-    color: #00458a;
+    color: #484848;
     text-decoration: none;
 }
 
-#header>a:visited { color: silver;
+
+
+#header>a:visited { color: white;
 }
 
-//werkt niet code hieronder
-#mm1>a:visited { color: silver;
 
-}
 
