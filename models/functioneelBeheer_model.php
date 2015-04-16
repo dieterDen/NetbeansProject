@@ -80,7 +80,7 @@ class functioneelBeheer_model extends Model {
      */
     function get_openstaandeDossiers($naam) {
         $naam = urldecode($naam);
-        $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiers WHERE lower(opsteller) = \"" . strtolower($naam) . "\" ORDER BY openstaande_dossiers_datum");
+        $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiers WHERE lower(opsteller) = \"" . strtolower($naam) . "\"");
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }

@@ -11,12 +11,13 @@ include_once 'languages/ned_get_openstaandeDossiers.php';
         <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/easyUI/demo.css">
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min"></script>
+
     </head>
     <body>
         <div id="border" style="border:1px solid #A8A8A8 ;padding: 30px;">
             <div id='table1' style="width:16%;float:left;">
                 <table class="easyui-datagrid" title="" style="width:210px;height:500px;"
-                       data-options="singleSelect:true,collapsible:false,">
+                       data-options="singleSelect:true,collapsible:false,fitColumns:true">
                     <thead>
                         <tr>
                             <th data-options="field:'itemid',width:210,align:'center'"><?php echo $lang['naam']; ?></th>
@@ -40,16 +41,16 @@ include_once 'languages/ned_get_openstaandeDossiers.php';
                 $row_opsteller = $this->statistiekPerWeek;
                 $naam = $row_opsteller[0]['opsteller'];
                 echo '
-            <table class="easyui-datagrid" title="Dossiers: ' . $naam . '" style="width:85%;height:500px;"
-                   data-options="singleSelect:true,collapsible:false,">
+            <table id="tt" class="easyui-datagrid" title="Dossiers: ' . $naam . '" style="width:85%;height:500px;"
+                   data-options="singleSelect:true,collapsible:false,fitColumns:true, remoteSort:false">
                     ';
                 ?>
                 <thead>
                     <tr>
-                        <th style="width: 100px;" data-options="field:'dossierNummer',align:'center'"><?php echo $lang['dossiernummer']; ?></th>
-                        <th style="width: 90px;" data-options="field:'type',align:'center'"><?php echo $lang['dossiertype']; ?></th>
-                        <th style="width: 100px;" data-options="field:'datum',align:'center'"><?php echo $lang['datum']; ?></th>
-                        <th style="width: 1150px;" data-options="field:'tekst',align:'left'"><?php echo $lang['tekst']; ?></th>
+                        <th style="width: 100px;" data-options="field:'dossierNummer',sortable:true,auto:true,align:'center'"><?php echo $lang['dossiernummer']; ?></th>
+                        <th style="width: 90px;" data-options="field:'type',sortable:true,auto:true,align:'center'"><?php echo $lang['dossiertype']; ?></th>
+                        <th style="width: 100px;" data-options="field:'datum',sortable:true,auto:true,align:'center'"><?php echo $lang['datum']; ?></th>
+                        <th style="width: 1150px;" data-options="field:'tekst',sortable:true,align:'left'"><?php echo $lang['tekst']; ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,10 +66,10 @@ include_once 'languages/ned_get_openstaandeDossiers.php';
                 </tbody>
                 </table>
             </div>
-            <br><br>
+            <br>
             <?php echo '
-    <table class="easyui-datagrid" title="Dossiers: ' . $naam . '" style="width:720px;height:190px;"
-           data-options="singleSelect:true,collapsible:true,">
+    <table class="easyui-datagrid" title="Dossiers: ' . $naam . '" style="width:720px;height:33%;"
+           data-options="singleSelect:true,collapsible:true,fitColumns:true">
             '; ?>
             <thead>
                 <tr>

@@ -40,15 +40,17 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
         }
         ?>
     </head>
+
     <body>
-        <div id="header">
+
+        <div data-role="header" id="header">
             <img src="/pictures/pol_logo.png" style="width: 20%;padding-left: 10px;">
             <br>
 
             <br />
-            <a href="<?php echo URL; ?>index">Index</a>
-            <a href="<?php echo URL; ?>help">Help</a>
-            <a href="<?php echo URL; ?>login">Login</a>
+            <a href="<?php echo URL; ?>index" rel="external"  >Index</a>
+            <a href="<?php echo URL; ?>help" data-role="button">Help</a>
+            <a href="<?php echo URL; ?>login" data-role="button">Login</a>
         </div>
         <div id="content">  
             <div id="container" style="width: 100%;"></div>
@@ -97,17 +99,20 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                                 }
                             },
                             series: [{
-                                    name: <?php $huidig_jaar=$this->statistiek_afwezigheid[0];
-                                    echo $huidig_jaar; ?>,
+                                    name: <?php
+        $huidig_jaar = $this->statistiek_afwezigheid[0];
+        echo $huidig_jaar;
+        ?>,
                                     data: [<?php
-                                    
         for ($i = 1; $i <= 12; $i++) {
             echo $this->statistiek_afwezigheid[3][$huidig_jaar][$i] . ",";
         }
         ?>]
                                 }, {
-                                    name: <?php $vorig_jaar=$this->statistiek_afwezigheid[1];
-                                    echo $vorig_jaar;?>,
+                                    name: <?php
+        $vorig_jaar = $this->statistiek_afwezigheid[1];
+        echo $vorig_jaar;
+        ?>,
                                     data: [<?php
         for ($i = 1; $i <= 12; $i++) {
             echo $this->statistiek_afwezigheid[3][$vorig_jaar][$i] . ",";
@@ -116,8 +121,10 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
 
                                 },
                                 {
-                                    name: <?php $twee_jaar=$this->statistiek_afwezigheid[2];
-                                    echo $twee_jaar;?>,
+                                    name: <?php
+        $twee_jaar = $this->statistiek_afwezigheid[2];
+        echo $twee_jaar;
+        ?>,
                                     data: [<?php
         for ($i = 1; $i <= 12; $i++) {
             echo $this->statistiek_afwezigheid[3][$twee_jaar][$i] . ",";
@@ -133,20 +140,21 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
             </script>
             <a class="btn1" href="#">Verberg statistieken ></a>
             <a class="btn2" href="#">Toon statistieken ></a>
+            <br /><br />
+            <a class="btn3" href="#">Print overzicht af ></a>
 
             <div style="margin:20px 0;"></div>
-            <table class="easyui-datagrid" title="Afwezigheidstoezicht" width="98%" style="width:98%"
-                   data-options="singleSelect:true,collapsible:true">
+            <table id="datagrid" class="easyui-datagrid" title="Afwezigheidstoezicht" style="width:98%;" data-options="singleSelect:true,fitColumns:true,remoteSort:false">
                 <thead>
                     <tr>
-                        <th data-options="field:'elementnummer',width:100"><?php echo $lang['elementnummer']; ?></th>
-                        <th data-options="field:'bewNaam',width:100"><?php echo $lang['bewoner naam']; ?></th>
-                        <th data-options="field:'bewVoornaam',width:120"><?php echo $lang['bewoner voornaam']; ?></th>
-                        <th data-options="field:'adres',width:500"><?php echo $lang['adres']; ?></th>
+                        <th data-priority data-options="field:'elementnummer',sortable:true,auto:true,align:'center'"><?php echo $lang['elementnummer']; ?></th>
+                        <th data-options="field:'bewNaam',sortable:true,auto:true"><?php echo $lang['bewoner naam']; ?></th>
+                        <th data-options="field:'bewVoornaam',sortable:true,auto:true"><?php echo $lang['bewoner voornaam']; ?></th>
+                        <th data-options="field:'adres',sortable:true,auto:true"><?php echo $lang['adres']; ?></th>
                         <th data-options="field:'inlichtingen',width:550"><?php echo $lang['afwezigheids inlichtingen']; ?></th>
-                        <th data-options="field:'begDatum',width:100"><?php echo $lang['begindatum']; ?></th>
-                        <th data-options="field:'bezocht',width:70, align:'center'"><?php echo $lang['bezocht']; ?></th>
-                        <th data-options="field:'dagGeleden',width:95, align:'center'"><?php echo $lang['dagen geleden']; ?></th>
+                        <th data-options="field:'begDatum',sortable:true,auto:true"><?php echo $lang['begindatum']; ?></th>
+                        <th data-options="field:'bezocht',auto:true, align:'center'"><?php echo $lang['bezocht']; ?></th>
+                        <th data-options="field:'dagGeleden',sortable:true,auto:true, align:'center'"><?php echo $lang['dagen geleden']; ?></th>
                     </tr>
                 </thead>
                 <tbody> 
@@ -165,8 +173,15 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                     ?>
                 </tbody>
             </table>
-
+            <!--<script type="text/javascript">
+                $('#datagrid').datagrid({
+                    onClickRow: function(index,row){
+                        alert('test');
+                    }
+                });
+            </script>-->
         </div> 
+
         <?php
         require 'views/footer.php';
         ?>

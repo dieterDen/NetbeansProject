@@ -5,8 +5,8 @@
  */
 $lang['elementnummer'] = 'elementnummer';
 $lang['afwezigheids inlichtingen'] = 'details en commentaar';
-$lang['bewoner naam'] = 'bewoner naam';
-$lang['bewoner voornaam'] = 'bewoner voornaam';
+$lang['bewoner naam'] = 'naam';
+$lang['bewoner voornaam'] = 'voornaam';
 $lang['adres'] = 'adres';
 $lang['begindatum'] = 'begindatum';
 $lang['bezocht'] = 'bezocht';
