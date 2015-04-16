@@ -5,7 +5,7 @@
  * @package views
  * @subpackage algemeenInfo
  * @version 0.0
- * @todo sort functie maken om birefingen te tonen op datum. Eerst iterator in array zetten en deze filteren 
+ * @todo sort functie maken om briefingen te tonen op datum. Eerst iterator in array zetten en deze filteren 
  */
 $log = KLogger::getInstance();
 ?>

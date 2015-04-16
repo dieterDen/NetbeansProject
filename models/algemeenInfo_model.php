@@ -97,7 +97,6 @@ class algemeenInfo_model extends Model {
      * @return Array[][] Tweedimensionale array van key-value waarden van inlichtingen van afwezigheidstoezicht
      */
     function get_afwezigheidInlichtingen($elementnummer) {
-        // echo 'inside function get_afwezigheidInlichtingen in model'.$elementnummer;
         $result = $this->db->query('SELECT afwezigheidstoezichttekst_tekst FROM islp.view_afwezigheidstoezichtTekst where lower(afwezigheidstoezichttekst_aardtekst) = "inlichtingen" and afwezigheidstoezichttekst_elementnummer like ' . $elementnummer);
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
