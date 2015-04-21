@@ -142,6 +142,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
             <a class="btn2" href="#">Toon statistieken ></a>
             <br /><br />
             <a class="btn3" href="<?php echo URL; ?>algemeenInfo/print_overzichtAfwezigheden">Print overzicht af ></a>
+            <a class="btn4" href="<?php echo URL; ?>algemeenInfo/print_briefAfwezigheden/114">Print brief ></a><br /><br />
 
             <div style="margin:20px 0;"></div>
             <table id="datagrid" class="easyui-datagrid" title="Afwezigheidstoezicht" style="width:98%;" data-options="singleSelect:true,fitColumns:true,remoteSort:false">

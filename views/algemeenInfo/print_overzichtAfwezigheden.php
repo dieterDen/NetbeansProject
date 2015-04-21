@@ -6,63 +6,57 @@ require_once 'PHPWord-0.12.0/src/PhpWord/Autoloader.php';
 // Creating the new document...
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
-/* Note: any element you append to a document must reside inside of a Section. */
-
 // Adding an empty Section to the document...
 $section = $phpWord->addSection();
-// Adding Text element to the Section having font styled by default...
-$section->addText(
-        htmlspecialchars(
-                '"Learn from yesterday, live for today, hope for tomorrow. '
-                . 'The important thing is not to stop questioning." '
-                . '(Albert Einstein)'
-        )
-);
-
-/*
- * Note: it's possible to customize font style of the Text element you add in three ways:
- * - inline;
- * - using named font style (new font style object will be implicitly created);
- * - using explicitly created font style object.
- */
 
 // Adding Text element with font customized inline...
+$section->addText(htmlspecialchars('Politiezone Geraardsbergen - Lierde'), array('italic' => true));
 $section->addText(
         htmlspecialchars(
-                '"Great achievement is usually born of great sacrifice, '
-                . 'and is never the result of selfishness." '
-                . '(Napoleon Hill)'
-        ), array('name' => 'Tahoma', 'size' => 10)
+                'Overzicht afwezigheden:'
+        ), array('name' => '', 'size' => 16)
 );
 
-// Adding Text element with font customized using named font style...
-$fontStyleName = 'oneUserDefinedStyle';
-$phpWord->addFontStyle(
-        $fontStyleName, array('name' => 'Tahoma', 'size' => 10, 'color' => '1B2232', 'bold' => true)
-);
-$section->addText(
-        htmlspecialchars(
-                '"The greatest accomplishment is not in never falling, '
-                . 'but in rising again after you fall." '
-                . '(Vince Lombardi)'
-        ), $fontStyleName
-);
+$section->addTextBreak(2);
+$styleTable = array('borderBottomSize' => 18, 'borderColor' => '006699', 'cellMargin' => 80);
+$styleFirstRow = array('borderBottomSize' => 18, 'borderBottomColor' => '0000FF', 'bgColor' => '66BBFF');
+$phpWord->addTableStyle('Overzicht table', $styleTable, $styleFirstRow);
+$table = $section->addTable('Overzicht table');
+$table->addRow();
+$table->addCell()->addText('nummer');
+$table->addCell()->addText('bewoner naam');
+$table->addCell()->addText('bewoner voornaam');
+$table->addCell()->addText('adres');
+$table->addCell()->addText('begindatum');
+$table->addCell()->addText('bezocht');
+$table->addCell()->addText('dagen geleden');
+$table->addRow();
 
-// Adding Text element with font customized using explicitly created font style object...
-$fontStyle = new \PhpOffice\PhpWord\Style\Font();
-$fontStyle->setBold(true);
-$fontStyle->setName('Tahoma');
-$fontStyle->setSize(13);
-$myTextElement = $section->addText(
-        htmlspecialchars('"Believe you can and you\'re halfway there." (Theodor Roosevelt)')
-);
-$myTextElement->setFontStyle($fontStyle);
+foreach ($this->overzichtAfwezigheden as $row) {
+    $section->addTable();
+    $table->addRow();
+    $table->addCell(1000)->addText(
+            htmlspecialchars($row['elementnummer']));
+    $table->addCell(1700)->addText(
+            htmlspecialchars($row['bewoner naam']));
+    $table->addCell(1700)->addText(
+            htmlspecialchars($row['bewoner voornaam']));
+    $table->addCell(4000)->addText(
+            htmlspecialchars($row['adres']));
+    $table->addCell(1700)->addText(
+            htmlspecialchars($row['begindatum']));
+    $table->addCell(1700)->addText(
+            htmlspecialchars($row['bezocht']));
+    $table->addCell(1700)->addText(
+            htmlspecialchars($row['dagen geleden']));
+      
+    $section->addTable();
+    $table->addRow();
+    $table->addCell(6000)->addText(htmlspecialchars($row['details en commentaar']));
+    $table->addRow();
+}
 
-
-
-
-
-$file='index.odt';
+$file = 'index.odt';
 
 
 //header("Content-Description: File Transfer");
@@ -75,8 +69,6 @@ header('Cache-Control: max-age= 0');
 
 // Saving the document as ODF file...
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'ODText');
+ob_clean();
 $objWriter->save('php://output');
-
-//$xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-//$xmlWriter->save("php://output");
 

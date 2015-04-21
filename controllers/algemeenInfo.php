@@ -52,10 +52,31 @@ class AlgemeenInfo extends Controller {
         $this->view->render('algemeenInfo/get_afwezigheidInlichtingen', true);
     }
 
+    /**
+     * De functie haalt alle info van alle bestaande afwezigheden op. 
+     * Deze info wordt doorgegeven aan de view die instaat voor het genereren van .odf file.
+     * 
+     * @return void
+     */
     function print_overzichtAfwezigheden() {
         $this->view->overzichtAfwezigheden = $this->model->get_afwezigheidstoezicht();
-        $this->view->render('algemeenInfo/print_overzichtAfwezigheden', true);
+        //print_r($this->view->overzichtAfwezigheden);
+        //bovenstaande code werkt
+       $this->view->render('algemeenInfo/print_overzichtAfwezigheden', true);
     }
+    
+       /**
+     * Haalt de commentaren op adhv elementnummer om brief te generen.
+     * Aan de view worden de commentaren meegeven
+     * Tot slot wordt de view gerenderd 
+     * @param string $elementnummer elementnummer van de geselecteerde afwezigheid
+     * @return void
+     */
+    function print_briefAfwezigheden($elementnummer) {
+        echo 'we zijn in method print_briefAfwezigheden in controller';
+        $this->view->overzichtCommentaren = $this->model->et_afwezigheidCommentaren($elementnummer);
+        $this->view->render('algemeenInfo/print_briefAfwezigheden',true);
+        }
 
     /**
      * toont een overzicht van alle 5min briefingen.
