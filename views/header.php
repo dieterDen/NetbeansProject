@@ -25,7 +25,7 @@ include_once ("languages/ned_language.php");
     <body>
 
         <div id="header">
-            <img src="/pictures/pol_logo.png" style="width: 20%;padding-left: 10px;">
+            <a href="<?php echo URL; ?>"><img src="/pictures/pol_logo.png" style="width: 20%;padding-left: 10px;"></a>
             <br>
 
             <br />

@@ -62,10 +62,10 @@ class AlgemeenInfo extends Controller {
         $this->view->overzichtAfwezigheden = $this->model->get_afwezigheidstoezicht();
         //print_r($this->view->overzichtAfwezigheden);
         //bovenstaande code werkt
-       $this->view->render('algemeenInfo/print_overzichtAfwezigheden', true);
+        $this->view->render('algemeenInfo/print_overzichtAfwezigheden', true);
     }
-    
-       /**
+
+    /**
      * Haalt de commentaren op adhv elementnummer om brief te generen.
      * Aan de view worden de commentaren meegeven
      * Tot slot wordt de view gerenderd 
@@ -73,10 +73,12 @@ class AlgemeenInfo extends Controller {
      * @return void
      */
     function print_briefAfwezigheden($elementnummer) {
-        echo 'we zijn in method print_briefAfwezigheden in controller';
-        $this->view->overzichtCommentaren = $this->model->et_afwezigheidCommentaren($elementnummer);
-        $this->view->render('algemeenInfo/print_briefAfwezigheden',true);
-        }
+        //echo 'we zijn in method print_briefAfwezigheden in controller';
+        echo $elementnummer;
+        $this->view->overzichtCommentaren = $this->model->get_afwezigheidCommentaren($elementnummer);
+        print_r($this->view->overzichtCommentaren);
+        $this->view->render('algemeenInfo/print_briefAfwezigheden', true);
+    }
 
     /**
      * toont een overzicht van alle 5min briefingen.

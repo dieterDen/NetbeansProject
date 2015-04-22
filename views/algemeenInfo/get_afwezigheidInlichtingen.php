@@ -33,7 +33,6 @@
                 </div>
             </div>
             <div title="Commentaren(<?php echo count($this->afwezigheidCommentaren); ?>)" style="padding:10px">
-                <a class="btn4" href="<?php echo URL; ?>algemeenInfo/print_briefAfwezigheden/<?php echo $this->afwezigheid_elementnummer; ?>">Print brief ></a><br /><br />
                 <?php
                 foreach ($this->afwezigheidCommentaren as $row) {
                     echo $row['afwezigheidstoezichttekst_tekst'] . "<br /><br />";

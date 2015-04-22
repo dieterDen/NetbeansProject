@@ -34,6 +34,12 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                 }
             };
         </script>
+        <script>
+            var createBrief = function (param) {
+                var elementnummer = $(param).parents("tr").find(">:first-child").text();
+                window.location.href = '<?php echo URL; ?>algemeenInfo/print_briefAfwezigheden/' + elementnummer;
+            }
+        </script>
         <?php
         for ($i = 1; $i <= 12; $i++) {
             echo $this->statistiek_afwezigheid[2014][$i];
@@ -44,7 +50,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
     <body>
 
         <div data-role="header" id="header">
-            <img src="/pictures/pol_logo.png" style="width: 20%;padding-left: 10px;">
+            <a href="<?php echo URL; ?>"><img src="/pictures/pol_logo.png" style="width: 20%;padding-left: 10px;"></a>
             <br>
 
             <br />
@@ -139,10 +145,8 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                 });
             </script>
             <a class="btn1" href="#">Verberg statistieken ></a>
-            <a class="btn2" href="#">Toon statistieken ></a>
-            <br /><br />
-            <a class="btn3" href="<?php echo URL; ?>algemeenInfo/print_overzichtAfwezigheden">Print overzicht af ></a>
-            <a class="btn4" href="<?php echo URL; ?>algemeenInfo/print_briefAfwezigheden/114">Print brief ></a><br /><br />
+            <a style="float: left;" class="btn2" href="#">Toon statistieken ></a>
+            <a style="margin-left: 80px;"class="btn3" href="<?php echo URL; ?>algemeenInfo/print_overzichtAfwezigheden">Print overzicht af ></a>
 
             <div style="margin:20px 0;"></div>
             <table id="datagrid" class="easyui-datagrid" title="Afwezigheidstoezicht" style="width:98%;" data-options="singleSelect:true,fitColumns:true,remoteSort:false">
@@ -156,6 +160,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                         <th data-options="field:'begDatum',sortable:true,auto:true"><?php echo $lang['begindatum']; ?></th>
                         <th data-options="field:'bezocht',auto:true, align:'center'"><?php echo $lang['bezocht']; ?></th>
                         <th data-options="field:'dagGeleden',sortable:true,auto:true, align:'center'"><?php echo $lang['dagen geleden']; ?></th>
+                        <th data-options="field:'printBrief', align:'center'"> </th>
                     </tr>
                 </thead>
                 <tbody> 
@@ -169,6 +174,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                         . '<td>' . $row['begindatum'] . '</td>'
                         . '<td>' . $row['bezocht'] . '</td>'
                         . '<td>' . $row['dagen geleden'] . '</td>'
+                        . '<td><a href="#" id="divPrintBrief" onclick="createBrief(this);">Print brief</a></td>'
                         . '</tr>';
                     }
                     ?>

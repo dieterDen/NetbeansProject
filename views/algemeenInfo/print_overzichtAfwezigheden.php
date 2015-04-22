@@ -49,10 +49,12 @@ foreach ($this->overzichtAfwezigheden as $row) {
             htmlspecialchars($row['bezocht']));
     $table->addCell(1700)->addText(
             htmlspecialchars($row['dagen geleden']));
-      
+    $table->addRow();
+    
     $section->addTable();
     $table->addRow();
-    $table->addCell(6000)->addText(htmlspecialchars($row['details en commentaar']));
+    $table->addCell()->addText('Details: ');
+    $table->addCell()->addText(htmlspecialchars($row['details en commentaar']));
     $table->addRow();
 }
 
