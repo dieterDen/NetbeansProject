@@ -16,9 +16,6 @@ include_once 'languages/ned_get_openstaandeDossiers.php';
         <script src="jquery.highchartTable.js" type="text/javascript"></script>   
     </head>
     <body>
-        <?php
-        print_r($this->openstaandeDossiersStatistiek);
-        ?>
         <div id="container" style="width: 100%;"></div>
         <script>
             $(document).ready(function () {
@@ -54,7 +51,7 @@ include_once 'languages/ned_get_openstaandeDossiers.php';
                         yAxis: {
                             min: 0,
                             title: {
-                                text: 'Aantal dossiers/maand'
+                                text: 'Aantal  openstaande dossiers/maand'
                             }
                         },
                         plotOptions: {
@@ -65,14 +62,37 @@ include_once 'languages/ned_get_openstaandeDossiers.php';
                         },
                         series: [{
                                 name: <?php
-        $huidig_jaar = $this->openstaandeDossiersStatistiek[0];
-        echo $huidig_jaar;
-        ?>,
+$huidig_jaar = $this->openstaandeDossiersStatistiek[0];
+echo $huidig_jaar;
+?>,
                                 data: [<?php
-        for ($i = 1; $i <= 12; $i++) {
-            echo $this->openstaandeDossiersStatistiek[3][$huidig_jaar][$i] . ",";
-        }
-        ?>]
+for ($i = 1; $i <= 12; $i++) {
+    echo $this->openstaandeDossiersStatistiek[3][$huidig_jaar][$i] . ",";
+}
+?>]
+                            }, {
+                                name: <?php
+$vorig_jaar = $this->openstaandeDossiersStatistiek[1];
+echo $vorig_jaar;
+?>,
+                                data: [<?php
+for ($i = 1; $i <= 12; $i++) {
+    echo $this->openstaandeDossiersStatistiek[3][$vorig_jaar][$i] . ",";
+}
+?>]
+
+
+                            },
+                            {
+                                name: <?php
+$twee_jaar = $this->openstaandeDossiersStatistiek[2];
+echo $twee_jaar;
+?>,
+                                data: [<?php
+for ($i = 1; $i <= 12; $i++) {
+    echo $this->openstaandeDossiersStatistiek[3][$twee_jaar][$i] . ",";
+}
+?>]
                             }]
                     });
                     $("#container").show();
