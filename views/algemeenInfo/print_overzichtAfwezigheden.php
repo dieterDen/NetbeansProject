@@ -24,12 +24,12 @@ $phpWord->addTableStyle('Overzicht table', $styleTable, $styleFirstRow);
 $table = $section->addTable('Overzicht table');
 $table->addRow();
 $table->addCell()->addText('nummer');
-$table->addCell()->addText('bewoner naam');
-$table->addCell()->addText('bewoner voornaam');
+$table->addCell()->addText('naam');
+$table->addCell()->addText('voornaam');
 $table->addCell()->addText('adres');
 $table->addCell()->addText('begindatum');
 $table->addCell()->addText('bezocht');
-$table->addCell()->addText('dagen geleden');
+$table->addCell()->addText(' # dagen');
 $table->addRow();
 
 foreach ($this->overzichtAfwezigheden as $row) {

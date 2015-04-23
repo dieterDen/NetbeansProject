@@ -11,9 +11,79 @@ include_once 'languages/ned_get_openstaandeDossiers.php';
         <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/easyUI/demo.css">
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.min.js"></script>
         <script type="text/javascript" src="<?php echo URL; ?>public/easyUI/jquery.easyui.min"></script>
-
+        <script type="text/javascript" src="<?php echo URL; ?>public/js/jQuery.js"></script>
+        <script src="<?php echo URL; ?>public/js/highcharts.js"></script>
+        <script src="jquery.highchartTable.js" type="text/javascript"></script>   
     </head>
     <body>
+        <?php
+        print_r($this->openstaandeDossiersStatistiek);
+        ?>
+        <div id="container" style="width: 100%;"></div>
+        <script>
+            $(document).ready(function () {
+                $(".btn1").hide();
+                $(".btn1").click(function () {
+                    $(".btn2").show();
+                    $("#container").hide(1000);
+                    $(".btn1").hide();
+                });
+                $(".btn2").click(function () {
+                    $('#container').highcharts({
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: 'Statistieken openstaande dossiers'
+                        },
+                        xAxis: {
+                            categories: ['Jan',
+                                'Feb',
+                                'Mar',
+                                'Apr',
+                                'Mei',
+                                'Jun',
+                                'Jul',
+                                'Aug',
+                                'Sep',
+                                'Okt',
+                                'Nov',
+                                'Dec'],
+                            crosshair: true
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: 'Aantal dossiers/maand'
+                            }
+                        },
+                        plotOptions: {
+                            column: {
+                                pointPadding: 0.2,
+                                borderWidth: 0
+                            }
+                        },
+                        series: [{
+                                name: <?php
+        $huidig_jaar = $this->openstaandeDossiersStatistiek[0];
+        echo $huidig_jaar;
+        ?>,
+                                data: [<?php
+        for ($i = 1; $i <= 12; $i++) {
+            echo $this->openstaandeDossiersStatistiek[3][$huidig_jaar][$i] . ",";
+        }
+        ?>]
+                            }]
+                    });
+                    $("#container").show();
+                    $(".btn1").show();
+                    $(".btn2").hide();
+                });
+            });
+        </script>
+
+        <a class="btn1" href="#">Verberg statistieken ></a>
+        <a style="float: left;" class="btn2" href="#">Toon statistieken ></a>
         <div id="border" style="border:1px solid #A8A8A8 ;padding: 30px;">
             <div id='table1' style="width:16%;float:left;">
                 <table class="easyui-datagrid" title="" style="width:210px;height:500px;"

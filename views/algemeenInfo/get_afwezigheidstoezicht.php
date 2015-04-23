@@ -118,7 +118,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                                     name: <?php
         $vorig_jaar = $this->statistiek_afwezigheid[1];
         echo $vorig_jaar;
-        ?>,
+        ?>, 
                                     data: [<?php
         for ($i = 1; $i <= 12; $i++) {
             echo $this->statistiek_afwezigheid[3][$vorig_jaar][$i] . ",";

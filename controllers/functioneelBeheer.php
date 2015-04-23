@@ -32,11 +32,12 @@ class FunctioneelBeheer extends Controller {
      * @return void 
      */
     function get_openstaandeDossiers_namen() {
+        $this->view->openstaandeDossiersStatistiek = $this->model->get_openstaandeDossiersStatistiek();
         $this->view->namen_openstaandeDossiers = $this->model->get_openstaandeDossiers_namen();
         $this->view->render('functioneelBeheer/get_openstaandeDossiers');
     }
 
-    /** 
+    /**
      * Alle dossiers van een geselecteerde persoon worden opgehaald en aan view doorgegeven.
      * Alle statistieken worden opgehaald van een gebruiker en aan view doorgegeven.
      * 

@@ -102,4 +102,67 @@ class functioneelBeheer_model extends Model {
         return $rows;
     }
 
+    function get_openstaandeDossiersStatistiek() {
+        $jaren = $this->db->query("select distinct year from view_statOpenstaandeDossiers");
+        while ($row = $jaren->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        foreach ($rows as $var) {
+            if (date("Y") == $var[year]) {
+                $huidig_jaar = $var[year];
+            } else {
+                $huidig_jaar = date("Y");
+            }
+        }
+        $vorig_jaar = $huidig_jaar - 1;
+        $twee_jaar = $huidig_jaar - 2;
+
+        $result = $this->db->query("select * from view_statOpenstaandeDossiers");
+        $associativeArray = array(
+            $twee_jaar => array(
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 0,
+                9 => 0,
+                10 => 0,
+                11 => 0,
+                 12 => 0),
+            $vorig_jaar => array(
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 0,
+                9 => 0,
+                10 => 0,
+                11 => 0,
+                12 => 0),
+            $huidig_jaar => array(
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 0,
+                9 => 0,
+                10 => 0,
+                11 => 0,
+                12 => 0)
+        );
+        while ($row = mysqli_fetch_array($result)) {
+            $associativeArray[$row['year']][$row['month']] = $row['aantalDossiers'];
+        }
+        return array($huidig_jaar, $vorig_jaar, $twee_jaar, $associativeArray);
+    }
+
 }
