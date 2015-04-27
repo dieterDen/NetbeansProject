@@ -73,10 +73,9 @@ class AlgemeenInfo extends Controller {
      * @return void
      */
     function print_briefAfwezigheden($elementnummer) {
-        //echo 'we zijn in method print_briefAfwezigheden in controller';
-        echo $elementnummer;
+        //echo $elementnummer;
         $this->view->overzichtCommentaren = $this->model->get_afwezigheidCommentaren($elementnummer);
-        print_r($this->view->overzichtCommentaren);
+        //print_r($this->view->overzichtCommentaren);
         $this->view->render('algemeenInfo/print_briefAfwezigheden', true);
     }
 

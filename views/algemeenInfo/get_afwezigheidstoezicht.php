@@ -38,6 +38,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
             var createBrief = function (param) {
                 var elementnummer = $(param).parents("tr").find(">:first-child").text();
                 window.location.href = '<?php echo URL; ?>algemeenInfo/print_briefAfwezigheden/' + elementnummer;
+                /*window.location.href = '<?php echo URL; ?>algemeenInfo/print_briefAfwezigheden/';*/
             }
         </script>
         <?php
