@@ -20,7 +20,7 @@ class algemeenInfo_model extends Model {
      * @return Array[][] Tweedimensionale array van key-value waarden van info van afwezigheidstoezicht
      */
     function get_afwezigheidstoezicht() {
-        $result = $this->db->query("SELECT afwezigheidstoezicht_elementnummer as 'elementnummer', afwezigheidstoezicht_naam as 'bewoner naam', afwezigheidstoezicht_voornaam as 'bewoner voornaam', afwezigheidstoezicht_adres as 'adres', afwezigheidstoezichttekst_tekst as 'details en commentaar', afwezigheidstoezicht_elementbegindatum as 'begindatum', bezocht as 'bezocht', `dagen geleden` FROM islp.view_afwezigheidstoezicht");
+        $result = $this->db->query("SELECT afwezigheidstoezicht_elementnummer as 'elementnummer', afwezigheidstoezicht_naam as 'bewoner naam', afwezigheidstoezicht_voornaam as 'bewoner voornaam', afwezigheidstoezicht_adres as 'adres', replace(afwezigheidstoezichttekst_tekst,'@@',';') as 'details en commentaar', afwezigheidstoezicht_elementbegindatum as 'begindatum', afwezigheidstoezicht_elementeinddatum as 'einddatum', bezocht as 'bezocht', `dagen geleden` FROM islp.view_afwezigheidstoezicht");
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }
@@ -111,6 +111,19 @@ class algemeenInfo_model extends Model {
      */
     function get_afwezigheidCommentaren($elementnummer) {
         $result = $this->db->query('SELECT * FROM islp.view_afwezigheidstoezichtTekst where lower(afwezigheidstoezichttekst_aardtekst) = "commentaar" and afwezigheidstoezichttekst_elementnummer like ' . $elementnummer);
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
+
+    /**
+     * De functie haalt de commentaren op van een afwezigheid via de bijhorende elementnummer
+     * @param string elementnummer van afwezigheid
+     * @return Tweedimensionale array van key-value waarden van commentaren van afwezigheidstoezicht
+     */
+    function get_allCommentaren() {
+        $result = $this->db->query('SELECT afwezigheidstoezichttekst_elementnummer, afwezigheidstoezichttekst_tekst  FROM islp.view_afwezigheidstoezichtTekst where lower(afwezigheidstoezichttekst_aardtekst) = "commentaar"');
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }

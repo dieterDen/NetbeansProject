@@ -60,8 +60,9 @@ class AlgemeenInfo extends Controller {
      */
     function print_overzichtAfwezigheden() {
         $this->view->overzichtAfwezigheden = $this->model->get_afwezigheidstoezicht();
-        //print_r($this->view->overzichtAfwezigheden);
-        //bovenstaande code werkt
+        $this->view->overzichtCommentaren=$this->model->get_allCommentaren();
+        //$this->view->overzichtCommentaren = $this->model->get_afwezigheidCommentaren();
+        // print_r($this->view->overzichtAfwezigheden);
         $this->view->render('algemeenInfo/print_overzichtAfwezigheden', true);
     }
 

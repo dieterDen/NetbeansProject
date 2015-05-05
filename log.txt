@@ -71,3 +71,4 @@
 2015-04-16 16:02:34 - ERROR --> Bootstrap: geen geldige parameter meegegeven aan controller functie 
 2015-04-16 16:02:34 - ERROR --> pagina bestaat niet: /algemeenInfo/URl/print_overzichtAfwezigheden 
 2015-04-23 15:44:16 - ERROR --> Kan pdf niet verwijderen, check of dat path van pdf file overeenkomt 
+2015-05-04 10:42:03 - ERROR --> Kan pdf niet verwijderen, check of dat path van pdf file overeenkomt 

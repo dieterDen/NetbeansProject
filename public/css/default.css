@@ -39,5 +39,11 @@ a {
 #header>a:visited { color: white;
 }
 
+#overzichtAfwezigheden {
+    border-top:1px red solid;
+}
 
+#overzichtAfwezigheden tr {
+    border-top:1px gray dotted;
+}
 

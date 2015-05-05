@@ -1,76 +1,104 @@
+<html>
+<link rel="stylesheet" href="<?php echo URL; ?>public/css/default.css"/>
+<body style="background-color: #ffffff;">
 <?php
 
-require_once 'PHPWord-0.12.0/src/PhpWord/Autoloader.php';
-\PhpOffice\PhpWord\Autoloader::register();
+/*
+  //$commentaren->$this->overzichtCommentaren($element[$var]);
+  $listeArticles = $this->overzichtAfwezigheden;
+  $commentaren = $this->overzichtCommentaren;
+  //print_r($commentaren);
 
-// Creating the new document...
-$phpWord = new \PhpOffice\PhpWord\PhpWord();
+  foreach ($listeArticles as $index => $element) {
+  $elementnummer = $element['elementnummer'];
+  $element['commentaar']='5';
+  //echo $element['bewoner naam'];
+  //echo $element['bewoner voornaam'];
+  foreach ($commentaren as $commentaar) {
+  if ($commentaar['afwezigheidstoezichttekst_elementnummer'] == $elementnummer['elementnummer']) {
 
-// Adding an empty Section to the document...
-$section = $phpWord->addSection();
 
-// Adding Text element with font customized inline...
-$section->addText(htmlspecialchars('Politiezone Geraardsbergen - Lierde'), array('italic' => true));
-$section->addText(
-        htmlspecialchars(
-                'Overzicht afwezigheden:'
-        ), array('name' => '', 'size' => 16)
-);
+  }
 
-$section->addTextBreak(2);
-$styleTable = array('borderBottomSize' => 18, 'borderColor' => '006699', 'cellMargin' => 80);
-$styleFirstRow = array('borderBottomSize' => 18, 'borderBottomColor' => '0000FF', 'bgColor' => '66BBFF');
-$phpWord->addTableStyle('Overzicht table', $styleTable, $styleFirstRow);
-$table = $section->addTable('Overzicht table');
-$table->addRow();
-$table->addCell()->addText('nummer');
-$table->addCell()->addText('naam');
-$table->addCell()->addText('voornaam');
-$table->addCell()->addText('adres');
-$table->addCell()->addText('begindatum');
-$table->addCell()->addText('bezocht');
-$table->addCell()->addText(' # dagen');
-$table->addRow();
-
-foreach ($this->overzichtAfwezigheden as $row) {
-    $section->addTable();
-    $table->addRow();
-    $table->addCell(1000)->addText(
-            htmlspecialchars($row['elementnummer']));
-    $table->addCell(1700)->addText(
-            htmlspecialchars($row['bewoner naam']));
-    $table->addCell(1700)->addText(
-            htmlspecialchars($row['bewoner voornaam']));
-    $table->addCell(4000)->addText(
-            htmlspecialchars($row['adres']));
-    $table->addCell(1700)->addText(
-            htmlspecialchars($row['begindatum']));
-    $table->addCell(1700)->addText(
-            htmlspecialchars($row['bezocht']));
-    $table->addCell(1700)->addText(
-            htmlspecialchars($row['dagen geleden']));
-    $table->addRow();
-    
-    $section->addTable();
-    $table->addRow();
-    $table->addCell()->addText('Details: ');
-    $table->addCell()->addText(htmlspecialchars($row['details en commentaar']));
-    $table->addRow();
+  }
+  echo $element['commentaar'];
+  }
+ */
+//print_r($listeArticles);
+//
+//
+// Make sure you have Zip extension or PclZip library loaded
+// First : include the librairy
+//require_once 'library/odf.php';
+$listeArticles = $this->overzichtAfwezigheden;
+echo '<p style="font-size:30px";><b>Overzicht vakantietoezicht</b></p>';
+echo "<p>Aantal vakantietoezichten: " . count($listeArticles) . "<br />";
+foreach ($listeArticles as $row) {
+    $string_artikel = implode(' ', array_slice($row, 0, 4));
+    $sub_array = explode(",", substr_replace($string_artikel, ',', strpos($string_artikel, ' '), 0));
+    $resterend_array = array_slice($row, 4, 5);
+    $new_array = array_merge($sub_array, $resterend_array);
+   //print_r($new_array);
+    foreach ($this->overzichtCommentaren as $row) {
+        if ($row['afwezigheidstoezichttekst_elementnummer'] == $new_array[0]) {
+            $commentaren = $commentaren . ' ' . $row['afwezigheidstoezichttekst_tekst'] . '; ';
+        }
+    }
+    echo "<table id='overzichtAfwezigheden' style='width:100%;border-collapse:true;'>"
+    . "<tr><th style='text-align:left;'>Toezicht " . $new_array[0] . ": bezocht: " . $new_array['bezocht'] . ", dagen geleden: " . $new_array['dagen geleden'] . "</th><th style='text-align:left';>Details</th></tr>"
+    . "<tr><td>Toezicht</td><td>" . $new_array[0] . "</td><tr/>"
+    . "<tr><td>Gegevens</td><td>" . $new_array[1] . "</td></tr>"
+    . "<tr><td>Begindatum</td><td>" . $new_array['begindatum'] . "</td></tr>"
+    . "<tr><td>Einddatum</td><td>" . $new_array['afwezigheidstoezicht_elementeinddatum'] . "</td></tr>"
+    . "<tr><td>Details</td><td>" . $new_array['details en commentaar'] . "</td></tr>"
+    . "<tr><td>Commentaren</td><td>" . $commentaren . "</td></tr>"
+    . "</table><br />";
 }
 
-$file = 'index.odt';
 
 
-//header("Content-Description: File Transfer");
-//header('Content-Disposition: attachment; filename="index.odt"');
-header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-header('Content-Disposition: apego; filename="index.odt"');
-
-header('Cache-Control: max-age= 0');
 
 
-// Saving the document as ODF file...
-$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'ODText');
-ob_clean();
-$objWriter->save('php://output');
 
+
+
+
+
+
+
+//print_r($string_artikels);
+//$aantalAfwezigheden=count($listeArticles);
+/* $odf = new odf("tutoriel6.odt");
+
+  $odf->setVars('titre', 'Rapport vakantietoezicht');
+
+  $message = "Aantal vakantietoezichten: ".$aantalAfwezigheden;
+
+  $odf->setVars('message', $message);
+
+
+  foreach ($listeArticles AS $element) {
+  $article = $odf->setSegment('articles');
+
+  $keys = array_keys($element);
+  foreach ($element as $var) {
+
+
+  $article->titreArticle(array_search($var, $element));
+  $article->texteArticle($var);
+
+  $article->merge();
+  }
+  }
+  $odf->mergeSegment($article);
+
+
+  // We export the file
+  ob_clean();
+  $odf->exportAsAttachedFile(); */
+?>
+
+
+
+</body>
+</html>

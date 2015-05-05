@@ -6,7 +6,7 @@
  * @subpackage algemeenInfo
  * @version 0.0
  */
-//echo 'inside view get_afwezigheidInlichtingen';    
+ 
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +26,7 @@
                 <div >
                     <?php
                     foreach ($this->afwezigheidInlichtingen as $row) {
-                        echo $row['afwezigheidstoezichttekst_tekst'] . "<br /><br />";
+                        echo str_replace("@@",'<br />',$row['afwezigheidstoezichttekst_tekst']) . "<br /><br />";
                     }
                     ?>
 

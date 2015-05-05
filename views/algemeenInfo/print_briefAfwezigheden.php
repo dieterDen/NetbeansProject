@@ -2,7 +2,7 @@
 
 // Make sure you have Zip extension or PclZip library loaded
 // First : include the librairy
-
+/*
 require_once 'library/odf.php';
 
 $odf = new odf("tutoriel6.odt");
@@ -16,15 +16,17 @@ $odf->setVars('message', $message,true,'UTF-8');
 
 $listeArticles=array();
 
+$listeArticles=
+
 $listeArticles = array(
-	array(	'datum' => 'PHP',
-			'texte' => 'PHP (sigle de PHP: Hypertext Preprocessor), est un langage de scripts (...)',
+	array(	'datum' => $this->overzichtCommentaren[datum],
+			'texte' => 'test afwezigheid',
 	),
 	array(	'datum' => 'MySQL',
-			'texte' => 'MySQL est un systeme',
+			'texte' => 'afwezigheid 2',
 	),
 	array(	'datum' => 'Apache',
-			'texte' => 'Apache HTTP Server, souvent Apache, est un logiciel de serveur (...)',
+			'texte' => 'Afwezigheid 3)',
 	),		
 );
 
@@ -39,6 +41,7 @@ $odf->mergeSegment($article);
 // We export the file
 ob_clean();
 $odf->exportAsAttachedFile();
+*/
 ?>
 
 
