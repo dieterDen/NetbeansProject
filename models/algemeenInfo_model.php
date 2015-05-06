@@ -123,7 +123,7 @@ class algemeenInfo_model extends Model {
      * @return Tweedimensionale array van key-value waarden van commentaren van afwezigheidstoezicht
      */
     function get_allCommentaren() {
-        $result = $this->db->query('SELECT afwezigheidstoezichttekst_elementnummer, afwezigheidstoezichttekst_tekst  FROM islp.view_afwezigheidstoezichtTekst where lower(afwezigheidstoezichttekst_aardtekst) = "commentaar"');
+        $result = $this->db->query('SELECT afwezigheidstoezichttekst_elementnummer, afwezigheidstoezichttekst_tekst, afwezigheidstoezichttekst_tekstcreatiedatumtijd as "datum"  FROM islp.view_afwezigheidstoezichtTekst where lower(afwezigheidstoezichttekst_aardtekst) = "commentaar"');
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }

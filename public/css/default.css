@@ -1,12 +1,12 @@
 body {
     background: silver;
-    
+
 
 }
 
 #header {
     padding: 20px;
-  //  background:#00438a;
+    //  background:#00438a;
     background:#004D9F;
     color: white;
     width: 98%;
@@ -34,8 +34,6 @@ a {
     text-decoration: none;
 }
 
-
-
 #header>a:visited { color: white;
 }
 
@@ -43,7 +41,19 @@ a {
     border-top:1px red solid;
 }
 
-#overzichtAfwezigheden tr {
-    border-top:1px gray dotted;
+#overzichtAfwezigheden > tbody > tr > td {
+    border-top:1px #C8C8C8   dotted;
+    vertical-align: text-top;
+
 }
+
+#overzichtAfwezigheden > tbody > tr:nth-child(even) {
+    background:  #F0F0F0;
+}
+
+.br_afw {
+    width: 250px;
+}
+
+
 
