@@ -29,10 +29,10 @@ This is the main page welcome!
     <div><a href="<?php echo URL; ?>functioneelBeheer/get_imeiNummers"><?php echo $lang['IMEI']; ?></a></div>
 </div>
 <div id="mm3" style="width: 250px;">
-    <div><?php echo $lang['GF_VO']; ?></div>
-    <div><?php echo $lang['kantschriften']; ?></div>
-    <div><?php echo $lang['woonstveranderingen']; ?></div>
-    <div><?php echo $lang['hercosi']; ?></div>
+    <div><a href="<?php echo URL; ?>afwerkingstermijnen/get_GF_VO"><?php echo $lang['GF_VO']; ?></a></div>
+    <div><a href="<?php echo URL; ?>afwerkingstermijnen/get_kantschriften"><?php echo $lang['kantschriften']; ?></a></div>
+    <div><a href="<?php echo URL; ?>afwerkingstermijnen/get_woonstveranderingen"><?php echo $lang['woonstveranderingen']; ?></a></div>
+    <div><a href="<?php echo URL; ?>afwerkingstermijnen/get_hercosi"><?php echo $lang['hercosi']; ?></a></div>
 </div>
 
 <hr>

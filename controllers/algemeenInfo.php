@@ -19,7 +19,6 @@ class AlgemeenInfo extends Controller {
      * geeft een  overzicht van alle afwezigheden.
      * Date voor statistieken wordt ook meegegeven aan view.
      * @return void
-     * @todo extra: print functie die pdf toont of nog liever odf file
      */
     function get_afwezigheidstoezicht() {
         $this->view->afwezigheidslijst = $this->model->get_afwezigheidstoezicht();
@@ -60,7 +59,7 @@ class AlgemeenInfo extends Controller {
      */
     function print_overzichtAfwezigheden() {
         $this->view->overzichtAfwezigheden = $this->model->get_afwezigheidstoezicht();
-        $this->view->overzichtCommentaren=$this->model->get_allCommentaren();
+        $this->view->overzichtCommentaren = $this->model->get_allCommentaren();
         //$this->view->overzichtCommentaren = $this->model->get_afwezigheidCommentaren();
         // print_r($this->view->overzichtAfwezigheden);
         $this->view->render('algemeenInfo/print_overzichtAfwezigheden', true);
@@ -77,8 +76,8 @@ class AlgemeenInfo extends Controller {
         //echo $elementnummer;
         $this->view->overzichtCommentaren = $this->model->get_afwezigheidCommentaren($elementnummer);
         $this->view->gegevens_afwezigheid = $this->model->get_afwezigheidstoezicht();
-        $this->view->elementnummer=$elementnummer;
-       // print_r($this->view->overzichtCommentaren);
+        $this->view->elementnummer = $elementnummer;
+        // print_r($this->view->overzichtCommentaren);
         $this->view->render('algemeenInfo/print_briefAfwezigheden', true);
     }
 

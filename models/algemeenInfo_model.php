@@ -16,7 +16,7 @@ class algemeenInfo_model extends Model {
     }
 
     /**
-     * De functie haalt alle algemene info op uit voor afwezigheidstoezicht voor de view view_afwezigheidstoezicht
+     * De functie haalt alle algemene info op voor afwezigheidstoezicht voor de view get_afwezigheidstoezicht
      * @return Array[][] Tweedimensionale array van key-value waarden van info van afwezigheidstoezicht
      */
     function get_afwezigheidstoezicht() {

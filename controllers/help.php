@@ -18,9 +18,7 @@ class Help  extends Controller {
     
     public function  other($arg=false) 
     {
-       // echo ' we are in other<br />';
-       //echo 'Optional:' .$arg.'<br />';
-        
+               
         require 'models/help_model.php';
         $model=new Help_Model();
         $this->view->blah=$model->blah();
