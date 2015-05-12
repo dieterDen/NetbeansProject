@@ -19,11 +19,40 @@ class Afwerkingstermijnen extends Controller {
      * geeft een  overzicht van alle gerechtelijk niet-verkeer en verkeersongeval ouder dan 14 dagen
      * Data wordt doorgegeven aan view
      * @return void
-     * @todo extra: print functie die pdf toont of nog liever odf file
      */
     function get_GF_VO() {
-        echo 'inside controller afwerkingstermijnen';
+        $this->view->gerechtelijkeFeiten = $this->model->get_gerechtelijkefeiten();
         $this->view->render('afwerkingstermijnen/get_GF_VO');
+    }
+
+    /**
+     * geeft een  overzicht van alle kantschriften ouder dan 30 dagen
+     * Data wordt doorgegeven aan view
+     * @return void
+     */
+    function get_kantschriften() {
+        $this->view->kantschriften = $this->model->get_kantschriften();
+        $this->view->render('afwerkingstermijnen/get_kantschriften');
+    }
+
+    /**
+     * geeft een  overzicht van alle woonstveranderingen ouder dan 14 dagen
+     * Data wordt doorgegeven aan view
+     * @return void
+     */
+    function get_woonstveranderingen() {
+        echo 'inside controller afwerkingstermijnen';
+        $this->view->render('afwerkingstermijnen/get_woonstveranderingen');
+    }
+
+    /**
+     * geeft een  overzicht van alle hercosi ouder dan 5 dagen
+     * Data wordt doorgegeven aan view
+     * @return void
+     */
+    function get_hercosi() {
+        echo 'inside controller afwerkingstermijen';
+        $this->view->render('afwerkingstermijnen/get_hercosi');
     }
 
 }

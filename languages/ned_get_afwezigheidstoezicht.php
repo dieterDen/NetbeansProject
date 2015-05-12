@@ -11,5 +11,6 @@ $lang['adres'] = 'adres';
 $lang['begindatum'] = 'begindatum';
 $lang['bezocht'] = 'bezocht';
 $lang['dagen geleden']= 'dagen geleden';
+$lang['BPT']= 'bpt';
 
 ?>

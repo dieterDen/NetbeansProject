@@ -119,7 +119,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                                     name: <?php
         $vorig_jaar = $this->statistiek_afwezigheid[1];
         echo $vorig_jaar;
-        ?>, 
+        ?>,
                                     data: [<?php
         for ($i = 1; $i <= 12; $i++) {
             echo $this->statistiek_afwezigheid[3][$vorig_jaar][$i] . ",";
@@ -145,15 +145,27 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                     });
                 });
             </script>
-            <a class="btn1" href="#">Verberg statistieken ></a>
-            <a style="float: left;" class="btn2" href="#">Toon statistieken ></a>
-            <a style="margin-left: 80px;"class="btn3" href="<?php echo URL; ?>algemeenInfo/print_overzichtAfwezigheden">Print overzicht af ></a>
+            <a class="btn1" href="#">Verberg statistieken</a>
+            <a style="float: left;" class="btn2" href="#"Statistieken >Statistieken</a>
+            <a style="margin-left: 80px;"class="btn3" target="_blank" href="<?php echo URL; ?>algemeenInfo/print_overzichtAfwezigheden">Globaal overzicht</a>
+            <?php
+            foreach ($this->wijken as $row) {
+                echo '
+            <a style = "margin-left: 80px;" class = "btn" target = "_blank" href = "' . URL . 'algemeenInfo/print_overzichtAfwezigheden_' . str_replace(' ', '', $row['afwezigheidstoezicht_wijk']) . '">' . $row['afwezigheidstoezicht_wijk'] . '</a>';
+            }
+            // velden met geen wijk
+            if (count($this->foutiefWijken) != 0) {
+                echo '
+            <a style = "margin-left: 80px;color: red;" class = "btn" target = "_blank" href = "' . URL . 'algemeenInfo/print_overzichtAfwezigheden_FoutiefTeam">Foutief Team</a>';
+            }
+            ?>
 
             <div style="margin:20px 0;"></div>
             <table id="datagrid" class="easyui-datagrid" title="Afwezigheidstoezicht" style="width:98%;" data-options="singleSelect:true,fitColumns:true,remoteSort:false">
                 <thead>
                     <tr>
                         <th data-priority data-options="field:'elementnummer',sortable:true,auto:true,align:'center'"><?php echo $lang['elementnummer']; ?></th>
+                        <th data-priority data-options="field:'wijk',sortable:true,auto:true,align:'center'"><?php echo $lang['BPT']; ?></th>
                         <th data-options="field:'bewNaam',sortable:true,auto:true"><?php echo $lang['bewoner naam']; ?></th>
                         <th data-options="field:'bewVoornaam',sortable:true,auto:true"><?php echo $lang['bewoner voornaam']; ?></th>
                         <th data-options="field:'adres',sortable:true,auto:true"><?php echo $lang['adres']; ?></th>
@@ -168,6 +180,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                     <?php
                     foreach ($this->afwezigheidslijst as $row) {
                         echo '<tr><td>' . $row['elementnummer'] . '</td>'
+                        . '<td>' . $row['afwezigheidstoezicht_wijk'] . '</td>'
                         . '<td>' . $row['bewoner naam'] . '</td>'
                         . '<td>' . $row['bewoner voornaam'] . '</td>'
                         . '<td>' . $row['adres'] . '</td>'
@@ -175,7 +188,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                         . '<td>' . $row['begindatum'] . '</td>'
                         . '<td>' . $row['bezocht'] . '</td>'
                         . '<td>' . $row['dagen geleden'] . '</td>'
-                        . '<td><a href="#" id="divPrintBrief" onclick="createBrief(this);">Print brief</a></td>'
+                        . '<td><a href="#" id="divPrintBrief" onclick="createBrief(this);">Brief</a></td>'
                         . '</tr>';
                     }
                     ?>

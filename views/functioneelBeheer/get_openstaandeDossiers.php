@@ -15,7 +15,7 @@ include_once 'languages/ned_get_openstaandeDossiers.php';
         <script src="<?php echo URL; ?>public/js/highcharts.js"></script>
         <script src="jquery.highchartTable.js" type="text/javascript"></script>   
     </head>
-    <body>
+    <body>  
         <div id="container" style="width: 100%;"></div>
         <script>
             $(document).ready(function () {
@@ -81,7 +81,6 @@ for ($i = 1; $i <= 12; $i++) {
 }
 ?>]
 
-
                             },
                             {
                                 name: <?php
@@ -130,8 +129,9 @@ for ($i = 1; $i <= 12; $i++) {
                 <?php
                 $row_opsteller = $this->statistiekPerWeek;
                 $naam = $row_opsteller[0]['opsteller'];
+                $aantalDossiers = count($this->info_openstaandeDossiers);
                 echo '
-            <table id="tt" class="easyui-datagrid" title="Dossiers: ' . $naam . '" style="width:85%;height:500px;"
+            <table id="tt" class="easyui-datagrid" title="Dossiers(' . $aantalDossiers . '): ' . $naam . '" style="width:85%;height:500px;"
                    data-options="singleSelect:true,collapsible:false,fitColumns:true, remoteSort:false">
                     ';
                 ?>

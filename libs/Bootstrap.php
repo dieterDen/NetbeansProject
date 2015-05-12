@@ -14,6 +14,7 @@ use KLogger;
  * @since 2015-03-24
  * 
  */
+
 class Bootstrap {
 
     /**
@@ -83,7 +84,7 @@ class Bootstrap {
     }
 
     /**
-     * Deze functie gaat foutboodschap tonen 'page doesn't exists' aan gebruiker indien pagina niet geladen kan worden
+     * Deze functie gaat foutboodschap tonen aan gebruiker indien pagina niet geladen kan worden
      * 
      * @return void
      * @since 2015-03-24
@@ -91,7 +92,7 @@ class Bootstrap {
     function error() {
         require 'controllers/error.php';
         $controller = new Error();
-        $controller->index();
+        $controller->index("Page doesn\'t exists");
         return false;
     }
 

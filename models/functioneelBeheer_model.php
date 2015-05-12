@@ -24,6 +24,9 @@ class functioneelBeheer_model extends Model {
      */
     function get_imeiNummers() {
         $result = $this->db->query("SELECT Dossiernaam as 'Dossiernummer', element as 'Element', elementnummer as 'Elementnummer',IMEINummer as 'IMEI-nummer' , merk as 'Merk'  from islp.view_imeiNummers ");
+        if (!$result) {
+            $this->error("Check query in get_imeiNummers in klasse functioneelBeheer_model");
+        }
         while ($row = $result->fetch_assoc()) {
             switch (true) {
                 case preg_match('/^ *$/', $row['IMEI-nummer']): $row['opmerking'] = "Geen spaties toegelaten.";
@@ -65,6 +68,9 @@ class functioneelBeheer_model extends Model {
      */
     function get_openstaandeDossiers_namen() {
         $result = $this->db->query("SELECT * from islp.view_openstaande_dossiers_hitparade");
+        if (!$result) {
+            $this->error("Check query in get_openstaandeDossiers in klasse functioneelBeheer_model");
+        }
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }
@@ -81,6 +87,9 @@ class functioneelBeheer_model extends Model {
     function get_openstaandeDossiers($naam) {
         $naam = urldecode($naam);
         $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiers WHERE lower(opsteller) = \"" . strtolower($naam) . "\"");
+        if (!$result) {
+            $this->error("Check query in get_openstaandeDossiers in klasse functioneelBeheer_model");
+        }
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }
@@ -96,14 +105,24 @@ class functioneelBeheer_model extends Model {
     function get_statistiekPerWeek($naam) {
         $naam = urldecode($naam);
         $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiersPerWeek WHERE lower(opsteller) = \"" . strtolower($naam) . "\"");
+        if (!$result) {
+            $this->error("Check query in get_statistiekPerWeek in klasse functioneelBeheer_model");
+        }
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }
         return $rows;
     }
 
+    /**
+     * De functie haalt uit de view_statOpenstaandeDossiers
+     * @return Array[][] Tweedimensionale array met gegevens van 3 jaar
+     */
     function get_openstaandeDossiersStatistiek() {
         $jaren = $this->db->query("select distinct year from view_statOpenstaandeDossiers");
+        if (!$jaren) {
+            $this->error("Check query in get_openstaandeDossiersStatistiek in klasse functioneelBeheer_model");
+        }
         while ($row = $jaren->fetch_assoc()) {
             $rows[] = $row;
         }
@@ -118,6 +137,9 @@ class functioneelBeheer_model extends Model {
         $twee_jaar = $huidig_jaar - 2;
 
         $result = $this->db->query("select * from view_statOpenstaandeDossiers");
+        if (!$result) {
+            $this->error("Check query in get_openstaandeDossiersStatistiek in klasse functioneelBeheer_model");
+        }
         $associativeArray = array(
             $twee_jaar => array(
                 1 => 0,
@@ -131,7 +153,7 @@ class functioneelBeheer_model extends Model {
                 9 => 0,
                 10 => 0,
                 11 => 0,
-                 12 => 0),
+                12 => 0),
             $vorig_jaar => array(
                 1 => 0,
                 2 => 0,
@@ -163,6 +185,13 @@ class functioneelBeheer_model extends Model {
             $associativeArray[$row['year']][$row['month']] = $row['aantalDossiers'];
         }
         return array($huidig_jaar, $vorig_jaar, $twee_jaar, $associativeArray);
+    }
+
+    function error($message) {
+        require 'controllers/error.php';
+        $controller = new Error();
+        $controller->index('Er is een database probleem opgetreden. Gelieve contact op te nemen met de systeembeheerder.', $message);
+        return false;
     }
 
 }

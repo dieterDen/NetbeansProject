@@ -23,7 +23,64 @@ class AlgemeenInfo extends Controller {
     function get_afwezigheidstoezicht() {
         $this->view->afwezigheidslijst = $this->model->get_afwezigheidstoezicht();
         $this->view->statistiek_afwezigheid = $this->model->get_afwezigheidstoezichtStatistiek();
+        $this->view->wijken = $this->model->get_wijken();
+        $this->view->foutiefWijken = $this->model->get_afwezigheidstoezichtFoutiefTeam();
         $this->view->render('algemeenInfo/get_afwezigheidstoezicht', true);
+    }
+
+    /**
+     * geeft een  overzicht van alle afwezigheden van team West.
+     * Alle commentaren worden opgehaald en later gefilterd in view
+     * @return void
+     */
+    function print_overzichtAfwezigheden_TeamWest() {
+        $this->view->overzichtAfwezigheden = $this->model->get_afwezigheidstoezichtTeam("team west");
+        $this->view->overzichtCommentaren = $this->model->get_allCommentaren();
+        $this->view->render('algemeenInfo/print_overzichtAfwezigheden_TeamWest', true);
+    }
+
+    /**
+     * geeft een  overzicht van alle afwezigheden van team Oost.
+     * Alle commentaren worden opgehaald en later gefilterd in view
+     * @return void
+     */
+    function print_overzichtAfwezigheden_TeamOost() {
+        $this->view->overzichtAfwezigheden = $this->model->get_afwezigheidstoezichtTeam("team oost");
+        $this->view->overzichtCommentaren = $this->model->get_allCommentaren();
+        $this->view->render('algemeenInfo/print_overzichtAfwezigheden_TeamOost', true);
+    }
+
+    /**
+     * geeft een  overzicht van alle afwezigheden van team Centrum.
+     * Alle commentaren worden opgehaald en later gefilterd in view
+     * @return void
+     */
+    function print_overzichtAfwezigheden_TeamCentrum() {
+        $this->view->overzichtAfwezigheden = $this->model->get_afwezigheidstoezichtTeam("team centrum");
+        $this->view->overzichtCommentaren = $this->model->get_allCommentaren();
+        $this->view->render('algemeenInfo/print_overzichtAfwezigheden_TeamCentrum', true);
+    }
+
+    /**
+     * geeft een  overzicht van alle afwezigheden van team Lierde.
+     * Alle commentaren worden opgehaald en later gefilterd in view
+     * @return void
+     */
+    function print_overzichtAfwezigheden_TeamLierde() {
+        $this->view->overzichtAfwezigheden = $this->model->get_afwezigheidstoezichtTeam("team lierde");
+        $this->view->overzichtCommentaren = $this->model->get_allCommentaren();
+        $this->view->render('algemeenInfo/print_overzichtAfwezigheden_TeamLierde', true);
+    }
+
+    /**
+     * geeft een  overzicht van alle afwezigheden die geen team hebben.
+     * Alle commentaren worden opgehaald en later gefilterd in view
+     * @return void
+     */
+    function print_overzichtAfwezigheden_FoutiefTeam() {
+        $this->view->overzichtAfwezigheden = $this->model->get_afwezigheidstoezichtFoutiefTeam();
+        $this->view->overzichtCommentaren = $this->model->get_allCommentaren();
+        $this->view->render('algemeenInfo/print_overzichtAfwezigheden_FoutiefTeam', true);
     }
 
     /**
@@ -132,8 +189,6 @@ class AlgemeenInfo extends Controller {
 
     /**
      * controller actie voor GF gisteren en vandaag.
-     * 
-     * 
      * @return void
      */
     function get_gerechtelijkeFeiten() {

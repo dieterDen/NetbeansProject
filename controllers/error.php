@@ -15,17 +15,19 @@ class Error extends Controller {
     function __construct() {
         parent::__construct();
     }
+
     /**
      * index is de default functie van een controller.
      * Deze functie staat in voor logging en tonen van foutbooschap
-     *@return void 
+     * @return void 
      */
-    function index() {
-        $this->view->msg = 'This page doesnt exists';
+    function index($foutBoodschap, $message = " ") {
+        $this->view->msg = $foutBoodschap;
         $this->view->render('error/index');
 
         $log = KLogger::getInstance();
         $log->LogError("pagina bestaat niet: " . $_SERVER['REQUEST_URI']);
+        $log->LogFatal($message);
     }
 
 }

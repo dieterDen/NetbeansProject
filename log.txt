@@ -73,3 +73,117 @@
 2015-04-23 15:44:16 - ERROR --> Kan pdf niet verwijderen, check of dat path van pdf file overeenkomt 
 2015-05-04 10:42:03 - ERROR --> Kan pdf niet verwijderen, check of dat path van pdf file overeenkomt 
 2015-05-07 9:02:00 - ERROR --> pagina bestaat niet: /afwerkingstermijnen/get_kantschriften 
+2015-05-07 9:38:29 - ERROR --> pagina bestaat niet: /afwerkingstermijnen/get_kantschriften 
+2015-05-07 15:52:13 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-07 15:52:39 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-07 15:53:49 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-07 15:53:49 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-07 15:54:52 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-07 15:55:04 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:14:27 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:14:31 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:17:44 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:19:47 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:28:24 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:28:45 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:28:46 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:28:47 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:28:48 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:28:49 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:28:56 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:28:58 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:29:26 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:29:29 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:29:30 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:29:30 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:33:54 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:38:28 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:43:33 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:44:09 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:44:10 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:47:47 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:48:22 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:48:23 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:48:26 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:53:23 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:53:29 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 9:56:36 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:02:36 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:02:36 - ERROR --> Er is een database probleem opgetreden. Gelieve contact op te nemen met de systeembeheerder. 
+2015-05-11 10:05:40 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:05:40 - FATAL --> Er is een database probleem opgetreden. Gelieve contact op te nemen met de systeembeheerder. 
+2015-05-11 10:06:15 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:06:15 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-11 10:08:07 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:14:30 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:16:54 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:17:10 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:17:37 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:18:02 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:18:04 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:18:13 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:19:22 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:20:32 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:20:32 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-11 10:20:42 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:20:42 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-11 10:20:54 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:20:54 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-11 10:20:57 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:20:57 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-11 10:20:57 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:20:57 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-11 10:21:26 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:21:26 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-11 10:25:20 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 10:25:20 - FATAL --> Check query in get_afwezigheidstoezichtStatistiek in klasse algemeenInfo_model 
+2015-05-11 10:36:59 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_imeiNummers 
+2015-05-11 10:36:59 - FATAL --> Check query in get_imeiNummers in klasse functioneelBeheer_model 
+2015-05-11 14:12:41 - ERROR --> Bootstrap: geen geldige parameter meegegeven aan controller functie 
+2015-05-11 14:12:41 - ERROR --> pagina bestaat niet: /algemeenInfo/%3C?php%20echo%20URL;%20?%3EalgemeenInfo/print_overzichtAfwezigheden 
+2015-05-11 14:12:41 - FATAL -->   
+2015-05-11 14:12:46 - ERROR --> Bootstrap: geen geldige parameter meegegeven aan controller functie 
+2015-05-11 14:12:46 - ERROR --> pagina bestaat niet: /algemeenInfo/%3C?php%20echo%20URL;%20?%3EalgemeenInfo/print_overzichtAfwezigheden 
+2015-05-11 14:12:46 - FATAL -->   
+2015-05-11 14:12:51 - ERROR --> Bootstrap: geen geldige parameter meegegeven aan controller functie 
+2015-05-11 14:12:51 - ERROR --> pagina bestaat niet: /algemeenInfo/%3C?php%20echo%20URL;%20?%3EalgemeenInfo/print_overzichtAfwezigheden 
+2015-05-11 14:12:51 - FATAL -->   
+2015-05-11 14:12:56 - ERROR --> Bootstrap: geen geldige parameter meegegeven aan controller functie 
+2015-05-11 14:12:56 - ERROR --> pagina bestaat niet: /algemeenInfo/%3C?php%20echo%20URL;%20?%3EalgemeenInfo/print_overzichtAfwezigheden 
+2015-05-11 14:12:56 - FATAL -->   
+2015-05-11 14:15:18 - ERROR --> Bootstrap: geen geldige parameter meegegeven aan controller functie 
+2015-05-11 14:15:18 - ERROR --> pagina bestaat niet: /algemeenInfo/%3C?php%20echo%20URL;%20?%3EalgemeenInfo/print_overzichtAfwezigheden 
+2015-05-11 14:15:18 - FATAL -->   
+2015-05-11 14:18:17 - ERROR --> Bootstrap: geen geldige parameter meegegeven aan controller functie 
+2015-05-11 14:18:17 - ERROR --> pagina bestaat niet: /algemeenInfo/%3C?php%20echo%20URL;%20?%3EalgemeenInfo/print_overzichtAfwezigheden 
+2015-05-11 14:18:17 - FATAL -->   
+2015-05-11 14:20:45 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_bpt-Lierde 
+2015-05-11 14:20:45 - FATAL -->   
+2015-05-11 14:23:34 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_bpt-Lierde 
+2015-05-11 14:23:34 - FATAL -->   
+2015-05-11 14:25:50 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_bpt-Oost 
+2015-05-11 14:25:50 - FATAL -->   
+2015-05-11 14:26:12 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_bpt-Lierde 
+2015-05-11 14:26:12 - FATAL -->   
+2015-05-11 14:36:17 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_bpt-West 
+2015-05-11 14:36:17 - FATAL -->   
+2015-05-11 15:05:19 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_bpt-West 
+2015-05-11 15:05:19 - FATAL -->   
+2015-05-11 15:23:05 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_bpt-West 
+2015-05-11 15:23:05 - FATAL -->   
+2015-05-11 15:30:12 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_Team%20West 
+2015-05-11 15:30:12 - FATAL -->   
+2015-05-11 15:32:00 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_TeamWest 
+2015-05-11 15:32:00 - FATAL -->   
+2015-05-11 15:53:41 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 15:53:41 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-11 15:55:51 - ERROR --> pagina bestaat niet: /algemeenInfo/get_afwezigheidstoezicht 
+2015-05-11 15:55:51 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-11 15:59:43 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_TeamWest 
+2015-05-11 15:59:43 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-11 16:05:36 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_TemOost 
+2015-05-11 16:05:36 - FATAL -->   
+2015-05-11 16:18:09 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_TemOost 
+2015-05-11 16:18:09 - FATAL -->   
+2015-05-12 10:09:28 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_foutief 
+2015-05-12 10:09:28 - FATAL -->   
