@@ -20,15 +20,18 @@ include_once ("languages/ned_get_GF_VO.php");
     </head>
     <body>
         <?php
-        $teller_tweeWeken = 0;
-        $teller_aantalFeiten;
+        $teller_drieWeken = 0;
+        $teller_aantalFeiten = 0;
+
         foreach ($this->gerechtelijkeFeiten as $row) {
-            if ((strtotime($row['datum']) - strtotime(time()) / (60 * 60 * 24)) > 21) {
-                $teller_tweeWeken+=1;
-                $teller_aantalFeiten+=1;
+            $datum_GF = strtotime($row['datum']);
+            $datediff = floor((time() - $datum_GF) / (60 * 60 * 24));
+            if ($datediff > 21) {
+                $teller_drieWeken+=1;
             }
+            $teller_aantalFeiten+=1;
         }
-        $teller_drieWeken = $teller_aantalFeiten - $teller_tweeWeken;
+        $teller_tweeWeken = $teller_aantalFeiten - $teller_drieWeken;
         ?>
         <div style="margin-bottom:20px">
             <p> Denk aan de termijn van 21 dagen! <br /> Een snelle afwerking zorgt ervoor dat je niet op deze lijst voorkomt!</p>
@@ -42,6 +45,7 @@ include_once ("languages/ned_get_GF_VO.php");
                     <th field="datum" width="80" align="center"><?php echo $lang['datum']; ?></th>
                     <th field="nummer" auto="true" align="center"><?php echo $lang['nummer']; ?></th>
                     <th field="feit" width="350" align="center"><?php echo $lang['feit']; ?></th>
+                    <th field="opsteller" width="100" align="center"><?php echo $lang['opsteller']; ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -51,6 +55,7 @@ include_once ("languages/ned_get_GF_VO.php");
                     . '<td>' . $row['datum'] . '</td>'
                     . '<td>' . $row['nummer'] . '</td>'
                     . '<td>' . $row['feit'] . '</td>'
+                    . '<td>' . $row['opsteller'] . '</td>'
                     . '</tr>';
                 }
                 ?> 

@@ -202,7 +202,6 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                 });
             </script>-->
         </div> 
-
         <?php
         require 'views/footer.php';
         ?>

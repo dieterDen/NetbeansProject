@@ -172,7 +172,7 @@ class AlgemeenInfo extends Controller {
      * @return void
      */
     function get_daderGerichteAanpak() {
-        echo 'inside controller algemeenInfo dadergerichteAanpak';
+        //echo 'inside controller algemeenInfo dadergerichteAanpak';
         $this->view->render('algemeenInfo/get_daderGerichteAanpak');
     }
 

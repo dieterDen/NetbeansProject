@@ -6,7 +6,9 @@
             <name>Afwezigheidstoezicht</name>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>datagrid</word>
             <word>elementnummer</word>
+            <word>gebruiker</word>
             <word>javascript</word>
         </spellchecker-wordlist>
     </configuration>
