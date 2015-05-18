@@ -21,34 +21,38 @@ include_once ("languages/ned_get_imeiNummers.php");
     <body>
         <div style="margin-bottom:20px">
         </div>
-        <table id="tt" class="easyui-datagrid" style="width:99%" 
-               title="IMEI-nummer" data-options="singleSelect:true,collapsible:true,fitColumns:true">
-            <thead>
-                <tr>
-                    <th field="itemid" width="250" align="center"><?php echo $lang['dossiernummer']; ?></th>
-                    <th field="productid" width="350" align="center"><?php echo $lang['element']; ?></th>
-                    <th field="listprice" auto="true" align="center"><?php echo $lang['elementnummer']; ?></th>
-                    <th field="imeinummer" auto="true" align="center"><?php echo $lang['imeiNummer']; ?></th>
-                    <th field="attr1" width="150" align="center"><?php echo $lang['merk']; ?></th>
-                    <th field="opmerkingimei" width="745" align="center"><?php echo $lang['opmerkingImei']; ?></th>
+        <?php if (is_null($this->imeiNummers)) : ?>
+            <p><b>Er is geen data beschikbaar om weer te geven!</b></p>
+        <?php else : ?>
+            <table id="tt" class="easyui-datagrid" style="width:99%" 
+                   title="IMEI-nummer" data-options="singleSelect:true,collapsible:true,fitColumns:true">
+                <thead>
+                    <tr>
+                        <th field="itemid" width="250" align="center"><?php echo $lang['dossiernummer']; ?></th>
+                        <th field="productid" width="350" align="center"><?php echo $lang['element']; ?></th>
+                        <th field="listprice" auto="true" align="center"><?php echo $lang['elementnummer']; ?></th>
+                        <th field="imeinummer" auto="true" align="center"><?php echo $lang['imeiNummer']; ?></th>
+                        <th field="attr1" width="150" align="center"><?php echo $lang['merk']; ?></th>
+                        <th field="opmerkingimei" width="745" align="center"><?php echo $lang['opmerkingImei']; ?></th>
 
 
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                foreach ($this->imeiNummers as $row) {
-                    echo '<tr><td>' . $row['Dossiernummer'] . '</td>'
-                    . '<td>' . $row['Element'] . '</td>'
-                    . '<td>' . $row['Elementnummer'] . '</td>'
-                    . '<td>' . $row['IMEI-nummer'] . '</td>'
-                    . '<td>' . $row['Merk'] . '</td>'
-                    . '<td><font color="red">' . $row['opmerking'].'. ' . $row['opmerkingMerk'] . '</font></td>'
-                    . '</tr>';
-                }
-                ?> 
-            </tbody>
-        </table>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($this->imeiNummers as $row) {
+                        echo '<tr><td>' . $row['Dossiernummer'] . '</td>'
+                        . '<td>' . $row['Element'] . '</td>'
+                        . '<td>' . $row['Elementnummer'] . '</td>'
+                        . '<td>' . $row['IMEI-nummer'] . '</td>'
+                        . '<td>' . $row['Merk'] . '</td>'
+                        . '<td><font color="red">' . $row['opmerking'] . '. ' . $row['opmerkingMerk'] . '</font></td>'
+                        . '</tr>';
+                    }
+                    ?> 
+                </tbody>
+            </table>
+        <?php endif; ?>   
     </body>
 </html>
 

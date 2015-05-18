@@ -187,3 +187,23 @@
 2015-05-11 16:18:09 - FATAL -->   
 2015-05-12 10:09:28 - ERROR --> pagina bestaat niet: /algemeenInfo/print_overzichtAfwezigheden_foutief 
 2015-05-12 10:09:28 - FATAL -->   
+2015-05-18 13:14:53 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_imeiNummers 
+2015-05-18 13:14:53 - FATAL --> Check query in get_imeiNummers in klasse functioneelBeheer_model 
+2015-05-18 13:20:41 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_imeiNummers 
+2015-05-18 13:20:41 - FATAL --> Check query in get_imeiNummers in klasse functioneelBeheer_model 
+2015-05-18 13:42:30 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_imeiNummers 
+2015-05-18 13:44:32 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_imeiNummers 
+2015-05-18 13:44:32 - FATAL --> Check query in get_imeiNummers in klasse functioneelBeheer_model 
+2015-05-18 13:45:20 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_imeiNummers 
+2015-05-18 13:45:20 - FATAL --> Check query in get_imeiNummers in klasse functioneelBeheer_model 
+2015-05-18 14:30:36 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_imeiNummers 
+2015-05-18 14:30:36 - ERROR --> Check query in get_imeiNummers in klasse functioneelBeheer_model 
+2015-05-18 14:31:04 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_imeiNummers 
+2015-05-18 14:31:04 - FATAL --> Check query in get_imeiNummers in klasse functioneelBeheer_model 
+2015-05-18 14:32:42 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_imeiNummers 
+2015-05-18 14:32:42 - FATAL --> Check query in get_imeiNummers in klasse functioneelBeheer_model 
+2015-05-18 14:41:48 - ERROR --> pagina bestaat niet: /afwerkingstermijnen/get_kantschriften 
+2015-05-18 14:41:48 - FATAL --> Check query in get_kantschriften in klasse afwerkingstermijnen_model 
+2015-05-18 15:00:46 - ERROR --> pagina bestaat niet: /afwerkingstermijnen/get_kantschriften 
+2015-05-18 15:01:30 - ERROR --> pagina bestaat niet: /afwerkingstermijnen/get_kantschriften 
+2015-05-18 15:01:30 - FATAL --> Check query in get_kantschriften in klasse afwerkingstermijnen_model 

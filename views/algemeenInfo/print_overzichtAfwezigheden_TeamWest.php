@@ -10,7 +10,7 @@
         foreach ($listeArticles as $row) {
             $datum = null;
             $commentaren = null;
-            
+            $row['adres'] = str_replace('/,', ' ', $row['adres']);
             $string_artikel = implode(' ', array_slice($row, 0, 4));
             $sub_array = explode(",", substr_replace($string_artikel, ',', strpos($string_artikel, ' '), 0));
             $resterend_array = array_slice($row, 4, 5);

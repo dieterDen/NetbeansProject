@@ -5,6 +5,7 @@ $lang['dossiernummer'] = 'Dossier Nummer';
 $lang['dossiertype'] = 'Dossier Type';
 $lang['datum'] = 'Datum';
 $lang['tekst'] = 'Tekst';
+$lang['aantal'] = 'Aantal';
 $lang['2w'] = '2w';
 $lang['3w'] = '3w';
 $lang['4w'] = '4w';

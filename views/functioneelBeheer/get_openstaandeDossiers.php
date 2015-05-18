@@ -66,8 +66,10 @@ $huidig_jaar = $this->openstaandeDossiersStatistiek[0];
 echo $huidig_jaar;
 ?>,
                                 data: [<?php
-for ($i = 1; $i <= 12; $i++) {
-    echo $this->openstaandeDossiersStatistiek[3][$huidig_jaar][$i] . ",";
+for ($i = 1;
+$i <= 12;
+$i++) {
+echo $this->openstaandeDossiersStatistiek[3][$huidig_jaar][$i] . ",";
 }
 ?>]
                             }, {
@@ -76,8 +78,10 @@ $vorig_jaar = $this->openstaandeDossiersStatistiek[1];
 echo $vorig_jaar;
 ?>,
                                 data: [<?php
-for ($i = 1; $i <= 12; $i++) {
-    echo $this->openstaandeDossiersStatistiek[3][$vorig_jaar][$i] . ",";
+for ($i = 1;
+$i <= 12;
+$i++) {
+echo $this->openstaandeDossiersStatistiek[3][$vorig_jaar][$i] . ",";
 }
 ?>]
 
@@ -88,8 +92,10 @@ $twee_jaar = $this->openstaandeDossiersStatistiek[2];
 echo $twee_jaar;
 ?>,
                                 data: [<?php
-for ($i = 1; $i <= 12; $i++) {
-    echo $this->openstaandeDossiersStatistiek[3][$twee_jaar][$i] . ",";
+for ($i = 1;
+$i <= 12;
+$i++) {
+echo $this->openstaandeDossiersStatistiek[3][$twee_jaar][$i] . ",";
 }
 ?>]
                             }]
@@ -104,28 +110,32 @@ for ($i = 1; $i <= 12; $i++) {
         <a class="btn1" href="#">Verberg statistieken ></a>
         <a style="float: left;" class="btn2" href="#">Toon statistieken ></a>
         <div id="border" style="border:1px solid #A8A8A8 ;padding: 30px;">
+<?php if (is_null($this->namen_openstaandeDossiers)) : ?>
+            <p><b>Er is geen data beschikbaar om weer te geven!</b></p>
+<?php else : ?>
             <div id='table1' style="width:16%;float:left;">
-                <table class="easyui-datagrid" title="" style="width:210px;height:500px;"
-                       data-options="singleSelect:true,collapsible:false,fitColumns:true">
+                <table class="easyui-datagrid" title="" style="width:240px;height:500px;"
+                       data-options="singleSelect:true,collapsible:false,fitColumns:true,remoteSort:false">
                     <thead>
                         <tr>
-                            <th data-options="field:'itemid',width:210,align:'center'"><?php echo $lang['naam']; ?></th>
+                            <th data-options="field:'itemid', sortable:true,width:210,align:'center'"><?php echo $lang['naam']; ?></th>
+                            <th data-options="field:'aantalAfwezigheden', sortable:true,width:55,align:'center'"><?php echo $lang['aantal']; ?></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $naam = null;
                         foreach ($this->namen_openstaandeDossiers as $row) {
-                            $naam = $row['opsteller'];
-                            echo '<tr><td><a href="' . URL . 'functioneelBeheer/get_openstaandeDossiers/' . $naam . '">' . $naam . '</a></td>'
-                            . '</tr>';
+                        $naam = $row['opsteller'];
+                        echo '<tr><td><a href="' . URL . 'functioneelBeheer/get_openstaandeDossiers/' . $naam . '">' . $naam . '</a></td>'
+                        . '<td>' . $row['count(openstaande_dossiers_id)'] . '</a></td>';
                         }
                         ?>
                     </tbody>
                 </table>
             </div>
 
-            <div  id='table2'style="margin-left:220px">
+            <div  id='table2'style="margin-left:270px">
                 <?php
                 $row_opsteller = $this->statistiekPerWeek;
                 $naam = $row_opsteller[0]['opsteller'];
@@ -146,18 +156,18 @@ for ($i = 1; $i <= 12; $i++) {
                 <tbody>
                     <?php
                     foreach ($this->info_openstaandeDossiers as $row) {
-                        echo '<tr><td>' . $row['openstaande_dossiers_nummer'] . '</td>'
-                        . '<td>' . $row['openstaande_dossiers_type'] . '</td>'
-                        . '<td>' . $row['openstaande_dossiers_datum'] . '</td>'
-                        . '<td>' . $row['openstaande_dossiers_tekst'] . '</td>'
-                        . '</tr>';
+                    echo '<tr><td>' . $row['openstaande_dossiers_nummer'] . '</td>'
+                    . '<td>' . $row['openstaande_dossiers_type'] . '</td>'
+                    . '<td>' . $row['openstaande_dossiers_datum'] . '</td>'
+                    . '<td>' . $row['openstaande_dossiers_tekst'] . '</td>'
+                    . '</tr>';
                     }
                     ?>
                 </tbody>
                 </table>
             </div>
             <br>
-            <?php echo '
+<?php echo '
     <table class="easyui-datagrid" title="Dossiers: ' . $naam . '" style="width:720px;height:33%;"
            data-options="singleSelect:true,collapsible:true,fitColumns:true">
             '; ?>
@@ -174,17 +184,18 @@ for ($i = 1; $i <= 12; $i++) {
             <tbody>
                 <?php
                 foreach ($this->statistiekPerWeek as $row) {
-                    echo '<tr><td>' . $row['openstaande_dossiers_type'] . '</td>'
-                    . '<td>' . $row['2w'] . '</td>'
-                    . '<td>' . $row['3w'] . '</td>'
-                    . '<td>' . $row['4w'] . '</td>'
-                    . '<td>' . $row['5w'] . '</td>'
-                    . '<td>' . $row['+6w'] . '</td>'
-                    . '</tr>';
+                echo '<tr><td>' . $row['openstaande_dossiers_type'] . '</td>'
+                . '<td>' . $row['2w'] . '</td>'
+                . '<td>' . $row['3w'] . '</td>'
+                . '<td>' . $row['4w'] . '</td>'
+                . '<td>' . $row['5w'] . '</td>'
+                . '<td>' . $row['+6w'] . '</td>'
+                . '</tr>';
                 }
                 ?>
             </tbody>
         </table>
+        <?php endif; ?>   
     </div>
 </body>
 </html>

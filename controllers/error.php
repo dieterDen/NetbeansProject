@@ -21,7 +21,7 @@ class Error extends Controller {
      * Deze functie staat in voor logging en tonen van foutbooschap
      * @return void 
      */
-    function index($foutBoodschap, $message = " ") {
+    function index($foutBoodschap, $message = "") {
         $this->view->msg = $foutBoodschap;
         $this->view->render('error/index');
 

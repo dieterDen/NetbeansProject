@@ -23,6 +23,7 @@ class functioneelBeheer_model extends Model {
      * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
      */
     function get_imeiNummers() {
+        
         $result = $this->db->query("SELECT Dossiernaam as 'Dossiernummer', element as 'Element', elementnummer as 'Elementnummer',IMEINummer as 'IMEI-nummer' , merk as 'Merk'  from islp.view_imeiNummers ");
         if (!$result) {
             $this->error("Check query in get_imeiNummers in klasse functioneelBeheer_model");
@@ -67,7 +68,7 @@ class functioneelBeheer_model extends Model {
      * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
      */
     function get_openstaandeDossiers_namen() {
-        $result = $this->db->query("SELECT * from islp.view_openstaande_dossiers_hitparade");
+        $result = $this->db->query("SELECT * from islp.view_openstaande_dossiers_hitparade order by opsteller ");
         if (!$result) {
             $this->error("Check query in get_openstaandeDossiers in klasse functioneelBeheer_model");
         }
@@ -76,7 +77,6 @@ class functioneelBeheer_model extends Model {
         }
         return $rows;
     }
-
     /**
      * De functie haalt alle dossiers van een persoon op adhv naam.
      * Om problemen met speciale karakters  in namen te vermijden ->  urldecode
@@ -88,7 +88,7 @@ class functioneelBeheer_model extends Model {
         $naam = urldecode($naam);
         $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiers WHERE lower(opsteller) = \"" . strtolower($naam) . "\"");
         if (!$result) {
-            $this->error("Check query in get_openstaandeDossiers in klasse functioneelBeheer_model");
+            $this->error("Check query in get_openstaandeDossiers(naam) in klasse functioneelBeheer_model");
         }
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;

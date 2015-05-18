@@ -10,7 +10,7 @@
         foreach ($listeArticles as $row) {
             $datum = null;
             $commentaren = null;
-            
+            $row['adres'] = str_replace('/,', ' ', $row['adres']);
             $string_artikel = implode(' ', array_slice($row, 0, 4));
             $sub_array = explode(",", substr_replace($string_artikel, ',', strpos($string_artikel, ' '), 0));
             $resterend_array = array_slice($row, 4, 5);
@@ -22,7 +22,6 @@
                     $commentaren[] = $row['afwezigheidstoezichttekst_tekst'];
                 }
             }
-
             echo "<table id='overzichtAfwezigheden' style='width:100%;border-collapse:true;'>"
             . "<tr><th colspan='2'; style='text-align:left;'>Toezicht " . $new_array[0] . ": bezocht: " . $new_array['bezocht'] . ", dagen geleden: " . $new_array['dagen geleden'] . "</th><th></th></tr>"
             . "<tr><td class='br_afw'>Locatie</td><td>" . $new_array[1] . "</td></tr>"
@@ -34,7 +33,7 @@
             foreach ($datum as $key) {
                 echo $key . '<br />';
             }
-            echo "</td><td rowspan='2'>";
+            echo "</td><td rowspan='2'>"; 
             foreach ($commentaren as $value) {
                 echo $value . '<br />';
             }

@@ -147,60 +147,64 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
             </script>
             <a class="btn1" href="#">Verberg statistieken</a>
             <a style="float: left;" class="btn2" href="#"Statistieken >Statistieken</a>
-            <a style="margin-left: 80px;"class="btn3" target="_blank" href="<?php echo URL; ?>algemeenInfo/print_overzichtAfwezigheden">Globaal overzicht</a>
-            <?php
-            foreach ($this->wijken as $row) {
-                echo '
+            <?php if (is_null($this->afwezigheidslijst)) : ?>
+                <p><b>Er is geen data beschikbaar om weer te geven!</b></p>
+            <?php else : ?>
+                <a style="margin-left: 80px;"class="btn3" target="_blank" href="<?php echo URL; ?>algemeenInfo/print_overzichtAfwezigheden">Globaal overzicht</a>
+                <?php
+                foreach ($this->wijken as $row) {
+                    echo '
             <a style = "margin-left: 80px;" class = "btn" target = "_blank" href = "' . URL . 'algemeenInfo/print_overzichtAfwezigheden_' . str_replace(' ', '', $row['afwezigheidstoezicht_wijk']) . '">' . $row['afwezigheidstoezicht_wijk'] . '</a>';
-            }
-            // velden met geen wijk
-            if (count($this->foutiefWijken) != 0) {
-                echo '
+                }
+                // velden met geen wijk
+                if (count($this->foutiefWijken) != 0) {
+                    echo '
             <a style = "margin-left: 80px;color: red;" class = "btn" target = "_blank" href = "' . URL . 'algemeenInfo/print_overzichtAfwezigheden_FoutiefTeam">Foutief Team</a>';
-            }
-            ?>
+                }
+                ?>
 
-            <div style="margin:20px 0;"></div>
-            <table id="datagrid" class="easyui-datagrid" title="Afwezigheidstoezicht" style="width:98%;" data-options="singleSelect:true,fitColumns:true,remoteSort:false">
-                <thead>
-                    <tr>
-                        <th data-priority data-options="field:'elementnummer',sortable:true,auto:true,align:'center'"><?php echo $lang['elementnummer']; ?></th>
-                        <th data-priority data-options="field:'wijk',sortable:true,auto:true,align:'center'"><?php echo $lang['BPT']; ?></th>
-                        <th data-options="field:'bewNaam',sortable:true,auto:true"><?php echo $lang['bewoner naam']; ?></th>
-                        <th data-options="field:'bewVoornaam',sortable:true,auto:true"><?php echo $lang['bewoner voornaam']; ?></th>
-                        <th data-options="field:'adres',sortable:true,auto:true"><?php echo $lang['adres']; ?></th>
-                        <th data-options="field:'inlichtingen',width:550"><?php echo $lang['afwezigheids inlichtingen']; ?></th>
-                        <th data-options="field:'begDatum',sortable:true,auto:true"><?php echo $lang['begindatum']; ?></th>
-                        <th data-options="field:'bezocht',auto:true, align:'center'"><?php echo $lang['bezocht']; ?></th>
-                        <th data-options="field:'dagGeleden',sortable:true,auto:true, align:'center'"><?php echo $lang['dagen geleden']; ?></th>
-                        <th data-options="field:'printBrief', align:'center'"> </th>
-                    </tr>
-                </thead>
-                <tbody> 
-                    <?php
-                    foreach ($this->afwezigheidslijst as $row) {
-                        echo '<tr><td>' . $row['elementnummer'] . '</td>'
-                        . '<td>' . $row['afwezigheidstoezicht_wijk'] . '</td>'
-                        . '<td>' . $row['bewoner naam'] . '</td>'
-                        . '<td>' . $row['bewoner voornaam'] . '</td>'
-                        . '<td>' . $row['adres'] . '</td>'
-                        . '<td><a href="#" id="divPopup" onclick="createPopup(this);">' . substr($row['details en commentaar'], 0, 60) . '...</a></td>'
-                        . '<td>' . $row['begindatum'] . '</td>'
-                        . '<td>' . $row['bezocht'] . '</td>'
-                        . '<td>' . $row['dagen geleden'] . '</td>'
-                        . '<td><a href="#" id="divPrintBrief" onclick="createBrief(this);">Brief</a></td>'
-                        . '</tr>';
-                    }
-                    ?>
-                </tbody>
-            </table>
-            <!--<script type="text/javascript">
-                $('#datagrid').datagrid({
-                    onClickRow: function(index,row){
-                        alert('test');
-                    }
-                });
-            </script>-->
+                <div style="margin:20px 0;"></div>
+                <table id="datagrid" class="easyui-datagrid" title="Afwezigheidstoezicht" style="width:98%;" data-options="singleSelect:true,fitColumns:true,remoteSort:false">
+                    <thead>
+                        <tr>
+                            <th data-priority data-options="field:'elementnummer',sortable:true,auto:true,align:'center'"><?php echo $lang['elementnummer']; ?></th>
+                            <th data-priority data-options="field:'wijk',sortable:true,auto:true,align:'center'"><?php echo $lang['BPT']; ?></th>
+                            <th data-options="field:'bewNaam',sortable:true,auto:true"><?php echo $lang['bewoner naam']; ?></th>
+                            <th data-options="field:'bewVoornaam',sortable:true,auto:true"><?php echo $lang['bewoner voornaam']; ?></th>
+                            <th data-options="field:'adres',sortable:true,auto:true"><?php echo $lang['adres']; ?></th>
+                            <th data-options="field:'inlichtingen',width:550"><?php echo $lang['afwezigheids inlichtingen']; ?></th>
+                            <th data-options="field:'begDatum',sortable:true,auto:true"><?php echo $lang['begindatum']; ?></th>
+                            <th data-options="field:'bezocht',auto:true, align:'center'"><?php echo $lang['bezocht']; ?></th>
+                            <th data-options="field:'dagGeleden',sortable:true,auto:true, align:'center'"><?php echo $lang['dagen geleden']; ?></th>
+                            <th data-options="field:'printBrief', align:'center'"> </th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <?php
+                        foreach ($this->afwezigheidslijst as $row) {
+                            echo '<tr><td>' . $row['elementnummer'] . '</td>'
+                            . '<td>' . $row['afwezigheidstoezicht_wijk'] . '</td>'
+                            . '<td>' . $row['bewoner naam'] . '</td>'
+                            . '<td>' . $row['bewoner voornaam'] . '</td>'
+                            . '<td>' . str_replace('/,', ' ', $row['adres']) . '</td>'
+                            . '<td><a href="#" id="divPopup" onclick="createPopup(this);">' . substr($row['details en commentaar'], 0, 60) . '...</a></td>'
+                            . '<td>' . $row['begindatum'] . '</td>'
+                            . '<td>' . $row['bezocht'] . '</td>'
+                            . '<td>' . $row['dagen geleden'] . '</td>'
+                            . '<td><a href="#" id="divPrintBrief" onclick="createBrief(this);">Brief</a></td>'
+                            . '</tr>';
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            <?php endif; ?>   
+        <!--<script type="text/javascript">
+            $('#datagrid').datagrid({
+                onClickRow: function(index,row){
+                    alert('test');
+                }
+            });
+        </script>-->
         </div> 
         <?php
         require 'views/footer.php';

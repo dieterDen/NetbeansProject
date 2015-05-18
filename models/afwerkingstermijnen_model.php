@@ -33,6 +33,9 @@ class afwerkingstermijnen_model extends Model {
 
     function get_kantschriften() {
         $result = $this->db->query("SELECT * FROM islp.view_kantschriften");
+        if (!$result) {
+            $this->error("Check query in get_kantschriften in klasse afwerkingstermijnen_model");
+        }
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
         }

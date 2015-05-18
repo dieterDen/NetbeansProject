@@ -8,7 +8,6 @@
  */
 // include_once ("languages/ned_language.php"); 
 ?>
-This is the main page welcome!
 
 <div style="background:#fafafa;padding:5px;width:100%;border:1px solid #ccc;">
     <a href="#" class="easyui-menubutton" menu="#mm1" iconCls="icon-info"><?php echo $lang['algemeneInfo']; ?></a>

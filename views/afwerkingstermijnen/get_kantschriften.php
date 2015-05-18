@@ -5,7 +5,7 @@
  * @package views
  * @subpackage afwerkingstermijnen
  * @version 0.0
- */ 
+ */
 include_once ("languages/ned_get_kantschriften.php");
 ?>
 <html>
@@ -23,38 +23,42 @@ include_once ("languages/ned_get_kantschriften.php");
             <p> Denk aan de termijn van 30 dagen! &nbsp;<font style="color:red">[ >45 dagen in rode kleur]</font><br /> 
                 Een snelle afwerking zorgt ervoor dat je niet op deze lijst voorkomt!</p>
         </div>
-        <table id="tt" class="easyui-datagrid" style="width:99%" 
-               title="Kantschriften ouder dan 30 dagen" data-options="singleSelect:true,collapsible:true,fitColumns:true">
-            <thead>
-                <tr>
-                    <th field="element" auto="true" align="center"><?php echo $lang['nummer']; ?></th>
-                    <th field="datum" width="80" align="center"><?php echo $lang['datum']; ?></th>
-                    <th field="nummer" width="350" align="center"><?php echo $lang['onderwerp']; ?></th>
-                    <th field="feit" auto="true" align="center"><?php echo $lang['uitvoerder']; ?></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                foreach ($this->kantschriften as $row) {
-                    $datum_ks = strtotime($row['datum']);
-                    $datediff = floor((time() - $datum_ks) / (60 * 60 * 24));
-                    if ($datediff < 45) {
-                        echo '<tr><td>' . $row['nummer'] . '</td>'
-                        . '<td>' . $row['datum'] . '</td>'
-                        . '<td>' . $row['onderwerp - betrokkene'] . '</td>'
-                        . '<td>' . $row['uitvoerder'] . '</td>'
-                        . '</tr>';
-                    } else {
-                        echo '<tr><td><font style="color: red">' . $row['nummer'] . '</font></td>'
-                        . '<td><font style="color: red">' . $row['datum'] . '</font></td>'
-                        . '<td><font style="color: red">' . $row['onderwerp - betrokkene'] . '</font></td>'
-                        . '<td><font style="color: red">' . $row['uitvoerder'] . '</font></td>'
-                        . '</tr>';
+        <?php if (is_null($this->kantschriften)) : ?>
+        <p><b>Er is geen data beschikbaar om weer te geven!</b></p>
+        <?php else : ?>
+            <table id="tt" class="easyui-datagrid" style="width:99%" 
+                   title="Kantschriften ouder dan 30 dagen" data-options="singleSelect:true,collapsible:true,fitColumns:true">
+                <thead>
+                    <tr>
+                        <th field="element" auto="true" align="center"><?php echo $lang['nummer']; ?></th>
+                        <th field="datum" width="80" align="center"><?php echo $lang['datum']; ?></th>
+                        <th field="nummer" width="350" align="center"><?php echo $lang['onderwerp']; ?></th>
+                        <th field="feit" auto="true" align="center"><?php echo $lang['uitvoerder']; ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($this->kantschriften as $row) {
+                        $datum_ks = strtotime($row['datum']);
+                        $datediff = floor((time() - $datum_ks) / (60 * 60 * 24));
+                        if ($datediff < 45) {
+                            echo '<tr><td>' . $row['nummer'] . '</td>'
+                            . '<td>' . $row['datum'] . '</td>'
+                            . '<td>' . $row['onderwerp - betrokkene'] . '</td>'
+                            . '<td>' . $row['uitvoerder'] . '</td>'
+                            . '</tr>';
+                        } else {
+                            echo '<tr><td><font style="color: red">' . $row['nummer'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['datum'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['onderwerp - betrokkene'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['uitvoerder'] . '</font></td>'
+                            . '</tr>';
+                        }
                     }
-                }
-                ?> 
-            </tbody>
-        </table>
+                    ?> 
+                </tbody>
+            </table>
+        <?php endif; ?>      
     </body>
 </html>
 
