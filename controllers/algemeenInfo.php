@@ -190,6 +190,7 @@ class AlgemeenInfo extends Controller {
     /**
      * controller actie voor GF gisteren en vandaag.
      * @return void
+     * @todo data van het model algemeenInfo toevoegen aan de juiste view
      */
     function get_gerechtelijkeFeiten() {
         echo 'inside controller functie get_gerechtelijkeFeiten';

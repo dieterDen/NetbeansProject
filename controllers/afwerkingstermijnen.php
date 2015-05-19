@@ -39,9 +39,10 @@ class Afwerkingstermijnen extends Controller {
      * geeft een  overzicht van alle woonstveranderingen ouder dan 14 dagen
      * Data wordt doorgegeven aan view
      * @return void
+     * @todo data van model afwerkingstermijnen toevoegen aan de juiste view
      */
     function get_woonstveranderingen() {
-        echo 'inside controller afwerkingstermijnen';
+        //echo 'inside controller afwerkingstermijnen';
         $this->view->render('afwerkingstermijnen/get_woonstveranderingen');
     }
 
@@ -49,9 +50,10 @@ class Afwerkingstermijnen extends Controller {
      * geeft een  overzicht van alle hercosi ouder dan 5 dagen
      * Data wordt doorgegeven aan view
      * @return void
+     * @todo data van model afwerkingstermijnen toevoegen aan de juiste view
      */
     function get_hercosi() {
-        echo 'inside controller afwerkingstermijen';
+        //echo 'inside controller afwerkingstermijen';
         $this->view->render('afwerkingstermijnen/get_hercosi');
     }
 

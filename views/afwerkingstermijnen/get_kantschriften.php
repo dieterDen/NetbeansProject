@@ -27,13 +27,13 @@ include_once ("languages/ned_get_kantschriften.php");
         <p><b>Er is geen data beschikbaar om weer te geven!</b></p>
         <?php else : ?>
             <table id="tt" class="easyui-datagrid" style="width:99%" 
-                   title="Kantschriften ouder dan 30 dagen" data-options="singleSelect:true,collapsible:true,fitColumns:true">
+                   title="Kantschriften ouder dan 30 dagen" data-options="singleSelect:true,collapsible:true,fitColumns:true,remoteSort:false">
                 <thead>
                     <tr>
-                        <th field="element" auto="true" align="center"><?php echo $lang['nummer']; ?></th>
-                        <th field="datum" width="80" align="center"><?php echo $lang['datum']; ?></th>
-                        <th field="nummer" width="350" align="center"><?php echo $lang['onderwerp']; ?></th>
-                        <th field="feit" auto="true" align="center"><?php echo $lang['uitvoerder']; ?></th>
+                        <th field="element" sortable="true" auto="true" align="center"><?php echo $lang['nummer']; ?></th>
+                        <th field="datum" sortable="true" width="80" align="center"><?php echo $lang['datum']; ?></th>
+                        <th field="nummer" sortable="true" width="350" align="center"><?php echo $lang['onderwerp']; ?></th>
+                        <th field="feit" sortable="true" auto="true" align="center"><?php echo $lang['uitvoerder']; ?></th>
                     </tr>
                 </thead>
                 <tbody>

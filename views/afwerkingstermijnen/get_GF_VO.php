@@ -41,14 +41,14 @@ include_once ("languages/ned_get_GF_VO.php");
                 <p style="text-align: center"><< Er zijn momenteel <em style="color: red"><?php echo $teller_tweeWeken; ?></em> dossiers ouder dan 14 dagen en <em style="color: red"><?php echo $teller_drieWeken; ?></em> ouder dan 21 dagen! >></p>
             </div>
             <table id="tt" class="easyui-datagrid" style="width:99%" 
-                   title="Gerechtelijk niet-verkeer en verkeersongeval ouder dan 14 dagen" data-options="singleSelect:true,collapsible:true,fitColumns:true">
+                   title="Gerechtelijk niet-verkeer en verkeersongeval ouder dan 14 dagen" data-options="singleSelect:true,collapsible:true,fitColumns:true,remoteSort: false">
                 <thead>
                     <tr>
-                        <th field="element" auto="true" align="center"><?php echo $lang['element']; ?></th>
-                        <th field="datum" width="80" align="center"><?php echo $lang['datum']; ?></th>
-                        <th field="nummer" auto="true" align="center"><?php echo $lang['nummer']; ?></th>
-                        <th field="feit" width="350" align="center"><?php echo $lang['feit']; ?></th>
-                        <th field="opsteller" width="100" align="center"><?php echo $lang['opsteller']; ?></th>
+                        <th field="element" sortable="true" auto="true" align="center"><?php echo $lang['element']; ?></th>
+                        <th field="datum" sortable="true" width="80" align="center"><?php echo $lang['datum']; ?></th>
+                        <th field="nummer" sortable="true" auto="true" align="center"><?php echo $lang['nummer']; ?></th>
+                        <th field="feit" sortable="true" width="350" align="center"><?php echo $lang['feit']; ?></th>
+                        <th field="opsteller" sortable="true" width="100" align="center"><?php echo $lang['opsteller']; ?></th>
                     </tr>
                 </thead>
                 <tbody>

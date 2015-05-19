@@ -33,7 +33,7 @@
             foreach ($datum as $key) {
                 echo $key . '<br />';
             }
-            echo "</td><td rowspan='2'>"; 
+            echo "</td><td rowspan='2'>";
             foreach ($commentaren as $value) {
                 echo $value . '<br />';
             }
