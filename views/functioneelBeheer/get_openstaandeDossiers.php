@@ -128,7 +128,7 @@ echo $this->openstaandeDossiersStatistiek[3][$twee_jaar][$i] . ",";
                         foreach ($this->namen_openstaandeDossiers as $row) {
                         $naam = $row['opsteller'];
                         echo '<tr><td><a href="' . URL . 'functioneelBeheer/get_openstaandeDossiers/' . $naam . '">' . $naam . '</a></td>'
-                        . '<td>' . $row['count(openstaande_dossiers_id)'] . '</a></td>';
+                        . '<td>' . sprintf('%02d',$row['count(openstaande_dossiers_id)']) . '</a></td>';
                         }
                         ?>
                     </tbody>
@@ -147,7 +147,7 @@ echo $this->openstaandeDossiersStatistiek[3][$twee_jaar][$i] . ",";
                 ?>
                 <thead>
                     <tr>
-                        <th style="width: 100px;" data-options="field:'dossierNummer',sortable:true,auto:true,align:'center'"><?php echo $lang['dossiernummer']; ?></th>
+                        <th style="width: 100px;" data-options="field:'dossierNummer',auto:true,align:'center'"><?php echo $lang['dossiernummer']; ?></th>
                         <th style="width: 90px;" data-options="field:'type',sortable:true,auto:true,align:'center'"><?php echo $lang['dossiertype']; ?></th>
                         <th style="width: 100px;" data-options="field:'datum',sortable:true,auto:true,align:'center'"><?php echo $lang['datum']; ?></th>
                         <th style="width: 1150px;" data-options="field:'tekst',sortable:true,align:'left'"><?php echo $lang['tekst']; ?></th>

@@ -5,7 +5,28 @@
  * @version 0.0
  */
 include_once ("languages/ned_language.php");
+
+function breadcrumbs($separator = ' > ', $home = 'Homepagina') {
+
+    $path = array_filter(explode('/', $_SERVER['REQUEST_URI']));
+    $base_url = ($_SERVER['HTTPS'] ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+    $breadcrumbs = array('' . $home . '');
+
+    $last = end(array_keys($path));
+
+    foreach ($path as $x => $crumb) {
+        $title = ucwords(str_replace(array('.php', '_', '-', 'get'), array('', ' ', ' ', ' '), $crumb));
+        if ($x != $last) {
+            $breadcrumbs[] = '' . $title . '';
+        } else {
+            $breadcrumbs[] = '' . $title . '';
+        }
+    }
+    $breadcrumbs = array_slice($breadcrumbs, 0, 3);
+    return implode($separator, $breadcrumbs);
+}
 ?>
+
 <!doctype html>
 <html>
     <head>
@@ -23,7 +44,6 @@ include_once ("languages/ned_language.php");
 
     </head>
     <body>
-
         <div id="header">
             <a href="<?php echo URL; ?>"><img src="/pictures/pol_logo.png" style="width: 20%;padding-left: 10px;"></a>
             <br>
@@ -32,6 +52,12 @@ include_once ("languages/ned_language.php");
             <a href="<?php echo URL; ?>index">Index</a>
             <a href="<?php echo URL; ?>help">Help</a>
             <a href="<?php echo URL; ?>login">Login</a>
+            <br /><br />
+            <?php
+            $breadcrumbs = array_slice(explode('>', breadcrumbs()), 0, 3);
+            echo '
+            <a style="color:white" href="' . URL . '" rel="external">' . $breadcrumbs[0] . '></a>'. $breadcrumbs[1] . '>' . $breadcrumbs[2];
+            ?>
         </div>
         <div id="content">
 

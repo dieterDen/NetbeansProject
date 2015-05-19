@@ -48,7 +48,7 @@ include_once ("languages/ned_get_kantschriften.php");
                             . '<td>' . $row['uitvoerder'] . '</td>'
                             . '</tr>';
                         } else {
-                            echo '<tr><td><font style="color: red">' . $row['nummer'] . '</font></td>'
+                            echo '<tr><td><font style="color: red">' . sprintf('%04d',$row['nummer']) . '</font></td>'
                             . '<td><font style="color: red">' . $row['datum'] . '</font></td>'
                             . '<td><font style="color: red">' . $row['onderwerp - betrokkene'] . '</font></td>'
                             . '<td><font style="color: red">' . $row['uitvoerder'] . '</font></td>'

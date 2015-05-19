@@ -207,3 +207,9 @@
 2015-05-18 15:00:46 - ERROR --> pagina bestaat niet: /afwerkingstermijnen/get_kantschriften 
 2015-05-18 15:01:30 - ERROR --> pagina bestaat niet: /afwerkingstermijnen/get_kantschriften 
 2015-05-18 15:01:30 - FATAL --> Check query in get_kantschriften in klasse afwerkingstermijnen_model 
+2015-05-19 15:52:41 - ERROR --> pagina bestaat niet: /Homepagina 
+2015-05-19 15:52:41 - FATAL -->  
+2015-05-19 15:52:56 - ERROR --> pagina bestaat niet: /%20AlgemeenInfo 
+2015-05-19 15:52:56 - FATAL -->  
+2015-05-19 15:53:51 - ERROR --> pagina bestaat niet: /%20AlgemeenInfo 
+2015-05-19 15:53:51 - FATAL -->  

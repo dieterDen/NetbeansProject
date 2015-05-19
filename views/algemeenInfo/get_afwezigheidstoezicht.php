@@ -7,6 +7,26 @@
  * @version 0.0
  */
 include_once ("languages/ned_get_afwezigheidstoezicht.php");
+
+function breadcrumbs($separator = ' > ', $home = 'Homepagina') {
+
+    $path = array_filter(explode('/', $_SERVER['REQUEST_URI']));
+    $base_url = ($_SERVER['HTTPS'] ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+    $breadcrumbs = array('' . $home . '');
+
+    $last = end(array_keys($path));
+
+    foreach ($path as $x => $crumb) {
+        $title = ucwords(str_replace(array('.php', '_', '-', 'get'), array('', ' ', ' ', ' '), $crumb));
+        if ($x != $last) {
+            $breadcrumbs[] = '' . $title . '';
+        } else {
+            $breadcrumbs[] = '' . $title . '';
+        }
+    }
+
+    return implode($separator, $breadcrumbs);
+}
 ?>
 <html>
     <head>
@@ -58,6 +78,13 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
             <a href="<?php echo URL; ?>index" rel="external"  >Index</a>
             <a href="<?php echo URL; ?>help" data-role="button">Help</a>
             <a href="<?php echo URL; ?>login" data-role="button">Login</a>
+            <br /><br />
+            <?php
+            $breadcrumbs = array_slice(explode('>', breadcrumbs()), 0, 3);
+            echo '
+            <a style="color:white" href="' . URL . '" rel="external">' . $breadcrumbs[0] . '></a>' . $breadcrumbs[1] . '>' . $breadcrumbs[2];
+            ?>
+
         </div>
         <div id="content">  
             <div id="container" style="width: 100%;"></div>
@@ -107,36 +134,36 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                             },
                             series: [{
                                     name: <?php
-        $huidig_jaar = $this->statistiek_afwezigheid[0];
-        echo $huidig_jaar;
-        ?>,
+            $huidig_jaar = $this->statistiek_afwezigheid[0];
+            echo $huidig_jaar;
+            ?>,
                                     data: [<?php
-        for ($i = 1; $i <= 12; $i++) {
-            echo $this->statistiek_afwezigheid[3][$huidig_jaar][$i] . ",";
-        }
-        ?>]
+            for ($i = 1; $i <= 12; $i++) {
+                echo $this->statistiek_afwezigheid[3][$huidig_jaar][$i] . ",";
+            }
+            ?>]
                                 }, {
                                     name: <?php
-        $vorig_jaar = $this->statistiek_afwezigheid[1];
-        echo $vorig_jaar;
-        ?>,
+            $vorig_jaar = $this->statistiek_afwezigheid[1];
+            echo $vorig_jaar;
+            ?>,
                                     data: [<?php
-        for ($i = 1; $i <= 12; $i++) {
-            echo $this->statistiek_afwezigheid[3][$vorig_jaar][$i] . ",";
-        }
-        ?>]
+            for ($i = 1; $i <= 12; $i++) {
+                echo $this->statistiek_afwezigheid[3][$vorig_jaar][$i] . ",";
+            }
+            ?>]
 
                                 },
                                 {
                                     name: <?php
-        $twee_jaar = $this->statistiek_afwezigheid[2];
-        echo $twee_jaar;
-        ?>,
+            $twee_jaar = $this->statistiek_afwezigheid[2];
+            echo $twee_jaar;
+            ?>,
                                     data: [<?php
-        for ($i = 1; $i <= 12; $i++) {
-            echo $this->statistiek_afwezigheid[3][$twee_jaar][$i] . ",";
-        }
-        ?>]
+            for ($i = 1; $i <= 12; $i++) {
+                echo $this->statistiek_afwezigheid[3][$twee_jaar][$i] . ",";
+            }
+            ?>]
                                 }]
                         });
                         $("#container").show();
@@ -190,7 +217,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                             . '<td><a href="#" id="divPopup" onclick="createPopup(this);">' . substr($row['details en commentaar'], 0, 60) . '...</a></td>'
                             . '<td>' . $row['begindatum'] . '</td>'
                             . '<td>' . $row['bezocht'] . '</td>'
-                            . '<td>' . $row['dagen geleden'] . '</td>'
+                            . '<td>' . sprintf('%02d', $row['dagen geleden']) . '</td>'
                             . '<td><a href="#" id="divPrintBrief" onclick="createBrief(this);">Brief</a></td>'
                             . '</tr>';
                         }
@@ -198,13 +225,13 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                     </tbody>
                 </table>
             <?php endif; ?>   
-        <!--<script type="text/javascript">
-            $('#datagrid').datagrid({
-                onClickRow: function(index,row){
-                    alert('test');
-                }
-            });
-        </script>-->
+<!--<script type="text/javascript">
+$('#datagrid').datagrid({
+onClickRow: function(index,row){
+alert('test');
+}
+});
+</script>-->
         </div> 
         <?php
         require 'views/footer.php';
