@@ -213,3 +213,23 @@
 2015-05-19 15:52:56 - FATAL -->  
 2015-05-19 15:53:51 - ERROR --> pagina bestaat niet: /%20AlgemeenInfo 
 2015-05-19 15:53:51 - FATAL -->  
+2015-05-20 10:17:19 - ERROR --> pagina bestaat niet: /afwerkingstermijnen/get_GF_VO 
+2015-05-20 10:17:19 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-20 10:17:21 - ERROR --> pagina bestaat niet: /afwerkingstermijnen/get_GF_VO 
+2015-05-20 10:17:21 - FATAL --> Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model 
+2015-05-20 14:21:15 - ERROR --> pagina bestaat niet: /algemeenInfo/afwezigheidstoezictHistoriek 
+2015-05-20 14:21:15 - FATAL -->  
+2015-05-20 14:25:07 - ERROR --> pagina bestaat niet: /algemeenInfo/afwezigheidstoezictHistoriek 
+2015-05-20 14:25:07 - FATAL -->  
+2015-05-20 14:25:12 - ERROR --> pagina bestaat niet: /algemeenInfo/afwezigheidstoezictHistoriek 
+2015-05-20 14:25:12 - FATAL -->  
+2015-05-20 14:54:12 - ERROR --> pagina bestaat niet: /algemeenInfo/afwezigheidstoezictHistoriek 
+2015-05-20 14:54:12 - FATAL -->  
+2015-05-20 14:54:54 - ERROR --> pagina bestaat niet: /algemeenInfo/afwezigheidstoezictHistoriek 
+2015-05-20 14:54:54 - FATAL -->  
+2015-05-20 14:55:17 - ERROR --> pagina bestaat niet: /algemeenInfo/afwezigheidstoezictHistoriek 
+2015-05-20 14:55:17 - FATAL -->  
+2015-05-20 14:55:18 - ERROR --> pagina bestaat niet: /algemeenInfo/afwezigheidstoezictHistoriek 
+2015-05-20 14:55:18 - FATAL -->  
+2015-05-20 14:55:19 - ERROR --> pagina bestaat niet: /algemeenInfo/afwezigheidstoezictHistoriek 
+2015-05-20 14:55:19 - FATAL -->  

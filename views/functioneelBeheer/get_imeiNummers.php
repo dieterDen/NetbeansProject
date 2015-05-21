@@ -28,7 +28,6 @@ include_once ("languages/ned_get_imeiNummers.php");
                    title="IMEI-nummer" data-options="singleSelect:true,collapsible:true,fitColumns:true, remoteSort:false">
                 <thead>
                     <tr>
-                        <th field="itemid" sortable="true" width="250" align="center"><?php echo $lang['dossiernummer']; ?></th>
                         <th field="productid" sortable="true" width="350" align="center"><?php echo $lang['element']; ?></th>
                         <th field="listprice" sortable="true" auto="true" align="center"><?php echo $lang['elementnummer']; ?></th>
                         <th field="imeinummer" sortable="true" auto="true" align="center"><?php echo $lang['imeiNummer']; ?></th>
@@ -41,7 +40,7 @@ include_once ("languages/ned_get_imeiNummers.php");
                 <tbody>
                     <?php
                     foreach ($this->imeiNummers as $row) {
-                        echo '<tr><td>' . $row['Dossiernummer'] . '</td>'
+                        echo '<tr>'
                         . '<td>' . $row['Element'] . '</td>'
                         . '<td>' . $row['Elementnummer'] . '</td>'
                         . '<td>' . $row['IMEI-nummer'] . '</td>'

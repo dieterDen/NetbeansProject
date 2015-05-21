@@ -16,6 +16,7 @@
 </div>
 <div id="mm1"style="width:200px;">
     <div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/get_afwezigheidstoezicht"><?php echo $lang['Afwezigheidstoezicht']; ?></a></div>
+    <div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/afwezigheidstoezictHistoriek"><?php echo $lang['Afwezigheidstoezicht_hist']; ?></a></div>
     <div><a href="<?php echo URL; ?>algemeenInfo/get_briefing"><?php echo $lang['briefing']; ?></a></div>
     <div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/get_daderGerichteAanpak"><?php echo $lang['DaderGerichteAanpak']; ?></a></div>
     <div class="menu-sep"></div>

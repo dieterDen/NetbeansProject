@@ -24,7 +24,7 @@ include_once ("languages/ned_get_kantschriften.php");
                 Een snelle afwerking zorgt ervoor dat je niet op deze lijst voorkomt!</p>
         </div>
         <?php if (is_null($this->kantschriften)) : ?>
-        <p><b>Er is geen data beschikbaar om weer te geven!</b></p>
+            <p><b>Er is geen data beschikbaar om weer te geven!</b></p>
         <?php else : ?>
             <table id="tt" class="easyui-datagrid" style="width:99%" 
                    title="Kantschriften ouder dan 30 dagen" data-options="singleSelect:true,collapsible:true,fitColumns:true,remoteSort:false">
@@ -32,8 +32,11 @@ include_once ("languages/ned_get_kantschriften.php");
                     <tr>
                         <th field="element" sortable="true" auto="true" align="center"><?php echo $lang['nummer']; ?></th>
                         <th field="datum" sortable="true" width="80" align="center"><?php echo $lang['datum']; ?></th>
-                        <th field="nummer" sortable="true" width="350" align="center"><?php echo $lang['onderwerp']; ?></th>
-                        <th field="feit" sortable="true" auto="true" align="center"><?php echo $lang['uitvoerder']; ?></th>
+                        <th field="datum2" sortable="true" width="140" align="center"><?php echo $lang['notitie']; ?></th>
+                        <th field="nummer" sortable="true" width="350" align="left"><?php echo $lang['onderwerp']; ?></th>
+                        <th field="uitvoerder" sortable="true" auto="true" align="left"><?php echo $lang['uitvoerder']; ?></th>
+                        <th field="magistraat" sortable="true" auto="true" align="left"><?php echo $lang['magistraat']; ?></th>
+                        <th field="gerechtelijk" sortable="true" auto="true" align="left"><?php echo $lang['gerechtelijk']; ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,16 +45,22 @@ include_once ("languages/ned_get_kantschriften.php");
                         $datum_ks = strtotime($row['datum']);
                         $datediff = floor((time() - $datum_ks) / (60 * 60 * 24));
                         if ($datediff < 45) {
-                            echo '<tr><td>' . $row['nummer'] . '</td>'
-                            . '<td>' . $row['datum'] . '</td>'
-                            . '<td>' . $row['onderwerp - betrokkene'] . '</td>'
+                            echo '<tr><td>' . $row['kantschrift_elementnummer'] . '</td>'
+                            . '<td>' . $row['kantschrift_creatiedatum'] . '</td>'
+                            . '<td>' . $row['kantschrift_notitienummer'] . '</td>'
+                            . '<td>' . $row['kantschrift_onderwerp'] . '</td>'
                             . '<td>' . $row['uitvoerder'] . '</td>'
+                            . '<td>' . $row['kantschrift_magistraat'] . '</td>'
+                            . '<td>' . $row['kantschrift_gerechtelijk_arro'] . '</td>'
                             . '</tr>';
                         } else {
-                            echo '<tr><td><font style="color: red">' . sprintf('%04d',$row['nummer']) . '</font></td>'
-                            . '<td><font style="color: red">' . $row['datum'] . '</font></td>'
-                            . '<td><font style="color: red">' . $row['onderwerp - betrokkene'] . '</font></td>'
+                            echo '<tr><td><font style="color: red">' . $row['kantschrift_elementnummer'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['kantschrift_creatiedatum'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['kantschrift_notitienummer'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['kantschrift_onderwerp'] . '</font></td>'
                             . '<td><font style="color: red">' . $row['uitvoerder'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['kantschrift_magistraat'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['kantschrift_gerechtelijk_arro'] . '</font></td>'
                             . '</tr>';
                         }
                     }

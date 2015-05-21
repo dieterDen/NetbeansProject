@@ -131,11 +131,23 @@ class AlgemeenInfo extends Controller {
      */
     function print_briefAfwezigheden($elementnummer) {
         //echo $elementnummer;
-        $this->view->overzichtCommentaren = $this->model->get_afwezigheidCommentaren($elementnummer);
-        $this->view->gegevens_afwezigheid = $this->model->get_afwezigheidstoezicht();
         $this->view->elementnummer = $elementnummer;
+        $this->view->verlopen_afwezigheden = $this->model->get_afwezigheidHistoriek();
+        $this->view->overzichtCommentaren = $this->model->get_afwezigheidCommentaren($elementnummer);
+        //$this->view->gegevens_afwezigheid = $this->model->get_afwezigheidstoezicht();
         // print_r($this->view->overzichtCommentaren);
         $this->view->render('algemeenInfo/print_briefAfwezigheden', true);
+    }
+
+    /**
+     * Haalt de historiek op van alle gepaseerde afwezigheidstoezichten
+     * Aan de view wordt de data meegegeven
+     * Tot slot wordt de view gerenderd 
+     * @return void
+     */
+    function afwezigheidstoezictHistoriek() {
+        $this->view->overzichtHistoriek = $this->model->get_afwezigheidHistoriek();
+        $this->view->render('algemeenInfo/afwezigheidstoezichtHistoriek');
     }
 
     /**

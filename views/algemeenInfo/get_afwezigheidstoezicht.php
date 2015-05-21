@@ -72,17 +72,11 @@ function breadcrumbs($separator = ' > ', $home = 'Homepagina') {
 
         <div data-role="header" id="header">
             <a href="<?php echo URL; ?>"><img src="/pictures/pol_logo.png" style="width: 20%;padding-left: 10px;"></a>
-            <br>
-
-            <br />
-            <a href="<?php echo URL; ?>index" rel="external"  >Index</a>
-            <a href="<?php echo URL; ?>help" data-role="button">Help</a>
-            <a href="<?php echo URL; ?>login" data-role="button">Login</a>
             <br /><br />
             <?php
             $breadcrumbs = array_slice(explode('>', breadcrumbs()), 0, 3);
             echo '
-            <a style="color:white" href="' . URL . '" rel="external">' . $breadcrumbs[0] . '></a>' . $breadcrumbs[1] . '>' . $breadcrumbs[2];
+            <a style="color:white" href="' . URL . '" rel="external">' . $breadcrumbs[0] . '></a>>' . $breadcrumbs[2];
             ?>
 
         </div>
@@ -183,7 +177,6 @@ function breadcrumbs($separator = ' > ', $home = 'Homepagina') {
                     echo '
             <a style = "margin-left: 80px;" class = "btn" target = "_blank" href = "' . URL . 'algemeenInfo/print_overzichtAfwezigheden_' . str_replace(' ', '', $row['afwezigheidstoezicht_wijk']) . '">' . $row['afwezigheidstoezicht_wijk'] . '</a>';
                 }
-                // velden met geen wijk
                 if (count($this->foutiefWijken) != 0) {
                     echo '
             <a style = "margin-left: 80px;color: red;" class = "btn" target = "_blank" href = "' . URL . 'algemeenInfo/print_overzichtAfwezigheden_FoutiefTeam">Foutief Team</a>';
@@ -203,7 +196,6 @@ function breadcrumbs($separator = ' > ', $home = 'Homepagina') {
                             <th data-options="field:'begDatum',sortable:true,auto:true"><?php echo $lang['begindatum']; ?></th>
                             <th data-options="field:'bezocht',auto:true, align:'center'"><?php echo $lang['bezocht']; ?></th>
                             <th data-options="field:'dagGeleden',sortable:true,auto:true, align:'center'"><?php echo $lang['dagen geleden']; ?></th>
-                            <th data-options="field:'printBrief', align:'center'"> </th>
                         </tr>
                     </thead>
                     <tbody> 
@@ -218,7 +210,6 @@ function breadcrumbs($separator = ' > ', $home = 'Homepagina') {
                             . '<td>' . $row['begindatum'] . '</td>'
                             . '<td>' . $row['bezocht'] . '</td>'
                             . '<td>' . sprintf('%02d', $row['dagen geleden']) . '</td>'
-                            . '<td><a href="#" id="divPrintBrief" onclick="createBrief(this);">Brief</a></td>'
                             . '</tr>';
                         }
                         ?>

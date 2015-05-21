@@ -19,6 +19,7 @@ $lang['kantschriften'] = 'Kantschriften > 30 dagen';
 $lang['woonstveranderingen'] = 'Woonstveranderingen > 14 dagen';
 $lang['GF_VO'] = 'GF niet-verkeer & VO > 14 dagen IN';
 $lang['hercosi'] = 'Hercosi > 5 dagen';
+$lang['Afwezigheidstoezicht_hist'] = 'Afwezigheidstoezicht historiek';
 
 
 ?>

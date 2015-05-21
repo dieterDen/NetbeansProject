@@ -183,6 +183,20 @@ class algemeenInfo_model extends Model {
     }
 
     /**
+     * De functie haalt de historiek van de afwezigheidstoezichten op
+     * @return Tweedimensionale array van key-value waarden van afwezigheden van afwezigheidstoezicht
+     */
+    function get_afwezigheidHistoriek() {
+        $result = $this->db->query('SELECT *  FROM islp.view_afwezigheidstoezichtHistoriek');
+        if (!$result) {
+            $this->error("Check query in get_afwezigheidHistoriek in klasse algemeenInfo_model");
+        } while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
+
+    /**
      * De functie haalt 
      * 
      * @return Tweedimensionale array van key-value waarden van commentaren van afwezigheidstoezicht

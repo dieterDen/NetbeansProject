@@ -30,28 +30,28 @@ class functioneelBeheer_model extends Model {
         }
         while ($row = $result->fetch_assoc()) {
             switch (true) {
-                case preg_match('/^ *$/', $row['IMEI-nummer']): $row['opmerking'] = "Geen spaties toegelaten.";
+                case preg_match('/^ *$/', $row['IMEI-nummer']): $row['opmerking'] = "IMEI-nummer: leeg.";
                     break;
-                case empty($row['IMEI-nummer']): $row['opmerking'] = "Geen IMEI-nummer ingevuld";
+                case empty($row['IMEI-nummer']): $row['opmerking'] = "IMEI-nummer: leeg.";
                     break;
-                case preg_match('/[^a-zA-Z\d]/', $row['IMEI-nummer']): $row['opmerking'] = "Geen speciale characters toegelaten";
+                case preg_match('/[^a-zA-Z\d]/', $row['IMEI-nummer']): $row['opmerking'] = "IMEI-nummer: geen speciale characters.";
                     break;
-                case preg_match('/[a-zA-Z]/', $row['IMEI-nummer']): $row['opmerking'] = "Geen letters toegelaten.";
+                case preg_match('/[a-zA-Z]/', $row['IMEI-nummer']): $row['opmerking'] = "IMEI-nummer: geen letters toegelaten.";
                     break;
-                case preg_match('/^[\d]+$/', $row['IMEI-nummer']): $row['opmerking'] = "IMEI-nummer moet 14 cijfers lang zijn.";
+                case preg_match('/^[\d]+$/', $row['IMEI-nummer']): $row['opmerking'] = "IMEI-nummer: moet 14 cijfers lang zijn.";
                     break;
-                case is_null($row['IMEI-nummer']): $row['opmerking'] = "Geen IMEI-nummer ingevuld";
+                case is_null($row['IMEI-nummer']): $row['opmerking'] = "IMEI-NUMMER: leeg.";
                     break;
                 default : $row['opmerking'] = "OK";
             }
             switch (true) {
-                case empty($row['Merk']): $row['opmerkingMerk'] = "Geen merknaam ingevuld";
+                case empty($row['Merk']): $row['opmerkingMerk'] = "Merknaam: leeg.";
                     break;
-                case is_null($row['Merk']): $row['opmerkingMerk'] = "Geen merknaam ingevuld";
+                case is_null($row['Merk']): $row['opmerkingMerk'] = "Merknaam: leeg.";
                     break;
-                case preg_match('/[^a-zA-Z\d]/', $row['Merk']):$row['opmerkingMerk'] = "Geen geldige merknaam";
+                case preg_match('/[^a-zA-Z\d]/', $row['Merk']):$row['opmerkingMerk'] = "Merknaam: ongeldig";
                     break;
-                case preg_match('/^[\d]*$/', $row['Merk']):$row['opmerkingMerk'] = "Geen geldige merknaam";
+                case preg_match('/^[\d]*$/', $row['Merk']):$row['opmerkingMerk'] = "Merknaam: ongeldig";
                     break;
                 default : $row['opmerkingMerk'] = "Merknaam OK ";
             }

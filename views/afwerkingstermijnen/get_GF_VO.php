@@ -38,28 +38,40 @@ include_once ("languages/ned_get_GF_VO.php");
             ?>
             <div style="margin-bottom:20px">
                 <p> Denk aan de termijn van 21 dagen! <br /> Een snelle afwerking zorgt ervoor dat je niet op deze lijst voorkomt!</p>
-                <p style="text-align: center"><< Er zijn momenteel <em style="color: red"><?php echo $teller_tweeWeken; ?></em> dossiers ouder dan 14 dagen en <em style="color: red"><?php echo $teller_drieWeken; ?></em> ouder dan 21 dagen! >></p>
+                <p style="text-align: center"><< Er zijn momenteel <em style="color: red"><?php echo $teller_tweeWeken; ?></em> dossiers ouder dan 14 dagen en <em style="color: red"><?php echo $teller_drieWeken; ?></em><font style="color:red"> ouder dan 21 dagen!</font> >></p>
             </div>
             <table id="tt" class="easyui-datagrid" style="width:99%" 
                    title="Gerechtelijk niet-verkeer en verkeersongeval ouder dan 14 dagen" data-options="singleSelect:true,collapsible:true,fitColumns:true,remoteSort: false">
                 <thead>
                     <tr>
                         <th field="element" sortable="true" auto="true" align="center"><?php echo $lang['element']; ?></th>
-                        <th field="datum" sortable="true" width="80" align="center"><?php echo $lang['datum']; ?></th>
+                        <th field="datum" sortable="true" align="center"><?php echo $lang['datum']; ?></th>
                         <th field="nummer" sortable="true" auto="true" align="center"><?php echo $lang['nummer']; ?></th>
-                        <th field="feit" sortable="true" width="350" align="center"><?php echo $lang['feit']; ?></th>
-                        <th field="opsteller" sortable="true" width="100" align="center"><?php echo $lang['opsteller']; ?></th>
+                        <th field="feit" sortable="true" width="350" align="left"><?php echo $lang['feit']; ?></th>
+                        <th field="opsteller" sortable="true" align="center"><?php echo $lang['opsteller']; ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     foreach ($this->gerechtelijkeFeiten as $row) {
-                        echo '<tr><td>' . $row['element'] . '</td>'
-                        . '<td>' . $row['datum'] . '</td>'
-                        . '<td>' . $row['nummer'] . '</td>'
-                        . '<td>' . $row['feit'] . '</td>'
-                        . '<td>' . $row['opsteller'] . '</td>'
-                        . '</tr>';
+                        $element=  str_replace('--', ' ',$row['openstaande_dossiers_type'].' '.$row['openstaande_dossiers_status']);
+                        $datum_GF = strtotime($row['datum']);
+                        $datediff = floor((time() - $datum_GF) / (60 * 60 * 24));
+                        if ($datediff < 21) {
+                            echo '<tr><td>' . $element . '</td>'
+                            . '<td>' . $row['openstaande_dossiers_datum'] . '</td>'
+                            . '<td>' . $row['openstaande_dossiers_nummer'] . '</td>'
+                            . '<td>' . $row['openstaande_dossiers_tekst'] . '</td>'
+                            . '<td>' . $row['opsteller'] . '</td>'
+                            . '</tr>';
+                        } else {
+                            echo '<tr><td><font style="color: red">' .$element . '</font></td>'
+                            . '<td><font style="color: red">' . $row['openstaande_dossiers_datum'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['openstaande_dossiers_nummer'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['openstaande_dossiers_tekst'] . '</font></td>'
+                            . '<td><font style="color: red">' . $row['opsteller'] . '</font></td>'
+                            . '</tr>';
+                        }
                     }
                     ?> 
                 </tbody>

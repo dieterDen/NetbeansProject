@@ -21,7 +21,7 @@ class afwerkingstermijnen_model extends Model {
      * rekening houden met opsteller dit eventueel nog aanpassen met join in db!
      */
     function get_gerechtelijkeFeiten() {
-        $result = $this->db->query("SELECT * FROM islp.view_gerechtelijkNietVerkeer");
+        $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiers where openstaande_dossiers_type in ('VO','GF') AND datediff(curdate(),openstaande_dossiers_datum) > 14");
         if (!$result) {
             $this->error("Check query in get_afwezigheidstoezicht in klasse algemeenInfo_model");
         }

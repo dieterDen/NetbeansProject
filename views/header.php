@@ -49,14 +49,14 @@ function breadcrumbs($separator = ' > ', $home = 'Homepagina') {
             <br>
 
             <br />
-            <a href="<?php echo URL; ?>index">Index</a>
+            <!--<a href="<?php echo URL; ?>index">Index</a>
             <a href="<?php echo URL; ?>help">Help</a>
             <a href="<?php echo URL; ?>login">Login</a>
-            <br /><br />
+            <br /><br />-->
             <?php
             $breadcrumbs = array_slice(explode('>', breadcrumbs()), 0, 3);
-            echo '
-            <a style="color:white" href="' . URL . '" rel="external">' . $breadcrumbs[0] . '></a>'. $breadcrumbs[1] . '>' . $breadcrumbs[2];
+            echo 
+             $breadcrumbs[0] . '>' . $breadcrumbs[2];
             ?>
         </div>
         <div id="content">
