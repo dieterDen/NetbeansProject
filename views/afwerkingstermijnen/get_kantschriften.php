@@ -27,7 +27,7 @@ include_once ("languages/ned_get_kantschriften.php");
             <p><b>Er is geen data beschikbaar om weer te geven!</b></p>
         <?php else : ?>
             <table id="tt" class="easyui-datagrid" style="width:99%" 
-                   title="Kantschriften ouder dan 30 dagen" data-options="singleSelect:true,collapsible:true,fitColumns:true,remoteSort:false">
+                   title="Kantschriften" data-options="singleSelect:true,collapsible:true,fitColumns:true,remoteSort:false">
                 <thead>
                     <tr>
                         <th field="element" sortable="true" auto="true" align="center"><?php echo $lang['nummer']; ?></th>

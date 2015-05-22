@@ -12,7 +12,6 @@ class functioneelBeheer_model extends Model {
      * @return void 
      */
     function __construct() {
-        //echo 'inside in functioneel_beheer model';
         parent::__construct();
     }
 
@@ -23,7 +22,7 @@ class functioneelBeheer_model extends Model {
      * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
      */
     function get_imeiNummers() {
-        
+
         $result = $this->db->query("SELECT Dossiernaam as 'Dossiernummer', element as 'Element', elementnummer as 'Elementnummer',IMEINummer as 'IMEI-nummer' , merk as 'Merk'  from islp.view_imeiNummers ");
         if (!$result) {
             $this->error("Check query in get_imeiNummers in klasse functioneelBeheer_model");
@@ -77,6 +76,29 @@ class functioneelBeheer_model extends Model {
         }
         return $rows;
     }
+
+    /**
+     * De functie haalt uit de view_openstaande_dossiers_hitparade_dienst het aantal dossiers per user per dienst op
+     *
+     * @param string dienst
+     * @return Array[][] Tweedimensionale array van key-value waarden 
+     */
+    function get_openstaandeDossiers_namen_dienst($dienst) {
+        if ($dienst == 'Interventiedienst%20') {
+            $dienst = 'Interventiedienst / Onthaal';
+        } else {
+            $dienst = urldecode($dienst);
+        }
+        $result = $this->db->query("SELECT * from islp.view_openstaande_dossiers_hitparade_dienst WHERE lower(dienst) = \"" . strtolower($dienst) . "\"");
+        if (!$result) {
+            $this->error("Check query in get_openstaandeDossiers in klasse functioneelBeheer_model");
+        }
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
+
     /**
      * De functie haalt alle dossiers van een persoon op adhv naam.
      * Om problemen met speciale karakters  in namen te vermijden ->  urldecode
@@ -87,6 +109,30 @@ class functioneelBeheer_model extends Model {
     function get_openstaandeDossiers($naam) {
         $naam = urldecode($naam);
         $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiers WHERE lower(opsteller) = \"" . strtolower($naam) . "\"");
+        if (!$result) {
+            $this->error("Check query in get_openstaandeDossiers(naam) in klasse functioneelBeheer_model");
+        }
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
+
+    /**
+     * De functie haalt uit de view_openstaande_dossiers de gegevens op van de geselecteerde gebruiker van een dienst
+     *
+     * @param string naa +  dienst
+     * @return Array[][] Tweedimensionale array van key-value waarden 
+     */
+    function get_openstaandeDossiers_persoon_dienst($naam, $dienst) {
+        $naam = urldecode($naam);
+        if ($dienst == 'Interventiedienst%20') {
+            $dienst = 'Interventiedienst / Onthaal';
+        } else {
+            $dienst = urldecode($dienst);
+        }
+
+        $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiers WHERE lower(opsteller) = \"" . strtolower($naam) . "\" and lower(dienst) = \"" . strtolower($dienst) . "\"");
         if (!$result) {
             $this->error("Check query in get_openstaandeDossiers(naam) in klasse functioneelBeheer_model");
         }
@@ -109,6 +155,26 @@ class functioneelBeheer_model extends Model {
             $this->error("Check query in get_statistiekPerWeek in klasse functioneelBeheer_model");
         }
         while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
+
+    /**
+     * De functie haalt uit de view_openstaande_dossiers de gebruikers per dienst met zijn aantal dossiers
+     *
+     * @param string naam opsteller openstaand dossier
+     * @return Array[][] Tweedimensionale array van key-value waarden van imei-nummers
+     */
+    function get_diensten() {
+        $result = $this->db->query("SELECT distinct dienst from islp.view_openstaande_dossiers order by dienst");
+        if (!$result) {
+            $this->error("Check query in get_openstaandeDossiers in klasse functioneelBeheer_model");
+        }
+        while ($row = $result->fetch_assoc()) {
+            if (empty($row['dienst'])) {
+                $row['dienst'] = '_geen dienst';
+            }
             $rows[] = $row;
         }
         return $rows;

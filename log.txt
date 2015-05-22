@@ -233,3 +233,48 @@
 2015-05-20 14:55:18 - FATAL -->  
 2015-05-20 14:55:19 - ERROR --> pagina bestaat niet: /algemeenInfo/afwezigheidstoezictHistoriek 
 2015-05-20 14:55:19 - FATAL -->  
+2015-05-21 15:47:26 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/bpt_team_lierde 
+2015-05-21 15:47:26 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 15:56:07 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/bpt_team_lierde 
+2015-05-21 15:56:07 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 15:56:14 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 15:56:14 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:08:02 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/bpt_team_centrum 
+2015-05-21 16:08:02 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:24:55 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:24:55 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:27:32 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:27:32 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:31:52 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:31:52 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:31:53 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:31:53 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:31:54 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:31:54 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:31:54 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:31:54 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:31:55 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:31:55 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:31:55 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:31:55 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:31:55 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:31:55 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:31:56 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:31:56 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:33:25 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:33:25 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:33:26 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:33:26 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:33:34 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:33:34 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:33:51 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:33:51 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:33:52 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:33:52 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 16:33:59 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/buurtpolitie 
+2015-05-21 16:33:59 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 
+2015-05-21 17:29:39 - ERROR --> Bootstrap: geen geldige parameter meegegeven aan controller functie 
+2015-05-21 17:29:39 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_info/Cruypelinck%20Eric%20buurtpolitie 
+2015-05-21 17:29:39 - FATAL -->  
+2015-05-22 13:53:41 - ERROR --> pagina bestaat niet: /functioneelBeheer/get_openstaandeDossiers_dienst/bpt%20team%20centrum 
+2015-05-22 13:53:41 - FATAL --> Check query in get_openstaandeDossiers in klasse functioneelBeheer_model 

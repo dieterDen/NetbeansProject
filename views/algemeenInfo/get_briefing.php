@@ -10,14 +10,11 @@
 $log = KLogger::getInstance();
 ?>
 
-
 <div class="easyui-accordion" style="width:98%;height:98%;">
-    <!--ToDO -> sort functie maken om te tonen op datum van (gebruik van scandir)-->
     <?php
     $path_dir = 'external_files/';
     $fi = new FilesystemIterator('external_files', FilesystemIterator::CURRENT_AS_PATHNAME);
     foreach ($fi as $fileinfo) {
-
         if ($handle = opendir($path_dir)) {
             while (false !== ($file = readdir($handle))) {
                 $filelastmodified = filemtime($path_dir . $file);
@@ -27,7 +24,6 @@ $log = KLogger::getInstance();
             }
             closedir($handle);
         }
-
         echo '<div title="5min briefing: ' . DATE("j/m/Y", filectime($fi->current())) . '"data-options="""iconCls:icon-ok" style="overflow:auto;padding:10px;">'
         . '<p><a href=' . URL . 'external_files/' . $fi->getFilename() . ' style="font-size:14px;">' . $fi->getFilename() . '</a></p>'
         . '<br /><a href="' . URL . 'algemeenInfo/delete_briefing/' . str_replace(".", "", $fi->getFilename()) . '">Delete </a>'

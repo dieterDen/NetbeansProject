@@ -12,5 +12,6 @@ $lang['begindatum'] = 'begindatum';
 $lang['bezocht'] = 'bezocht';
 $lang['dagen geleden']= 'dagen<br />geleden';
 $lang['BPT']= 'bpt';
+$lang['einddatum']= 'Einddatum';
 
 ?>

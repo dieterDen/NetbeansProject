@@ -31,6 +31,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                     <th data-options="field:'adres',sortable:true,width:250"><?php echo $lang['adres']; ?></th>
                     <th data-options="field:'inlichtingen',width:500"><?php echo $lang['afwezigheids inlichtingen']; ?></th>
                     <th data-options="field:'begDatum',sortable:true,auto:true"><?php echo $lang['begindatum']; ?></th>
+                    <th data-options="field:'eindDatum',sortable:true,auto:true"><?php echo $lang['einddatum']; ?></th>
                     <th data-options="field:'printBrief', align:'center', width:50"> </th>
                 </tr>
             </thead>
@@ -43,6 +44,7 @@ include_once ("languages/ned_get_afwezigheidstoezicht.php");
                     . '<td>' . str_replace('/,', ' ', $row['afwezigheidstoezicht_adres']) . '</td>'
                     . '<td>' . substr($row['afwezigheidstoezichttekst_tekst'], 0, 150) . '...</td>'
                     . '<td>' . $row['afwezigheidstoezicht_elementbegindatum'] . '</td>'
+                    . '<td>' . $row['afwezigheidstoezicht_elementeinddatum'] . '</td>'
                     . '<td><a href="#" id="divPrintBrief" onclick="createBrief(this);">Brief</a></td>'
                     . '</tr>';
                 }

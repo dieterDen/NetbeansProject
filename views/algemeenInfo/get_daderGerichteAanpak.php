@@ -74,15 +74,15 @@ include_once ("languages/ned_get_daderGerichteAanpak.php");
             function load(mode) {
                 switch (mode) {
                     case alles:
-                        loadlocal("alles");
+                        loadlocal("alles");break;
                     case veelpleger:
-                        loadlocal("veelpleger");
+                        loadlocal("veelpleger");break;
                     case huisarrest:
-                        loadlocal("huisarrest");
+                        loadlocal("huisarrest");break;
                     case elektronischToezicht:
-                        loadlocal("elektronischToezicht");
+                        loadlocal("elektronischToezicht");break;
                     case ifgOpvolgingGezinssituatie:
-                        loadlocal("ifgOpvolgingGezinssituatie");
+                        loadlocal("ifgOpvolgingGezinssituatie");break;
                 }
               else {
                   vanuit javascript een php variable opvullen met andere array
@@ -98,9 +98,10 @@ include_once ("languages/ned_get_daderGerichteAanpak.php");
 </html>
 
 
-
-//javascript functies worden opgeroepen 
+<?php
+/*javascript functies worden opgeroepen 
 -> hierop moeten de juiste query uitgevoerd worden naar gelang de keuze van de gebruiker
 geselecteerde data wordt opgehaald uit model, param moet doorgegeven worden. 
 -> data tonen in datagrid
--> één datagrid opstellen en enkel array veranderen.
+-> één datagrid opstellen en enkel array veranderen.*/
+?>

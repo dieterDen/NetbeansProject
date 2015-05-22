@@ -41,7 +41,7 @@ include_once ("languages/ned_get_GF_VO.php");
                 <p style="text-align: center"><< Er zijn momenteel <em style="color: red"><?php echo $teller_tweeWeken; ?></em> dossiers ouder dan 14 dagen en <em style="color: red"><?php echo $teller_drieWeken; ?></em><font style="color:red"> ouder dan 21 dagen!</font> >></p>
             </div>
             <table id="tt" class="easyui-datagrid" style="width:99%" 
-                   title="Gerechtelijk niet-verkeer en verkeersongeval ouder dan 14 dagen" data-options="singleSelect:true,collapsible:true,fitColumns:true,remoteSort: false">
+                   title="Gerechtelijk niet-verkeer en verkeersongeval" data-options="singleSelect:true,collapsible:true,fitColumns:true,remoteSort: false">
                 <thead>
                     <tr>
                         <th field="element" sortable="true" auto="true" align="center"><?php echo $lang['element']; ?></th>

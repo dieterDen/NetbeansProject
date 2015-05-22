@@ -31,6 +31,10 @@ class afwerkingstermijnen_model extends Model {
         return $rows;
     }
 
+    /**
+     * De functie haalt alle algemene info op voor kantschriften voor de view get_GF_VO
+     * @return Array[][] Tweedimensionale array van key-value waarden van info kantschriften
+     */
     function get_kantschriften() {
         $result = $this->db->query("SELECT * FROM islp.view_kantschriften");
         if (!$result) {
@@ -60,6 +64,9 @@ class afwerkingstermijnen_model extends Model {
           return $rows; */
     }
 
+    /**
+     * De functie toont foutboodschap aan gebruiker en logt de fout in log.txt
+     */
     function error($message) {
         require 'controllers/error.php';
         $controller = new Error();

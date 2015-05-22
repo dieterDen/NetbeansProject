@@ -34,6 +34,7 @@ class FunctioneelBeheer extends Controller {
     function get_openstaandeDossiers_namen() {
         $this->view->openstaandeDossiersStatistiek = $this->model->get_openstaandeDossiersStatistiek();
         $this->view->namen_openstaandeDossiers = $this->model->get_openstaandeDossiers_namen();
+        $this->view->namen_diensten = $this->model->get_diensten();
         $this->view->render('functioneelBeheer/get_openstaandeDossiers');
     }
 
@@ -45,9 +46,43 @@ class FunctioneelBeheer extends Controller {
      * @return void 
      */
     function get_openstaandeDossiers($naam) {
-        $this->view->info_openstaandeDossiers = $this->model->get_openstaandeDossiers($naam);
-        $this->view->statistiekPerWeek = $this->model->get_statistiekPerWeek($naam);
+        $arr_values = explode('%20', $naam);
+        $param_naam = $arr_values[0] . '%20' . $arr_values[1] . '%20' . $arr_values[2] . '%20';
+        $this->view->info_openstaandeDossiers = $this->model->get_openstaandeDossiers($param_naam);
+        $this->view->statistiekPerWeek = $this->model->get_statistiekPerWeek($param_naam);
         $this->get_openstaandeDossiers_namen();
+    }
+
+    /**
+     * Alle dossiers van een geselecteerde persoon en zijn dienst worden opgehaald en aan view doorgegeven.
+     * 
+     * @param string naam opsteller openstaand dossier + dienst
+     * @return void 
+     */
+    function get_openstaandeDossiers_info($naam) {
+        $arr_values = explode('-', $naam);
+        $param_naam = $arr_values[0];
+        $param_dienst = $arr_values[1];
+        $this->view->info_openstaandeDossiers = $this->model->get_openstaandeDossiers_persoon_dienst($param_naam, $param_dienst);
+        $this->view->statistiekPerWeek = $this->model->get_statistiekPerWeek($param_naam);
+        $this->view->namen_diensten = $this->model->get_diensten();
+        $this->view->namen_openstaandeDossiers = $this->model->get_openstaandeDossiers_namen_dienst($param_dienst);
+        $this->view->huidige_dienst = $param_dienst;
+        $this->view->render('functioneelBeheer/get_openstaandeDossiers_info');
+    }
+
+    /**
+     * Alle dossiers van een geselecteerde dienst worden opgehaald en aan view doorgegeven.
+     * 
+     * @param string naam opsteller openstaand dossier
+     * @return void 
+     */
+    function get_openstaandeDossiers_dienst($dienst) {
+        $this->view->namen_openstaandeDossiers = $this->model->get_openstaandeDossiers_namen_dienst($dienst);
+        $this->view->openstaandeDossiersStatistiek = $this->model->get_openstaandeDossiersStatistiek();
+        $this->view->huidige_dienst = $dienst;
+        $this->view->namen_diensten = $this->model->get_diensten();
+        $this->view->render('functioneelBeheer/get_openstaandeDossiers_dienst');
     }
 
 }
