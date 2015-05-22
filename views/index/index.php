@@ -17,11 +17,11 @@
 <div id="mm1"style="width:200px;">
     <div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/get_afwezigheidstoezicht"><?php echo $lang['Afwezigheidstoezicht']; ?></a></div>
     <div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/afwezigheidstoezictHistoriek"><?php echo $lang['Afwezigheidstoezicht_hist']; ?></a></div>
-    <div><a href="<?php echo URL; ?>algemeenInfo/get_briefing"><?php echo $lang['briefing']; ?></a></div>
-    <div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/get_daderGerichteAanpak"><?php echo $lang['DaderGerichteAanpak']; ?></a></div>
     <div class="menu-sep"></div>
-    <div><a href="<?php echo URL; ?>algemeenInfo/get_daderGerichteAanpak"><?php echo $lang['innameOpenbareweg']; ?></a></div>
-    <div><a href="<?php echo URL; ?>algemeenInfo/get_gerechtelijkeFeiten"><?php echo $lang['Gerechtelijk_feit']; ?></a></div>
+    <div><a href="<?php echo URL; ?>algemeenInfo/get_briefing"><?php echo $lang['briefing']; ?></a></div>
+    <!--<div iconCls=""><a href="<?php echo URL; ?>algemeenInfo/get_daderGerichteAanpak"><?php echo $lang['DaderGerichteAanpak']; ?></a></div>-->
+       <!--<div><a href="<?php echo URL; ?>algemeenInfo/get_daderGerichteAanpak"><?php echo $lang['innameOpenbareweg']; ?></a></div>-->
+    <!--<div><a href="<?php echo URL; ?>algemeenInfo/get_gerechtelijkeFeiten"><?php echo $lang['Gerechtelijk_feit']; ?></a></div>-->
 
 </div>
 <div id="mm2" style="width:200px;">
@@ -31,8 +31,8 @@
 <div id="mm3" style="width: 250px;">
     <div><a href="<?php echo URL; ?>afwerkingstermijnen/get_GF_VO"><?php echo $lang['GF_VO']; ?></a></div>
     <div><a href="<?php echo URL; ?>afwerkingstermijnen/get_kantschriften"><?php echo $lang['kantschriften']; ?></a></div>
-    <div><a href="<?php echo URL; ?>afwerkingstermijnen/get_woonstveranderingen"><?php echo $lang['woonstveranderingen']; ?></a></div>
-    <div><a href="<?php echo URL; ?>afwerkingstermijnen/get_hercosi"><?php echo $lang['hercosi']; ?></a></div>
+    <!--<div><a href="<?php echo URL; ?>afwerkingstermijnen/get_woonstveranderingen"><?php echo $lang['woonstveranderingen']; ?></a></div>-->
+    <!--<div><a href="<?php echo URL; ?>afwerkingstermijnen/get_hercosi"><?php echo $lang['hercosi']; ?></a></div>-->
 </div>
 
 <hr>
