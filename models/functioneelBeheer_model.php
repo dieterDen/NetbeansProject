@@ -69,7 +69,7 @@ class functioneelBeheer_model extends Model {
     function get_openstaandeDossiers_namen() {
         $result = $this->db->query("SELECT * from islp.view_openstaande_dossiers_hitparade order by opsteller ");
         if (!$result) {
-            $this->error("Check query in get_openstaandeDossiers in klasse functioneelBeheer_model");
+            $this->error("Check query in get_openstaandeDossiers_namen in klasse functioneelBeheer_model");
         }
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
@@ -91,7 +91,7 @@ class functioneelBeheer_model extends Model {
         }
         $result = $this->db->query("SELECT * from islp.view_openstaande_dossiers_hitparade_dienst WHERE lower(dienst) = \"" . strtolower($dienst) . "\"");
         if (!$result) {
-            $this->error("Check query in get_openstaandeDossiers in klasse functioneelBeheer_model");
+            $this->error("Check query in get_openstaandeDossiers_namen_dienst in klasse functioneelBeheer_model");
         }
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
@@ -134,7 +134,7 @@ class functioneelBeheer_model extends Model {
 
         $result = $this->db->query("SELECT * FROM islp.view_openstaande_dossiers WHERE lower(opsteller) = \"" . strtolower($naam) . "\" and lower(dienst) = \"" . strtolower($dienst) . "\"");
         if (!$result) {
-            $this->error("Check query in get_openstaandeDossiers(naam) in klasse functioneelBeheer_model");
+            $this->error("Check query in get_openstaandeDossiers_persoon_dienst(naam,dienst) in klasse functioneelBeheer_model");
         }
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
@@ -169,7 +169,7 @@ class functioneelBeheer_model extends Model {
     function get_diensten() {
         $result = $this->db->query("SELECT distinct dienst from islp.view_openstaande_dossiers order by dienst");
         if (!$result) {
-            $this->error("Check query in get_openstaandeDossiers in klasse functioneelBeheer_model");
+            $this->error("Check query in get_diensten in klasse functioneelBeheer_model");
         }
         while ($row = $result->fetch_assoc()) {
             if (empty($row['dienst'])) {
