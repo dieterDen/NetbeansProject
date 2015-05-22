@@ -200,7 +200,7 @@ for ($i = 1; $i <= 12; $i++) {
                     $naam = $row_opsteller[0]['opsteller'];
                     $aantalDossiers = count($this->info_openstaandeDossiers);
                     echo '
-            <table id="tt" class="easyui-datagrid" title="Dossiers(' . $aantalDossiers . '): ' . $naam . '" style="width:85%;height:320px;"
+            <table id="tt" class="easyui-datagrid" title="Dossiers(' . $aantalDossiers . '): ' . $naam . '" style="width:85%;height:400px;"
                    data-options="singleSelect:true,collapsible:false,fitColumns:true, remoteSort:false">
                     ';
                     ?>
